@@ -58,6 +58,14 @@ def multiplie(A,B):
     reduit(AB)
     return AB
 
+def puissance(P,n):
+    if n == 0 :
+        return [1]
+    elif n%2==0:
+        return multiplie(puissance(P,n//2),puissance(P,n//2))
+    else :
+        return multiplie(P,multiplie(puissance(P,n//2),puissance(P,n//2)))
+
 def main():
     P = [1, 2, 3, 0, 0]
     reduit(P)
@@ -76,6 +84,7 @@ def main():
     print(additionne([1,2,3],[4,3,2,1]))
     print(soustrait([1,2,3],[4,3,2,1]))
     print(multiplie([1,2,3],[4,3,2,1]))
+    print(puissance([1,2,3],2))
 
 if __name__ == "__main__":
     main()
