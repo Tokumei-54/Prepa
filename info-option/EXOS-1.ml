@@ -9,5 +9,4 @@ let a_0 = let e_0 = 8.85418782e-12 and h_ = 1.054571818e-34 and m_e = 9.19e-31 a
 
 (*c*)
 let th x = let e_2x = exp (2. *. x) in (e_2x -. 1.) /. (e_2x +. 1.)
-let t = th 2.
-let argth x = let ln_x = log x in 1. +. ln_x
+let argth x = (log ((1. +. x) /. (1. -. x))) /. 2.
