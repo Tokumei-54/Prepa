@@ -1,1 +1,1 @@
-let a = 54
+let a = 6 in a*9
