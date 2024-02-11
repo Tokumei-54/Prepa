@@ -20,3 +20,39 @@ let argth x = (log ((1. +. x) /. (1. -. x))) /. 2.
 (*true grace a l'evaluation paresseuse qui evite l'erreur*)
 
 (*c*) 
+(*b <> c*)
+
+(*Exercice 1.3*)
+
+(*a*) 
+(*bool -> bool -> bool -> bool*)
+
+(*b*)
+let f a b c = (a || not b) && c
+
+(*d*) 
+(*a && b*)
+
+(*Exercice 1.4*)
+
+(*a*) 
+let volume n h b d = let ha = (b /. 2.) /. tan (Float.pi /. n) in let st = 0.5 *. b *. ha in let sp = n *. st in let sb = sp -. Float.pi *. (0.5 *. d ) ** 2. in sb *. h
+(*ffffffffffffffffffffiiiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnnnnnnnnnniiiiiiiiiiiiiiiiiiiiiiirrrrrrrrrrrrrrrrrr*)
+(*b*)
+let volume8 h b d = volume 8. h b d
+
+(*Exercice 1.5*)
+
+(*a*) 
+let () = 
+
+(*Exercice 1.6*)
+(*a*) (*erreur virgule*)
+(*b*) (*5*)
+(*c*) (*erreur and est silmultané donc x n'est pas definis*)
+(*d*) (*erreur*)
+(*e*) (* la fonction qui a x ,y associe y * (2 * x**2) *)
+(*f*) (*1*)
+(*g*) (*erreur*)
+(*h*) (*erreur la fonction n'a pas eté initialisé comme réccursive *)
+(*i*) (*3*)
