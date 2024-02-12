@@ -44,7 +44,19 @@ let volume8 h b d = volume 8. h b d
 (*Exercice 1.5*)
 
 (*a*) 
-let () = 
+let rec fact x = match x with 
+  | 0 -> 1
+  | _ -> x * fact (pred x)
+
+let tPasc l  = 
+    for n  = 0  to l do
+        for k = 0 to n do
+          print_string (string_of_int (fact n / (fact k * fact ( n - k ))) ^ " ")
+        done ;
+        print_newline ()
+    done
+
+let () = print_string "nombre de lignes : " ; tPasc (read_int ())
 
 (*Exercice 1.6*)
 (*a*) (*erreur virgule*)
