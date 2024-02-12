@@ -44,17 +44,30 @@ let volume8 h b d = volume 8. h b d
 (*Exercice 1.5*)
 
 (*a*) 
-let rec fact x = match x with 
+let rec fact x = match x with  (*fonctione seulement jusqu'a 20! après la taille exède 2^62 et passe dans les negatifs*)
   | 0 -> 1
   | _ -> x * fact (pred x)
 
-let tPasc l  = 
-    for n  = 0  to l do
-        for k = 0 to n do
-          print_string (string_of_int (fact n / (fact k * fact ( n - k ))) ^ " ")
-        done ;
-        print_newline ()
-    done
+let tPasc l  =  
+  for n  = 0  to l do
+    for k = 0 to n do
+      Printf.printf "%5d"  (fact n / (fact k * fact ( n - k )))
+    done ;
+    print_newline ()
+  done
+
+let tPasc2 l = 
+  let p = Array.make ((l * (l+1))/2) 1 in
+  print_endline ("1");
+  print_endline ("1 1");
+  for n  = 1  to (l-1) do
+    print_string "1 ";
+    for k = 1 to  n do
+      p.((n * (n + 1)) / 2 + k) <- p.(((n - 1) * n) / 2 + k) + p.(((n-1) * (n))/2 + k -1);
+      print_string (string_of_int p.((n * (n + 1)) / 2 + k)  ^ " ")
+    done ;
+    print_endline ("1")
+  done
 
 let () = print_string "nombre de lignes : " ; tPasc (read_int ())
 
