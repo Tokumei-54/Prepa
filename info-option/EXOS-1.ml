@@ -36,10 +36,19 @@ let f a b c = (a || not b) && c
 (*Exercice 1.4*)
 
 (*a*) 
-let volume n h b d = let ha = (b /. 2.) /. tan (Float.pi /. n) in let st = 0.5 *. b *. ha in let sp = n *. st in let sb = sp -. Float.pi *. (0.5 *. d ) ** 2. in sb *. h
-(*ffffffffffffffffffffiiiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnnnnnnnnnniiiiiiiiiiiiiiiiiiiiiiirrrrrrrrrrrrrrrrrr*)
-(*b*)
+let volume n h b d = 
+  if d > 2. *. h then
+    failwith "Diametre trop grand volume null "
+  else (
+    let ha = (b /. 2.) /. tan (Float.pi /. n) in 
+    let st = 0.5 *. b *. ha in let sp = n *. st in 
+    let sb = sp -. Float.pi *. (0.5 *. d ) ** 2. in 
+    sb *. h
+  )
+
 let volume8 h b d = volume 8. h b d
+
+let () = Printf.printf "l'anneau à un volume de %f m^3 \n" (volume8 54. 54. 54.)
 
 (*Exercice 1.5*)
 
