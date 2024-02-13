@@ -38,6 +38,15 @@ let norme x y = (x**2. +. y**2.)**0.5
 let k = norme 3. 4.
 
 (*c*)
-let divise n p = n mod p = 0
+let divise n p = p mod n = 0
 
 let f = divise 7 28
+let h = divise 6 28
+
+(*d*)
+let max3 a b c = let m1 = if a < b then a else b in if m1 < c then c else m1
+
+let x = max3 42 54 2024
+
+(*e*)
+let racine
