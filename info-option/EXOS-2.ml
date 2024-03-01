@@ -22,6 +22,19 @@ let rec dec2 x = match x /10 with
 
 let y = dec2 2024
 
+(*Exercice 2.2*)
+(*
+a. int -> int -> int
+b. int * int -> int
+c. 'a -> 'b -> 'a * 'b
+d. float -> float -> float * float
+e. 'a -> (float -> 'b) -> float -> 'b   
+f. int * int * int
+g. int * int * int 
+h. 'a -> (int -> 'b) -> int -> 'b 
+i. 'a -> float -> (float -> 'b) -> 'b
+*)
+
 (*Exercice 2.3*)
 
 (*a*)
@@ -73,6 +86,7 @@ let carre n =
   done;
   n + !n_2
 
+(*c*)
 let carre2 n = 
   let n_2 = ref n in
   let i = ref 1 in
@@ -106,3 +120,63 @@ let o = f 2 6
 (*Exercice 2.6*)
 
 (*a*)
+let rec pom x = 
+  let y = read_int (print_string "Guess : ") in
+  match x = y with
+  |true ->  "🏆"
+  |false -> print_endline (if x < y then "-" else "+"); pom x
+
+let plus_ou_moins = 
+  let x = (Random.int 101) in
+  let rec dicoto g d n = 
+    let y = (g + d) / 2 in
+    if y < n then 1 + dicoto y d n
+    else if y > n then 1 + dicoto g y n
+    else 1
+  in
+  Printf.printf "%s                 Optimal : %d  \n" (pom x) (dicoto 0 100 x)
+
+let pm = plus_ou_moins
+
+(*b*)
+(*le nombre de proposition est majoré par   ⌊log2(101)⌋ + 1  = 7 *)
+
+(*Exercice 2.7*)
+(*a*)
+let bissextile n = n mod 4 = 0 && n mod 100 <> 0 || n mod 400 = 0
+let a = bissextile 2024
+
+(*b*)
+let date_valide j m a = 1 <= m && m <= 12 && 
+  match m with
+  | 2 -> 1 <= j && j <= 28 || j = 29 && bissextile a
+  |4 | 6 | 9 | 11 -> 1 <= j && j <= 30
+  |_ -> 1 <= j && j <= 31
+
+let d = date_valide 29 02 2024 
+
+(*c*)
+let jour = function
+|0 -> "lundi"
+|1 -> "mardi"
+|2 -> "mercredi"
+|3 -> "jeudi"
+|4 -> "vendredi"
+|5 -> "samedi"
+|6 -> "dimanche"
+|_ -> "invalide"
+
+(*d*)
+let indice_jour j m a =
+  let b, c =
+    if m = 1 || m = 2 then
+      a - 1, 5
+    else
+      a, 2
+  in
+  (j + c + 23 * m / 9 + b + b/4 + b/100 + b/400 + 1) mod 7
+
+(*e*)
+let jour_semaine j m a = if not (date_valide j m a) then failwith "date invalide" else jour (indice_jour j m a)
+
+let t = jour_semaine 26 12 2005
