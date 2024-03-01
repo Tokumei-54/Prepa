@@ -41,7 +41,8 @@ let volume n h b d =
     failwith "Diametre trop grand volume null "
   else (
     let ha = (b /. 2.) /. tan (Float.pi /. n) in 
-    let st = 0.5 *. b *. ha in let sp = n *. st in 
+    let st = 0.5 *. b *. ha in 
+    let sp = n *. st in 
     let sb = sp -. Float.pi *. (0.5 *. d ) ** 2. in 
     sb *. h
   )
