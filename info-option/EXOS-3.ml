@@ -75,9 +75,10 @@ let t = bin 54
 
 (*b*)
 let rec int_of_bin = function
-  |"" -> 0
+  |"0" -> 0
+  |"1" -> 1
   |ch -> let len = String.length ch in 
-        (int_of_bin String.sub ch 0 (len - 1)) * 2 + int_of_strin ch.[len - 1]
+        (int_of_bin (String.sub ch 0 (len - 1))) * 2 + int_of_string ch.[len - 1]
 
 let u = ((((1*2 + 1)*2 + 0)*2 + 1 )*2 + 1) *2 +0
 let v = int_of_bin 110110
