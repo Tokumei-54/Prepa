@@ -64,12 +64,12 @@ let pgcdi a_ b_ =
 (*c*)
 (*un O de ln(a) ou ln(b)*)
 
-(*Exercice 3.3*)
+(*Exercice 3.4*)
 
 (*a*) 
 let rec bin = function
- |0 -> "0"
- |n -> string_of_int (n mod 2) ^ bin (n / 2)  
+ |0 -> ""
+ |n ->  bin (n / 2)  ^ string_of_int (n mod 2)
 
 let t = bin 54
 
@@ -78,7 +78,19 @@ let rec int_of_bin = function
   |"0" -> 0
   |"1" -> 1
   |ch -> let len = String.length ch in 
-        (int_of_bin (String.sub ch 0 (len - 1))) * 2 + int_of_string ch.[len - 1]
+        (int_of_bin (String.sub ch 0 (len - 1))) * 2 + int_of_char ch.[len-1]- int_of_char '0'
 
 let u = ((((1*2 + 1)*2 + 0)*2 + 1 )*2 + 1) *2 +0
-let v = int_of_bin 110110
+let v = int_of_bin "110110"
+
+let int_of_bin_ter =
+  let rec iobt acc = function
+    |"0" -> acc*2
+    |"1" -> acc * 2 + 1
+    |ch -> let len = String.length ch in 
+            iobt (acc * 2 + int_of_char ch.[0]- int_of_char '0') (String.sub ch 1 (len - 1))
+  in
+  iobt 0
+let vijf= int_of_bin_ter "110110"
+
+let int_of_bin_it ch = 
