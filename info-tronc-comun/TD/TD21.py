@@ -109,6 +109,37 @@ def luminosite(im, a):
             tab[i][j]= f(tab[i][j][0]) ,f(tab[i][j][1]) , f(tab[i][j][2])
     return Image.fromarray(tab)
 
+def contraste_plus(im):
+    def f(x):
+        return 255 /2  * (1 + np.sin((x/255- 1/2)* np.pi))
+    tab = np.array(im)
+    x, y, c = tab. shape
+    for i in range(x):
+        for j in range(y):
+            tab[i][j]= f(tab[i][j][0]) ,f(tab[i][j][1]) , f(tab[i][j][2])
+    return Image.fromarray(tab)
+
+def contraste_moins(im):
+    def f(x):
+        return (255 / np.pi) * np.arcsin((2/255)*x-1)+255/2
+    tab = np.array(im)
+    x, y, c = tab. shape
+    for i in range(x):
+        for j in range(y):
+            tab[i][j]= f(tab[i][j][0]) ,f(tab[i][j][1]) , f(tab[i][j][2])
+    return Image.fromarray(tab)
+
+def popart(im):
+    def filtre(im,f)
+        tab = np.array(im)
+        x, y, c = tab. shape
+        for i in range(x):
+            for j in range(y):
+                if 
+        
+    
+    return 
+
 im = Image.open("/home/eleve/Dokuments/Prepa/info-tronc-comun/TD/lena.png")
 print("Mode des couleurs de l'image : ", im.mode)
 print("Format de l'image : ", im.format)
@@ -146,5 +177,7 @@ nouv_im.save("nouvelle_image.png")
 # nouv_tab = np.zeros((h,l,3), dtype='uint8')
 # Image.fromarray(nouv_tab).show()
 # extrait(im, 180, 190, 419, 379).save("extrait.png")
-luminosite(im, 0.5).save("luminosité.png")
-luminosite(im, -1).save("luminosité2.png")
+# luminosite(im, 0.5).save("luminosité.png")
+# luminosite(im, -1).save("luminosité2.png")
+contraste_plus(im).save("contraste_plus.png")
+contraste_moins(im).save("contraste_moins.png")

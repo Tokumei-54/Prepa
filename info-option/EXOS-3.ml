@@ -94,3 +94,8 @@ let int_of_bin_ter =
 let vijf= int_of_bin_ter "110110"
 
 let int_of_bin_it ch = 
+  let n = ref 0 in
+  for i = 0 to String.length ch do
+    n := !n*2 + int_of_char ch.[i]- int_of_char '0'
+  done;
+n
