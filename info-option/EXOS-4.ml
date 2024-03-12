@@ -28,3 +28,20 @@ let u = (log v) /. log 2.
 let rec puiss x = function
   |0 -> 1
   |n -> (puiss x (pred n)) * x 
+
+(*b*)
+let puissT =
+  let rec p acc x = function
+  |0 -> acc
+  |n -> (puiss (acc*x) x (pred n)) 
+  in 
+  p 1
+
+(*c*)
+let puissI x n = 
+  let x_n = ref 1 in
+  for i = 1 to n do
+    x_n:= !x_n * x;
+  done;
+  !x_n
+
