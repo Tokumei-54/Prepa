@@ -63,24 +63,15 @@ def contours2(im):
     b=np.array([[1,1,1,1,1],[1,1,1,1,1],[1,1,-24,1,1],[1,1,1,1,1],[1,1,1,1,1]])
     return convolution2(im, b)
 
-# def rotation(im):
-#     def rota(tab):
-#         n,_,_ = tab.shape
-#         if n <= 1 :
-#             return tab
-#         m = n//2
-#         return np.concatenate(np.concatenate((rota(tab[m:][:m]),rota(tab[m:][m:])), axis=1),np.concatenate((rota(tab[:m][:m]),rota(tab[m:][:m])), axis=1))
-#     T = np.array(im)
-#     return Image.fromarray(rota(T))
-    
-def rota(tab):
-    n,_,_ = tab.shape
-    if n <= 1 :
-        return tab
-    m = n//2
-    return np.concatenate(np.concatenate((rota(tab[m:][:m]),rota(tab[m:][m:])), axis=1),np.concatenate((rota(tab[:m][:m]),rota(tab[m:][:m])), axis=1))
-
-
+def rotation(im): #Bon ça marche pas mais ça devrait 
+    def rota(tab):
+        n,_,_ = tab.shape
+        if n <= 1 :
+            return tab
+        m = n//2
+        return np.concatenate(np.concatenate((rota(tab[m:][:m]),rota(tab[m:][m:])), axis=1),np.concatenate((rota(tab[:m][:m]),rota(tab[m:][:m])), axis=1))
+    T = np.array(im)
+    return Image.fromarray(rota(T))
 
 def main():
     # contours(im,20).save("contours.png")
@@ -89,8 +80,7 @@ def main():
     # convolution(im,b_5_25).save("convolution.png")
     # netteté(im).save("netteté.png")
     # contours2(im).save("contour2.png")
-    # rotation(im).save("rotation.png")
-    print(np.array([[1],[2],[3],[4]]))
+    rotation(im).save("rotation.png")
     
 if __name__ == '__main__':
     main()

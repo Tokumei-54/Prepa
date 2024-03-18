@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
+import copy
 
 def composante_rouge(im):
     tab = np.array(im)
@@ -130,12 +131,21 @@ def contraste_moins(im):
     return Image.fromarray(tab)
 
 def popart(im):
-    def filtre(im,f)
-        tab = np.array(im)
+
+    def borne(exp):
+        return max(0, min(exp, 255))
+    
+    def filtre(T,f):
+        tab = copy.deepcopy(T)
         x, y, c = tab. shape
         for i in range(x):
             for j in range(y):
-                if 
+                tab[i][j]= [borne(tab[i][j][0] + f[0]) ,borne(tab[i][j][1] + f[1]) , borne(tab[i][j][2] + f[2])]
+        return tab
+
+    tab = np.array(im)   
+
+    return Image.fromarray(np.concatenate((np.concatenate((filtre(tab,(255,255,0)),filtre(tab,(255,0,0))),axis=1),np.concatenate((filtre(tab,(255,0,255)),filtre(tab,(0,255,0))),axis=1)),axis=0))     
         
     
     return 
@@ -179,5 +189,6 @@ nouv_im.save("nouvelle_image.png")
 # extrait(im, 180, 190, 419, 379).save("extrait.png")
 # luminosite(im, 0.5).save("luminosité.png")
 # luminosite(im, -1).save("luminosité2.png")
-contraste_plus(im).save("contraste_plus.png")
-contraste_moins(im).save("contraste_moins.png")
+# contraste_plus(im).save("contraste_plus.png")
+# contraste_moins(im).save("contraste_moins.png")
+popart(im).save("popart.png")
