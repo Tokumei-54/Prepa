@@ -51,7 +51,7 @@ def niveau_gris(im):
 
 def convolution2(im, b):
     tab = np.array(niveau_gris(convolution(im,b)))
-    a, b = tab. shape
+    a, b = tab.shape
     cadre =  np.zeros((a,b), dtype='uint8')
     for i in range(a):
         for j in range(b):
@@ -63,6 +63,18 @@ def contours2(im):
     b=np.array([[1,1,1,1,1],[1,1,1,1,1],[1,1,-24,1,1],[1,1,1,1,1],[1,1,1,1,1]])
     return convolution2(im, b)
 
+def rotation(im):
+    def rota(tab):
+        n,_,_ = tab.shape
+        if n <= 2 :
+            return tab
+        m = n//2
+        return np.concatenate(np.concatenate((rota(tab[m:][:m]),rota(tab[m:][m:])), axis=1),np.concatenate((rota(tab[:m][:m]),rota(tab[m:][:m])), axis=1))
+    tab = np.array(im)
+    return Image.fromarray(rota(tab))
+    
+
+
 
 def main():
     # contours(im,20).save("contours.png")
@@ -70,7 +82,8 @@ def main():
     # b_5_25 = np.array([[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1]])/25
     # convolution(im,b_5_25).save("convolution.png")
     # netteté(im).save("netteté.png")
-    contours2(im).save("contour2.png")
+    # contours2(im).save("contour2.png")
+    rotation(im).save("rotation.png")
     
 if __name__ == '__main__':
     main()
