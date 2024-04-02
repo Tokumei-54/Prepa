@@ -128,3 +128,51 @@ let test = il_exist f [-1;1;-1]
 
 (*a*)
 let separe li = 
+  let rec pair n = function
+  |[] -> failwith "liste vide" 
+  |[x] -> if n mod 2 = 0 then [x] else []
+  |h::t -> if n mod 2 = 0 then h:: pair (pred n) t else pair (pred n) t
+  in
+  let rec impair n = function
+  |[] -> failwith "liste vide" 
+  |[x] -> if n mod 2 = 1 then [x] else []
+  |h::t -> if n mod 2 = 1 then h:: impair (pred n) t else impair (pred n) t
+  in
+
+  let l = List.length li in
+
+  pair l li , impair l li
+
+let test = separe [0;1;2;3]
+
+(*b*)
+(* let join (l1,l2) = 
+  let rec j0 = function
+    |[],[] -> []
+    |li,[] -> li
+    |h::t , li -> h:: j1 t li
+    |_ -> failwith "cas imposible"
+    and j1 = function
+    |[],[] -> []
+    |[],li -> li
+    |li,h::t -> h :: j0 li t
+    |_ -> failwith "cas imposible"
+  in
+  j0 l1,l2  *)
+(* let rec join (l1,l2) =
+  |[x],[y] -> [x;y]
+  |[],li -> li
+  |li,[] -> li
+  |h::t,li -> h:: join li t *)
+
+(* let rec join (l1,l2) = 
+  |[],[] -> []
+  |[x],[y] -> x::y
+  |[x],[] -> [x]
+  |[],[y] -> [y]
+  |h::t,[] -> h::t
+  |[], h::t -> h::t
+  |a::b,c::d -> a::c:: join b d *)
+
+
+

@@ -44,4 +44,34 @@ let test = trit [9;5;4;8;6;2;7;3;1;0]
 (*O(n^2)*)
 
 (*Exercice 8.3*)
+(*a*)
+let rec valuation p n = if n mod p = 0 then 1 + valuation p (n/p) else 0
 
+let test = valuation 2 8
+
+(*b*)
+let factorise n = 
+  let v n p = valuation p n in
+  let rec fac = function
+    |[] -> []
+    |h::t -> v n h :: fac t
+  in
+  fac
+
+let test = factorise 12 [2;3;5;7;11;]
+
+let rec prime m = function
+  |[] -> true
+  |h::t -> m mod h <> 0 && prime m t
+
+let rec primes n acc m= 
+   if float_of_int m > sqrt (float_of_int n) then acc 
+      else if prime m acc then primes n (m::acc) (succ m)
+            else primes n acc (succ m) 
+
+let decomposition n = factorise n (primes n [] 2)
+
+let test = decomposition 24
+
+
+(*Exercice 8.4*)
