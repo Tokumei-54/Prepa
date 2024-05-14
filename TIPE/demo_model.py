@@ -1,6 +1,6 @@
 # learn to produce results of a 4/3 bit adder input to numbers in binary output in decimal or binary ?
 
-Input = list[tuple[tuple[list[int],list[int]],int]]
+Input = list[tuple[list[int],int]]
 
 def int_to_bin_list(i:int,n:int) -> list[int]:
     return list(map(int,list(bin(i)[2:].zfill(n))))
