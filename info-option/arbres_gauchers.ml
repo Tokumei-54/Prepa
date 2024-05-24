@@ -43,8 +43,8 @@ let rang = function
 let rec fusion a b = match a,b with
   |Vide,Vide -> Vide
   |c,Vide|Vide,c -> c
-  |N (i,n,g1,d1),N (j,m,g2,d2) -> if n > m then (let f = fusion d1 (N (j,m,g2,d2)) in if i > j then N (i,n,g1,f) else N (j,n,f,g1) )
-                                  else  (let f = fusion d2 (N (i,n,g1,d1)) in if j > i then N (j,m,g2,f) else N (i,m,f,g2) )
+  |N (i,n,g1,d1),N (j,m,g2,d2) -> if n > m then (let f = fusion d1 (N (j,m,g2,d2)) in if i > rang f then N (rang f + 1,n,g1,f) else N (rang g1 +1,n,f,g1) )
+                                  else  (let f = fusion d2 (N (i,n,g1,d1)) in if j > rang f then N (rang f + 1,m,g2,f) else N (rang g2 +1,m,f,g2) )
 
 let test6 = fusion test_tree1 test_tree2
 

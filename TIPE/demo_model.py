@@ -23,5 +23,14 @@ def data_spliter(D:Data,p:float)-> tuple[Data,Data]:
 def n_bit_adder_data(n:int, p:float) -> tuple[Data,Data]:
     return data_spliter(n_bit_adder_data_generator(n),p)
 
+def ReLU(X):
+    return np.maximum(0,X)
+
+def softmax(X):
+    return np.exp(X) / sum(np.exp(X))
+    
+
 training_data , test_data = n_bit_adder_data(2,0.5)
-print("\n",training_data ,"\n\n", test_data)
+
+def foward_propagation(X,W,b,f):
+    return f(W.dot(X) + b)
