@@ -48,5 +48,33 @@ let rec feuilles = function
 
 let rec is_equilibre = function
   | V -> true
-  | N (g,x,d) -> let hg = hauteur g and hd = hauteur d in (hg = hd || hg = hd + 1 || hg = hd -1) && is_equilibre g && is_equilibre d
+  | N (g,x,d) -> abs (hauteur g - hauteur d) <= 1 && is_equilibre g && is_equilibre d
 
+let testa = feuilles test_tree
+let testb = is_equilibre test_tree
+
+let rec symetrique = function
+  |V -> V
+  |N (g,x,d) -> N (symetrique d, x, symetrique g)
+
+(* let rec parcour = function
+  |V -> [-1]
+  |N (g,x,d) -> parcour g @ x::parcour d  *)
+(* let rec alt l1 l2 = match l1,l2 with
+  |[],[] -> []
+  |[],l2 -> l2
+  |l1,[] -> l1
+  |h1::t1,h2::t2 -> h1::h2::alt t1 t2
+
+
+let rec parcour = function
+|V -> [-1]
+|N (g,x,d) -> x:: alt (parcour g) (parcour d) 
+
+let rec tree_of_list = function
+  |[] -> V
+  |h::t -> N () *)
+
+
+let testa = symetrique test_tree
+(* let testb = parcour test_tree *)
