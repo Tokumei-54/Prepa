@@ -1,5 +1,8 @@
 # learn to produce results of a 4/3 bit adder input to numbers in binary output in decimal or binary ?
+
 import numpy as np
+from encephalon import NN
+
 
 Data = list[tuple[list[int],int]]
 
@@ -28,9 +31,22 @@ def ReLU(X):
 
 def softmax(X):
     return np.exp(X) / sum(np.exp(X))
+
+
     
 
 training_data , test_data = n_bit_adder_data(2,0.5)
 
 def foward_propagation(X,W,b,f):
     return f(W.dot(X) + b)
+
+def main():
+    Id = lambda x: x
+    bill = NN([1,1])
+    bill.load("/home/eleve/bill_2024-07-19T14:58:29.npz")
+    X = np.array([0,1])
+    print(bill.forward_propagation(X, g = Id))
+
+
+if __name__ == "__main__":
+    main()

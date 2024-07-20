@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55 -->
+<html class="fixed-size-document" lang="en" data-lt-installed="true" style="--zoom-factor: 1.083151889314555; --viewport-scale-factor: 1.4442025190860734;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .ol-cm-activeLineLayer {pointer-events: none;}
+.ͼ1 .cm-line {overflow-x: hidden;}
+.ͼ2 .ol-cm-change-i {background-color: #2c8e304d;}
+.ͼ3 .ol-cm-change-i {background-color: rgba(37, 107, 41, 0.15);}
+.ͼ2 .ol-cm-change-c {background-color: #f3b1114d;}
+.ͼ3 .ol-cm-change-c {background-color: rgba(194, 93, 11, 0.15);}
+.ͼ1 .ol-cm-change {padding: var(--half-leading, 0) 0;}
+.ͼ1 .ol-cm-change-d {border-left: 2px dotted #c5060b; margin-left: -1px;}
+.ͼ1 .ol-cm-change-callout {position: relative; pointer-events: none; padding: var(--half-leading, 0) 0;}
+.ͼ1 .ol-cm-change-callout-inner {display: inline-block; position: absolute; left: 0; bottom: 0; width: 100vw; border-bottom: 1px dashed black;}
+@supports (-moz-appearance:none) {.ͼ1 .ol-cm-change-callout-inner {display: none;}}
+.ͼ1 .ol-cm-change-callout-i .ol-cm-change-callout-inner {border-color: #2c8e30;}
+.ͼ1 .ol-cm-change-callout-c .ol-cm-change-callout-inner {border-color: #f3b111;}
+.ͼ1 .ol-cm-change-callout-d .ol-cm-change-callout-inner {border-color: #c5060b;}
+.ͼ1 .ol-cm-filler {padding: 0 2px;}
+.ͼ1 .ol-cm-spelling-error {text-decoration-color: red; text-decoration-line: underline; text-decoration-style: dotted; text-decoration-thickness: 2px; text-decoration-skip-ink: none; text-underline-offset: 0.2em;}
+.ͼ1 .cm-tooltip.ol-cm-spelling-context-menu-tooltip {border-width: 0;}
+.ͼ1 .cm-panel.cm-search [name=close] {position: absolute; top: 0; right: 4px; background-color: inherit; border: none; font: inherit; padding: 0; margin: 0;}
+.ͼ1 .cm-panel.cm-search input, .ͼ1 .cm-panel.cm-search button, .ͼ1 .cm-panel.cm-search label {margin: .2em .6em .2em 0;}
+.ͼ1 .cm-panel.cm-search input[type=checkbox] {margin-right: .2em;}
+.ͼ1 .cm-panel.cm-search label {font-size: 80%; white-space: pre;}
+.ͼ1 .cm-panel.cm-search {padding: 2px 6px 4px; position: relative;}
+.ͼ2 .cm-searchMatch {background-color: #ffff0054;}
+.ͼ3 .cm-searchMatch {background-color: #00ffff8a;}
+.ͼ2 .cm-searchMatch-selected {background-color: #ff6a0054;}
+.ͼ3 .cm-searchMatch-selected {background-color: #ff00ff8a;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-content {font-size: var(--font-size); font-family: var(--source-font-family); line-height: var(--line-height);}
+.ͼ1 .cm-cursor-primary {font-size: var(--font-size); font-family: var(--source-font-family); line-height: var(--line-height);}
+.ͼ1 .cm-gutters {font-size: var(--font-size); line-height: var(--line-height);}
+.ͼ1 .cm-tooltip {font-size: var(--font-size);}
+.ͼ1 .cm-panel {font-size: var(--font-size);}
+.ͼ1 .cm-foldGutter .cm-gutterElement > span {height: calc(var(--font-size) * var(--line-height));}
+.ͼ1 .cm-lineNumbers {font-family: var(--source-font-family);}
+.ͼ1 .cm-lintRange-error .cm-lintRange-error {background: none;}
+.ͼ1 .cm-lintRange-error {padding: var(--half-leading, 0) 0; background: rgba(255, 0, 0, 0.2);}
+.ͼ1 .cm-specialChar {color: red; background-color: rgba(255, 0, 0, 0.1);}
+.ͼ1 .cm-widgetBuffer {height: 1.3em;}
+.ͼ1 .cm-snippetFieldPosition {display: inline-block; height: 1.3em;}
+.ͼ3 .cm-foldGutter .cm-gutterElement > span:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2); background-color: rgba(255, 255, 255, 0.1);}
+.ͼ2 .cm-foldGutter .cm-gutterElement > span:hover {border-color: rgba(0, 0, 0, 0.3); box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7); background-color: rgba(255, 255, 255, 0.2);}
+.ͼ1 .cm-gutter-lint {order: -1;}
+.ͼ1 .cm-gutter-lint .cm-gutterElement {padding: .2em;}
+.ͼ1 .cm-gutter-lint {width: 1.4em;}
+.ͼ1 .cm-lint-marker {width: 1em; height: 1em;}
+.ͼ1 .cm-lint-marker-info {content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">%3Cpath%20fill%3D%22%23aaf%22%20stroke%3D%22%2377e%22%20stroke-width%3D%226%22%20stroke-linejoin%3D%22round%22%20d%3D%22M5%205L35%205L35%2035L5%2035Z%22%2F%3E</svg>');}
+.ͼ1 .cm-lint-marker-warning {content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">%3Cpath%20fill%3D%22%23fe8%22%20stroke%3D%22%23fd7%22%20stroke-width%3D%226%22%20stroke-linejoin%3D%22round%22%20d%3D%22M20%206L37%2035L3%2035Z%22%2F%3E</svg>');}
+.ͼ1 .cm-lint-marker-error {content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2215%22%20fill%3D%22%23f87%22%20stroke%3D%22%23f43%22%20stroke-width%3D%226%22%2F%3E</svg>');}
+.ͼ1 .cm-diagnostic {padding: 3px 6px 3px 8px; margin-left: -1px; display: block; white-space: pre-wrap;}
+.ͼ1 .cm-diagnostic-error {border-left: 5px solid #d11;}
+.ͼ1 .cm-diagnostic-warning {border-left: 5px solid orange;}
+.ͼ1 .cm-diagnostic-info {border-left: 5px solid #999;}
+.ͼ1 .cm-diagnostic-hint {border-left: 5px solid #66d;}
+.ͼ1 .cm-diagnosticAction {font: inherit; border: none; padding: 2px 4px; background-color: #444; color: white; border-radius: 3px; margin-left: 8px; cursor: pointer;}
+.ͼ1 .cm-diagnosticSource {font-size: 70%; opacity: 0.7;}
+.ͼ1 .cm-lintRange {background-position: left bottom; background-repeat: repeat-x; padding-bottom: 0.7px;}
+.ͼ1 .cm-lintRange-error {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22%23d11%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-warning {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22orange%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-info {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22%23999%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-hint {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22%2366d%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-active {background-color: #ffdd9980;}
+.ͼ1 .cm-tooltip-lint {padding: 0; margin: 0;}
+.ͼ1 .cm-lintPoint:after {content: ""; position: absolute; bottom: 0; left: -2px; border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 4px solid #d11;}
+.ͼ1 .cm-lintPoint {position: relative;}
+.ͼ1 .cm-lintPoint-warning:after {border-bottom-color: orange;}
+.ͼ1 .cm-lintPoint-info:after {border-bottom-color: #999;}
+.ͼ1 .cm-lintPoint-hint:after {border-bottom-color: #66d;}
+.ͼ1 .cm-panel.cm-panel-lint ul [aria-selected] u {text-decoration: underline;}
+.ͼ1 .cm-panel.cm-panel-lint ul [aria-selected] {background-color: #ddd;}
+.ͼ1 .cm-panel.cm-panel-lint ul:focus [aria-selected] {background: #bdf; background-color: Highlight; color: white; color: HighlightText;}
+.ͼ1 .cm-panel.cm-panel-lint ul u {text-decoration: none;}
+.ͼ1 .cm-panel.cm-panel-lint ul {max-height: 100px; overflow-y: auto; padding: 0; margin: 0;}
+.ͼ1 .cm-panel.cm-panel-lint [name=close] {position: absolute; top: 0; right: 2px; background: inherit; border: none; font: inherit; padding: 0; margin: 0;}
+.ͼ1 .cm-panel.cm-panel-lint {position: relative;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li, .ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {padding: 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {overflow-x: hidden; text-overflow: ellipsis; cursor: pointer;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {display: list-item; border-bottom: 1px solid silver; padding-left: 0.5em; opacity: 0.7;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: hidden auto; max-width: 700px; max-width: min(700px, 95vw); min-width: 250px; max-height: 10em; height: 100%; list-style: none; margin: 0; padding: 0;}
+.ͼ2 .cm-tooltip-autocomplete ul li[aria-selected] {background: #17c; color: white;}
+.ͼ2 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #777;}
+.ͼ3 .cm-tooltip-autocomplete ul li[aria-selected] {background: #347; color: white;}
+.ͼ3 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #444;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 400px; box-sizing: border-box;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left-narrow {right: 30px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right-narrow {left: 30px;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; display: inline-block; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6; box-sizing: content-box;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {z-index: 100; box-sizing: border-box;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete {margin-left: -4px;}
+.ͼ2 .cm-tooltip.cm-tooltip-autocomplete, .ͼ2 .cm-tooltip.cm-completionInfo {border: 1px lightgray solid; background: #fefefe; color: #111; box-shadow: 2px 3px 5px rgb(0 0 0 / 20%);}
+.ͼ3 .cm-tooltip.cm-tooltip-autocomplete, .ͼ3 .cm-tooltip.cm-completionInfo {border: 1px #484747 solid; box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.51); background: #25282c; color: #c1c1c1;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: var(--source-font-family); font-size: var(--font-size);}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete li[role="option"] {display: flex; justify-content: space-between; line-height: 1.4; outline: 1px solid transparent;}
+.ͼ2 .cm-tooltip.cm-tooltip-autocomplete li[role="option"]:hover {outline-color: #abbffe; background-color: rgba(233, 233, 253, 0.4);}
+.ͼ3 .cm-tooltip.cm-tooltip-autocomplete li[role="option"]:hover {outline-color: rgba(109, 150, 13, 0.8); background-color: rgba(58, 103, 78, 0.62);}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete ul li[aria-selected] {color: inherit;}
+.ͼ2 .cm-tooltip.cm-tooltip-autocomplete ul li[aria-selected] {background: #cad6fa;}
+.ͼ3 .cm-tooltip.cm-tooltip-autocomplete ul li[aria-selected] {background: #3a674e;}
+.ͼ1 .cm-completionMatchedText {text-decoration: none;}
+.ͼ2 .cm-completionMatchedText {color: #2d69c7;}
+.ͼ3 .cm-completionMatchedText {color: #93ca12;}
+.ͼ1 .ol-cm-completionType {padding-left: 1em; padding-right: 0; width: auto; font-size: 90%; font-family: var(--source-font-family); opacity: 0.5;}
+.ͼ1 .cm-completionInfo .ol-cm-symbolCompletionInfo {margin: 0; white-space: normal; display: flex; flex-direction: column; align-items: center; text-align: center;}
+.ͼ1 .cm-completionInfo .ol-cm-symbolCharacter {font-size: 32px;}
+.ͼ1 .cm-panel.cm-gotoLine label .cm-textfield:focus-visible {outline: none;}
+.ͼ1 .cm-panel.cm-gotoLine label .cm-textfield:focus {border-color: var(--input-border-focus);}
+.ͼ1 .cm-panel.cm-gotoLine label .cm-textfield {margin: 0 10px; max-width: 100px; height: 34px; padding: 5px 16px; font-size: 14px; font-weight: normal; line-height: var(--line-height-base); color: var(--input-color); background-color: #fff; background-image: none; border-radius: var(--input-border-radius); box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%); transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;}
+.ͼ1 .cm-panel.cm-gotoLine label {margin: 0; font-size: 14px;}
+.ͼ1 .cm-panel.cm-gotoLine .cm-button {padding: 4px 16px 5px; text-transform: capitalize; font-size: 14px; line-height: var(--line-height-base); user-select: none; background-image: none; background-color: var(--btn-default-bg); border-radius: var(--btn-border-radius-base); border: 0 solid transparent; color: #fff;}
+.ͼ1 .cm-panel.cm-gotoLine {padding: 10px; font-size: 14px;}
+.ͼ1 .cm-matchingBracket {pointer-events: none;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ2 {--indent-marker-bg-color: #F0F1F2; --indent-marker-active-bg-color: #E4E5E6;}
+.ͼ3 {--indent-marker-bg-color: #2B3245; --indent-marker-active-bg-color: #3C445C;}
+.ͼ1 .cm-line {position: relative;}
+.ͼ1 .cm-indent-markers::before {content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--indent-markers); pointer-events: none; z-index: -1;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ5 .cm-tooltip.ol-cm-references-search-hint .btn {font-size: 100%; padding: 0px 8px;}
+.ͼ5 .cm-tooltip.ol-cm-references-search-hint {max-width: min(700px, 95vw); background-color: var(--ol-blue); color: white; cursor: pointer; padding: 4px 8px; margin-left: -4px; border-radius: 4px; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);}
+.ͼ5 .ol-cm-references-search-hint-inner {display: flex; align-items: center; justify-content: space-between; gap: 12px; line-height: 1.6; white-space: nowrap;}
+.ͼ4 .ol-cm-toolbar {background-color: var(--editor-toolbar-bg); color: var(--toolbar-btn-color); flex: 1; display: flex; overflow-x: hidden;}
+.ͼ4.overall-theme-dark .ol-cm-toolbar img {filter: invert(1);}
+.ͼ4 .ol-cm-toolbar-overflow {display: flex; flex-wrap: wrap;}
+.ͼ4 #popover-toolbar-overflow .popover-content {padding: 0;}
+.ͼ4 #popover-toolbar-overflow .arrow:after {border-bottom-color: var(--editor-toolbar-bg);}
+.ͼ4 #popover-toolbar-overflow .arrow {border-bottom-color: rgba(125, 125, 125, 0.2);}
+.ͼ4 #popover-toolbar-overflow {padding: 0; border-color: rgba(125, 125, 125, 0.2); background-color: var(--editor-toolbar-bg); color: var(--toolbar-btn-color);}
+.ͼ4 .ol-cm-toolbar-button-menu-popover > .popover-content {padding: 0;}
+.ͼ4 .ol-cm-toolbar-button-menu-popover .arrow {display: none;}
+.ͼ4 .ol-cm-toolbar-button-menu-popover .list-group {margin-bottom: 0; background-color: var(--editor-toolbar-bg); border-radius: 4px;}
+.ͼ4 .ol-cm-toolbar-button-menu-popover .list-group-item:hover, .ͼ4 .ol-cm-toolbar-button-menu-popover .list-group-item:focus {background-color: rgba(125, 125, 125, 0.2);}
+.ͼ4 .ol-cm-toolbar-button-menu-popover .list-group-item {width: 100%; text-align: start; display: flex; align-items: center; gap: 5px; color: var(--toolbar-btn-color); border-color: var(--editor-toolbar-bg); background: none;}
+.ͼ4 .ol-cm-toolbar-button-group.ol-cm-toolbar-end {border-left: none;}
+.ͼ4 .editor-toggle-switch + .ol-cm-toolbar-button-group.ol-cm-toolbar-stretch {border-left: none;}
+.ͼ4 .ol-cm-toolbar-button-group.ol-cm-toolbar-stretch {flex: 1;}
+.ͼ4 .ol-cm-toolbar-button-group.overflow-hidden {border-left: none; width: 0; padding: 0;}
+.ͼ4 .ol-cm-toolbar-button-group {display: flex; align-items: center; white-space: nowrap; flex-wrap: nowrap; padding: 0 4px; margin: 4px 0; line-height: 1; border-left: 1px solid rgba(125, 125, 125, 0.3);}
+.ͼ4 .ol-cm-toolbar-button:hover[aria-disabled="true"], .ͼ4 .ol-cm-toolbar-button:focus[aria-disabled="true"], .ͼ4 .ol-cm-toolbar-button:active[aria-disabled="true"], .ͼ4 .ol-cm-toolbar-button.active[aria-disabled="true"] {opacity: 0.2;}
+.ͼ4 .ol-cm-toolbar-button:hover, .ͼ4 .ol-cm-toolbar-button:focus, .ͼ4 .ol-cm-toolbar-button:active, .ͼ4 .ol-cm-toolbar-button.active {background-color: rgba(125, 125, 125, 0.1); color: inherit; box-shadow: none;}
+.ͼ4 .ol-cm-toolbar-button.active, .ͼ4 .ol-cm-toolbar-button:active {background-color: rgba(125, 125, 125, 0.2);}
+.ͼ4 .ol-cm-toolbar-button[aria-disabled="true"] {opacity: 0.2; cursor: not-allowed;}
+.ͼ4 .overflow-hidden .ol-cm-toolbar-button {display: none;}
+.ͼ4 .ol-cm-toolbar-button.ol-cm-toolbar-button-math {font-family: "Noto Serif", serif; font-size: 16px; font-weight: 700;}
+.ͼ4 .ol-cm-toolbar-button {display: inline-flex; align-items: center; justify-content: center; padding: 0; margin: 0 1px; background-color: transparent; border: none; border-radius: 1px; line-height: 1; width: 24px; height: 24px; overflow: hidden;}
+.ͼ4.overall-theme-dark .ol-cm-toolbar-button:hover, .ͼ4.overall-theme-dark .ol-cm-toolbar-button:focus, .ͼ4.overall-theme-dark .ol-cm-toolbar-button:active, .ͼ4.overall-theme-dark .ol-cm-toolbar-button.active {background-color: rgba(125, 125, 125, 0.2);}
+.ͼ4.overall-theme-dark .ol-cm-toolbar-button.active, .ͼ4.overall-theme-dark .ol-cm-toolbar-button:active {background-color: rgba(125, 125, 125, 0.4);}
+.ͼ4.overall-theme-dark .ol-cm-toolbar-button[aria-disabled="true"] {opacity: 0.2;}
+.ͼ4.overall-theme-dark .ol-cm-toolbar-button {opacity: 0.8;}
+.ͼ4 .ol-cm-toolbar-end .badge {margin-right: 5px;}
+.ͼ4 .ol-cm-toolbar-end {justify-content: flex-end;}
+.ͼ4 .ol-cm-toolbar-overflow-toggle.ol-cm-toolbar-overflow-toggle-visible {display: flex;}
+.ͼ4 .ol-cm-toolbar-overflow-toggle {display: none;}
+.ͼ4 .ol-cm-toolbar-menu-toggle:hover, .ͼ4 .ol-cm-toolbar-menu-toggle:focus, .ͼ4 .ol-cm-toolbar-menu-toggle.active {background-color: rgba(125, 125, 125, 0.1); opacity: 1; color: inherit;}
+.ͼ4 .ol-cm-toolbar-menu-toggle .caret {margin-top: 0;}
+.ͼ4 .ol-cm-toolbar-menu-toggle {background: transparent; box-shadow: none !important; border: none; white-space: nowrap; color: inherit; border-radius: 0; opacity: 0.8; width: 120px; font-size: 13px; font-family: Lato; font-weight: 700; display: flex; align-items: center; justify-content: space-between; padding: 5px 6px;}
+.ͼ4 .ol-cm-toolbar-menu-popover.bottom {margin-top: 1px;}
+.ͼ4 .ol-cm-toolbar-menu-popover.top {margin-bottom: 1px;}
+.ͼ4 .ol-cm-toolbar-menu-popover .arrow {display: none;}
+.ͼ4 .ol-cm-toolbar-menu-popover .popover-content {padding: 0;}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu {width: 120px; display: flex; flex-direction: column; box-sizing: border-box; font-size: 14px;}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu-item.ol-cm-toolbar-menu-item-active {background-color: rgba(125, 125, 125, 0.1);}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu-item:hover {background-color: rgba(125, 125, 125, 0.2); color: inherit;}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu-item.section-level-section {font-size: 1.44em;}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu-item.section-level-subsection {font-size: 1.2em;}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu-item.section-level-body {font-weight: normal;}
+.ͼ4 .ol-cm-toolbar-menu-popover .ol-cm-toolbar-menu-item {border: none; background: none; padding: 4px 12px; height: 40px; display: flex; align-items: center; font-weight: bold;}
+.ͼ4 .ol-cm-toolbar-menu-popover {border: none; border-radius: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; box-shadow: 0 2px 5px rgb(0 0 0 / 20%); background-color: var(--editor-toolbar-bg); color: var(--toolbar-btn-color); padding: 0;}
+.ͼ4.overall-theme-dark .ol-cm-toolbar-table-grid-popover {color: #fff;}
+.ͼ4.overall-theme-dark .ol-cm-toolbar-table-grid td.active {outline-color: white; background: rgb(125, 125, 125);}
+.ͼ4 .ol-cm-toolbar-table-grid td.active {outline-color: #3265B2; background: #F1F4F9;}
+.ͼ4 .ol-cm-toolbar-table-grid td {outline: 1px solid #E7E9EE; outline-offset: -2px; width: 16px; height: 16px;}
+.ͼ4 .ol-cm-toolbar-table-grid {border-collapse: separate; table-layout: fixed; font-size: 6px; cursor: pointer; width: 160px;}
+.ͼ4 .ol-cm-toolbar-table-size-label {max-width: 160px; font-family: Lato, sans-serif; font-size: 12px;}
+.ͼ4 .ol-cm-toolbar-table-grid-popover {max-width: unset; padding: 8px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); border-radius: 4px; background-color: var(--editor-toolbar-bg); pointer-events: all;}
+.ͼ4 .ol-cm-toolbar-button-menu-popover-unstyled {max-width: unset; background: transparent; border: 0; padding: 0 8px 8px 160px; box-shadow: none; pointer-events: none;}
+.ͼa .ol-cm-search-form {padding: 10px; display: flex; gap: 10px; background: var(--ol-blue-gray-1); --ol-cm-search-form-focus-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%); --ol-cm-search-form-error-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px var(--input-shadow-danger-color);}
+.ͼa .ol-cm-search-controls {display: grid; grid-template-columns: auto auto; grid-template-rows: auto auto; gap: 10px;}
+.ͼa .ol-cm-search-form-row {display: flex; gap: 10px; justify-content: space-between;}
+.ͼa .ol-cm-search-form-group {display: flex; gap: 10px; align-items: center;}
+.ͼa .ol-cm-search-input-group input[type="text"] {background: none; box-shadow: none;}
+.ͼa .ol-cm-search-input-group input[type="text"]:focus {outline: none; box-shadow: none;}
+.ͼa .ol-cm-search-input-group .btn.btn.checked {color: #fff; background-color: var(--ol-blue);}
+.ͼa .ol-cm-search-input-group .btn.btn:active {box-shadow: none;}
+.ͼa .ol-cm-search-input-group .btn.btn {background: var(--ol-blue-gray-0); color: var(--ol-blue-gray-3); border-radius: 50%; height: 2em; display: inline-flex; align-items: center; justify-content: center; width: 2em; margin-right: 3px;}
+.ͼa .ol-cm-search-input-group:focus-within {border-color: var(--input-border-focus); box-shadow: var(--ol-cm-search-form-focus-shadow);}
+.ͼa .ol-cm-search-input-group {border: 1px solid var(--input-border); border-radius: 20px; background: white; width: 100%; max-width: 25em;}
+.ͼa .ol-cm-search-input-group.ol-cm-search-input-error:focus-within {border-color: var(--input-border-danger); box-shadow: var(--ol-cm-search-form-error-shadow);}
+.ͼa .input-group .ol-cm-search-form-input {border: none;}
+.ͼa .ol-cm-search-input-button {background: #fff; color: inherit; border: none;}
+.ͼa .ol-cm-search-input-button.focused {border-color: var(--input-border-focus); box-shadow: var(--ol-cm-search-form-focus-shadow);}
+.ͼa .ol-cm-search-form-button-group {flex-shrink: 0;}
+.ͼa .ol-cm-search-form-position {flex-shrink: 0; color: var(--ol-blue-gray-4);}
+.ͼa .ol-cm-search-hidden-inputs {position: absolute; left: -10000px;}
+.ͼa .ol-cm-search-form-close {flex: 1;}
+.ͼa .ol-cm-search-replace-input {order: 3;}
+.ͼa .ol-cm-search-replace-buttons {order: 4;}
+.ͼa .ol-cm-stored-selection {background: rgba(125, 125, 125, 0.1); padding-top: var(--half-leading); padding-bottom: var(--half-leading);}
+.ͼa .cm-selectionMatch, .ͼa .cm-searchMatch {background-color: transparent; outline-offset: -1px; padding-top: var(--half-leading); padding-bottom: var(--half-leading);}
+.ͼa .cm-searchMatch .cm-selectionMatch {background-color: transparent !important;}
+.ͼ9 .ol-cm-cursorHighlightsLayer {z-index: 100; contain: size style; pointer-events: none;}
+.ͼ9 .ol-cm-cursorHighlight {color: hsl(var(--hue), 70%, 50%); border-left: 2px solid hsl(var(--hue), 70%, 50%); display: inline-block; height: 1.6em; position: absolute; pointer-events: none;}
+.ͼ9 .ol-cm-cursorHighlight:before {content: ''; position: absolute; left: -2px; top: -5px; height: 5px; width: 5px; border-width: 3px 3px 2px 2px; border-style: solid; border-color: inherit;}
+.ͼ9 .ol-cm-cursorHighlightLabel {line-height: 1; background-color: hsl(var(--hue), 70%, 50%); padding: 1em 1em; font-size: 0.8rem; font-family: Lato, sans-serif; color: white; font-weight: 700; white-space: nowrap; pointer-events: none;}
+.ͼf .tok-typeName {color: blue;}
+.ͼf .tok-keyword {color: blue;}
+.ͼf .tok-labelName {color: #833FBA;}
+.ͼf .tok-literal {color: #833FBA;}
+.ͼf .tok-invalid {background-color: rgba(255, 0, 0, 0.1); color: red;}
+.ͼf .tok-operator {color: rgb(104, 118, 135);}
+.ͼf .tok-string {color: rgb(3, 106, 7);}
+.ͼf .tok-comment {color: rgb(76, 136, 107);}
+.ͼf .tok-attributeValue {color: rgb(49, 132, 149);}
+.ͼf .tok-function {color: #0000A2;}
+.ͼf .tok-heading {color: rgb(12, 7, 255);}
+.ͼf .tok-list {color: rgb(185, 6, 144);}
+.ͼe .cm-gutters {background-color: transparent; border-right-color: transparent; background: #f0f0f0; color: #333;}
+.ͼe .cm-foldPlaceholder {background-color: #6B72E6;}
+.ͼe {background-color: #FFFFFF; color: black;}
+.ͼe .cm-cursor, .ͼe .cm-dropCursor {color: black;}
+.ͼe.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .ͼe .cm-selectionBackground, .ͼe .cm-content ::selection, .ͼe .cm-searchMatch.cm-searchMatch.cm-searchMatch-selected {background: rgb(181, 213, 255);}
+.ͼe.cm-focused .cm-matchingBracket, .ͼe.cm-focused .cm-nonmatchingBracket {margin: 0; outline: 1px solid rgb(192, 192, 192);}
+.ͼe .cm-activeLine {background: rgba(0, 0, 0, 0.07);}
+.ͼe .cm-activeLineGutter {background-color: #dcdcdc;}
+.ͼe .cm-selectionMatch.cm-selectionMatch, .ͼe .cm-searchMatch.cm-searchMatch {background: rgba(250, 250, 255, 0.5); outline: 1px solid rgb(200, 200, 250); margin: 0;}
+.ͼh .cm-tooltip {--font-size: 12px; --source-font-family: Lucida Console, Source Code Pro, monospace; --line-height: 1.6;}
+.ͼg .cm-tooltip {--font-size: 12px; --source-font-family: Lucida Console, Source Code Pro, monospace; --line-height: 1.6;}
+.ͼ8 {height: 100%; text-rendering: optimizeSpeed;}
+.ͼ8.cm-editor.cm-focused:not(:focus-visible) {outline: none;}
+.ͼ8 .cm-panel.cm-search label {display: inline-flex; align-items: center; font-weight: normal;}
+.ͼ8 .cm-selectionLayer {z-index: -10;}
+.ͼ8 .cm-gutters {border-right: none; flex-shrink: 0;}
+.ͼ8 .cm-foldGutter .cm-gutterElement > span {border: 1px solid transparent; border-radius: 3px; display: inline-flex; flex-direction: column; justify-content: center; color: rgba(109, 109, 109, 0.7);}
+.ͼ8 .cm-lineNumbers .cm-gutterElement {padding: 0; user-select: none;}
+.ͼ8:not(.cm-focused) > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block; opacity: 0.2;}
+.ͼ8 .cm-cursor, .ͼ8 .cm-dropCursor {border-width: 2px; margin-left: -1px; border-left-color: inherit;}
+.ͼ8 .cm-tooltip-hover {border: none;}
+.ͼ8 .cm-snippetField {background: rgba(194, 193, 208, 0.09); border: 1px dotted rgba(211, 208, 235, 0.62);}
+.ͼ8 .cm-foldPlaceholder {box-sizing: border-box; display: inline-block; height: 11px; width: 1.8em; margin-top: -2px; vertical-align: middle; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII="); background-repeat: no-repeat, repeat-x; background-position: center center, top left; color: transparent; border: 1px solid black; border-radius: 2px;}
+.ͼ8 .cm-gutter-lint .cm-gutterElement {padding: 0.3em;}
+.ͼ8 .cm-lint-marker-error:before {content: normal;}
+.ͼ8 .cm-lint-marker-error {content: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2215%22%20fill%3D%22%23f87%22%20stroke%3D%22%23f43%22%20stroke-width%3D%226%22%2F%3E%3C%2Fsvg%3E');}
+.ͼ8 .cm-lint-marker-warning {content: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cpath%20fill%3D%22%23FCC483%22%20stroke%3D%22%23DE8014%22%20stroke-width%3D%226%22%20stroke-linejoin%3D%22round%22%20d%3D%22M20%206L37%2035L3%2035Z%22%2F%3E%3C%2Fsvg%3E');}
+.ͼc .cm-line ::selection {background-color: transparent !important;}
+.ͼc .cm-line::selection {background-color: transparent !important;}
+.ͼc .cm-line {caret-color: transparent !important;}
+</style><title>TIPE : Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf</title><meta name="twitter:title" content="TIPE : Réseau de Neurones Hydraulique"><meta name="og:title" content="TIPE : Réseau de Neurones Hydraulique"><meta name="description" content="An online LaTeX editor that’s easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta itemprop="description" content="An online LaTeX editor that’s easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta itemprop="image" content="https://cdn.overleaf.com/img/ol-brand/overleaf_og_logo.png"><meta name="image" content="https://cdn.overleaf.com/img/ol-brand/overleaf_og_logo.png"><meta itemprop="name" content="Overleaf, the Online LaTeX Editor"><meta name="robots" content="noindex, nofollow"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@overleaf"><meta name="twitter:description" content="An online LaTeX editor that’s easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta name="twitter:image" content="https://cdn.overleaf.com/img/ol-brand/overleaf_og_logo.png"><meta property="fb:app_id" content="400474170024644"><meta property="og:description" content="An online LaTeX editor that’s easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta property="og:image" content="https://cdn.overleaf.com/img/ol-brand/overleaf_og_logo.png"><meta property="og:type" content="website"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="https://www.overleaf.com/favicon.ico"><link rel="icon" sizes="192x192" href="https://www.overleaf.com/touch-icon-192x192.png"><link rel="apple-touch-icon-precomposed" href="https://www.overleaf.com/apple-touch-icon-precomposed.png"><link rel="mask-icon" href="https://www.overleaf.com/mask-favicon.svg" color="#138A07"><link rel="stylesheet" href="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/main-style-a4521ec7389b00203fe5.css" id="main-stylesheet"><link rel="alternate" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="en"><link rel="alternate" href="https://cs.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="cs"><link rel="alternate" href="https://es.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="es"><link rel="alternate" href="https://pt.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="pt"><link rel="alternate" href="https://fr.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="fr"><link rel="alternate" href="https://de.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="de"><link rel="alternate" href="https://sv.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="sv"><link rel="alternate" href="https://tr.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="tr"><link rel="alternate" href="https://it.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="it"><link rel="alternate" href="https://cn.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="zh-CN"><link rel="alternate" href="https://no.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="no"><link rel="alternate" href="https://ru.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="ru"><link rel="alternate" href="https://da.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="da"><link rel="alternate" href="https://ko.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="ko"><link rel="alternate" href="https://ja.overleaf.com/project/6655a7ff2eeb3db0025b0d55" hreflang="ja"><link rel="preload" href="https://cdn.overleaf.com/js/en-json-d586780b604d61a78d37.js" as="script" nonce=""><script type="text/javascript" nonce="" id="ga-loader" data-ga-token="UA-112092690-1" data-ga-token-v4="G-RV4YBCCCWJ" data-cookie-domain=".overleaf.com" data-session-analytics-id="50e10538-ab0d-46d8-a1df-9f1342588b51">var gaSettings = document.querySelector('#ga-loader').dataset;
+var gaid = gaSettings.gaTokenV4;
+var gaToken = gaSettings.gaToken;
+var cookieDomain = gaSettings.cookieDomain;
+var sessionAnalyticsId = gaSettings.sessionAnalyticsId;
+if(gaid) {
+    var additionalGaConfig = sessionAnalyticsId ? { 'user_id': sessionAnalyticsId } : {};
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', gaid, { 'anonymize_ip': true, ...additionalGaConfig });
+}
+if (gaToken) {
+    window.ga = window.ga || function () {
+        (window.ga.q = window.ga.q || []).push(arguments);
+    }, window.ga.l = 1 * new Date();
+}
+var loadGA = window.olLoadGA = function() {
+    if (gaid) {
+        var s = document.createElement('script');
+        s.setAttribute('async', 'async');
+        s.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=' + gaid);
+        document.querySelector('head').append(s);
+    } 
+    if (gaToken) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', gaToken, cookieDomain.replace(/^\./, ""));
+        ga('set', 'anonymizeIp', true);
+        if (sessionAnalyticsId) {
+            ga('set', 'userId', sessionAnalyticsId);
+        }
+        ga('send', 'pageview');
+    }
+};
+// Check if consent given (features/cookie-banner)
+var oaCookie = document.cookie.split('; ').find(function(cookie) {
+    return cookie.startsWith('oa=');
+});
+if(oaCookie) {
+    var oaCookieValue = oaCookie.split('=')[1];
+    if(oaCookieValue === '1') {
+        loadGA();
+    }
+}
+</script><meta name="ol-csrfToken" content="0TP4Su2R-eJ3ZKDKP1YKAz4DgOupIbcO8OWA"><meta name="ol-baseAssetPath" content="https://cdn.overleaf.com/"><meta name="ol-mathJaxPath" content="/js/libs/mathjax-3.2.2/es5/tex-svg-full.js"><meta name="ol-usersEmail" content="leonardwilsonb@gmail.com"><meta name="ol-ab" data-type="json" content="{}"><meta name="ol-user_id" content="61ba491bcc5e8d8a5a821072"><meta name="ol-i18n" data-type="json" content="{&quot;currentLangCode&quot;:&quot;en&quot;}"><meta name="ol-ExposedSettings" data-type="json" content="{&quot;isOverleaf&quot;:true,&quot;appName&quot;:&quot;Overleaf&quot;,&quot;adminEmail&quot;:&quot;support@overleaf.com&quot;,&quot;dropboxAppName&quot;:&quot;Overleaf&quot;,&quot;ieeeBrandId&quot;:15,&quot;hasAffiliationsFeature&quot;:true,&quot;hasSamlFeature&quot;:true,&quot;samlInitPath&quot;:&quot;/saml/ukamf/init&quot;,&quot;hasLinkUrlFeature&quot;:true,&quot;hasLinkedProjectFileFeature&quot;:true,&quot;hasLinkedProjectOutputFileFeature&quot;:true,&quot;siteUrl&quot;:&quot;https://www.overleaf.com&quot;,&quot;emailConfirmationDisabled&quot;:false,&quot;maxEntitiesPerProject&quot;:2000,&quot;maxUploadSize&quot;:52428800,&quot;projectUploadTimeout&quot;:120000,&quot;recaptchaSiteKey&quot;:&quot;6LebiTwUAAAAAMuPyjA4pDA4jxPxPe2K9_ndL74Q&quot;,&quot;recaptchaDisabled&quot;:{&quot;invite&quot;:true,&quot;login&quot;:false,&quot;passwordReset&quot;:false,&quot;register&quot;:false,&quot;addEmail&quot;:false},&quot;textExtensions&quot;:[&quot;tex&quot;,&quot;latex&quot;,&quot;sty&quot;,&quot;cls&quot;,&quot;bst&quot;,&quot;bib&quot;,&quot;bibtex&quot;,&quot;txt&quot;,&quot;tikz&quot;,&quot;mtx&quot;,&quot;rtex&quot;,&quot;md&quot;,&quot;asy&quot;,&quot;lbx&quot;,&quot;bbx&quot;,&quot;cbx&quot;,&quot;m&quot;,&quot;lco&quot;,&quot;dtx&quot;,&quot;ins&quot;,&quot;ist&quot;,&quot;def&quot;,&quot;clo&quot;,&quot;ldf&quot;,&quot;rmd&quot;,&quot;lua&quot;,&quot;gv&quot;,&quot;mf&quot;,&quot;yml&quot;,&quot;yaml&quot;,&quot;lhs&quot;,&quot;mk&quot;,&quot;xmpdata&quot;,&quot;cfg&quot;,&quot;rnw&quot;,&quot;ltx&quot;,&quot;inc&quot;],&quot;editableFilenames&quot;:[&quot;latexmkrc&quot;,&quot;.latexmkrc&quot;,&quot;makefile&quot;,&quot;gnumakefile&quot;],&quot;validRootDocExtensions&quot;:[&quot;tex&quot;,&quot;Rtex&quot;,&quot;ltx&quot;,&quot;Rnw&quot;],&quot;fileIgnorePattern&quot;:&quot;**/{{__MACOSX,.git,.texpadtmp,.R}{,/**},.!(latexmkrc),*.{dvi,aux,log,toc,out,pdfsync,synctex,synctex(busy),fdb_latexmk,fls,nlo,ind,glo,gls,glg,bbl,blg,doc,docx,gz,swp}}&quot;,&quot;sentryAllowedOriginRegex&quot;:&quot;^(https://[a-z]+\\\\.overleaf.com|https://cdn.overleaf.com|https://compiles.overleafusercontent.com)/&quot;,&quot;sentryDsn&quot;:&quot;https://4f0989f11cb54142a5c3d98b421b930a@app.getsentry.com/34706&quot;,&quot;sentryEnvironment&quot;:&quot;production&quot;,&quot;sentryRelease&quot;:&quot;f64a6c474af39f1e9ae76c1ede26e4fd160cfe22&quot;,&quot;enableSubscriptions&quot;:true,&quot;gaToken&quot;:&quot;UA-112092690-1&quot;,&quot;gaTokenV4&quot;:&quot;G-RV4YBCCCWJ&quot;,&quot;cookieDomain&quot;:&quot;.overleaf.com&quot;,&quot;templateLinks&quot;:[{&quot;name&quot;:&quot;Academic Journal&quot;,&quot;url&quot;:&quot;/gallery/tagged/academic-journal&quot;,&quot;trackingKey&quot;:&quot;academic-journal&quot;},{&quot;name&quot;:&quot;Book&quot;,&quot;url&quot;:&quot;/gallery/tagged/book&quot;,&quot;trackingKey&quot;:&quot;book&quot;},{&quot;name&quot;:&quot;Formal Letter&quot;,&quot;url&quot;:&quot;/gallery/tagged/formal-letter&quot;,&quot;trackingKey&quot;:&quot;formal-letter&quot;},{&quot;name&quot;:&quot;Homework Assignment&quot;,&quot;url&quot;:&quot;/gallery/tagged/homework&quot;,&quot;trackingKey&quot;:&quot;homework-assignment&quot;},{&quot;name&quot;:&quot;Poster&quot;,&quot;url&quot;:&quot;/gallery/tagged/poster&quot;,&quot;trackingKey&quot;:&quot;poster&quot;},{&quot;name&quot;:&quot;Presentation&quot;,&quot;url&quot;:&quot;/gallery/tagged/presentation&quot;,&quot;trackingKey&quot;:&quot;presentation&quot;},{&quot;name&quot;:&quot;Project / Lab Report&quot;,&quot;url&quot;:&quot;/gallery/tagged/report&quot;,&quot;trackingKey&quot;:&quot;lab-report&quot;},{&quot;name&quot;:&quot;Résumé / CV &quot;,&quot;url&quot;:&quot;/gallery/tagged/cv&quot;,&quot;trackingKey&quot;:&quot;cv&quot;},{&quot;name&quot;:&quot;Thesis&quot;,&quot;url&quot;:&quot;/gallery/tagged/thesis&quot;,&quot;trackingKey&quot;:&quot;thesis&quot;},{&quot;name&quot;:&quot;view_all&quot;,&quot;url&quot;:&quot;/latex/templates&quot;,&quot;trackingKey&quot;:&quot;view-all&quot;}],&quot;labsEnabled&quot;:false,&quot;groupSSOEnabled&quot;:true,&quot;wikiEnabled&quot;:true,&quot;templatesEnabled&quot;:true}"><meta name="ol-splitTestVariants" data-type="json" content="{&quot;bib-file-tpr-prompt&quot;:&quot;edit-bib-file&quot;,&quot;compile-log-events&quot;:&quot;default&quot;,&quot;null-test-share-modal&quot;:&quot;default&quot;,&quot;paywall-cta&quot;:&quot;default&quot;,&quot;pdf-caching-cached-url-lookup&quot;:&quot;enabled&quot;,&quot;pdf-caching-mode&quot;:&quot;enabled&quot;,&quot;pdf-caching-prefetch-large&quot;:&quot;default&quot;,&quot;pdf-caching-prefetching&quot;:&quot;default&quot;,&quot;pdfjs-40&quot;:&quot;default&quot;,&quot;personal-access-token&quot;:&quot;enabled&quot;,&quot;table-generator-promotion&quot;:&quot;default&quot;,&quot;track-pdf-download&quot;:&quot;default&quot;,&quot;writefull-oauth-promotion&quot;:&quot;enabled&quot;,&quot;ieee-stylesheet&quot;:&quot;disabled&quot;,&quot;pdf-controls&quot;:&quot;default&quot;,&quot;revert-file&quot;:&quot;default&quot;}"><meta name="ol-splitTestInfo" data-type="json" content="{&quot;bib-file-tpr-prompt&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;compile-log-events&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;paywall-cta&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;pdf-caching-cached-url-lookup&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;url&quot;:&quot;&quot;,&quot;tooltipText&quot;:&quot;&quot;}},&quot;pdf-caching-mode&quot;:{&quot;phase&quot;:&quot;release&quot;},&quot;pdf-controls&quot;:{&quot;phase&quot;:&quot;alpha&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;pdfjs-40&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;personal-access-token&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;revert-file&quot;:{&quot;phase&quot;:&quot;alpha&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;track-pdf-download&quot;:{&quot;phase&quot;:&quot;release&quot;},&quot;writefull-oauth-promotion&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}},&quot;ieee-stylesheet&quot;:{&quot;phase&quot;:&quot;release&quot;,&quot;badgeInfo&quot;:{&quot;tooltipText&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;}}}"><meta name="ol-algolia" data-type="json" content="{&quot;appId&quot;:&quot;SK53GL4JLY&quot;,&quot;apiKey&quot;:&quot;9ac63d917afab223adbd2cd09ad0eb17&quot;,&quot;indexes&quot;:{&quot;wiki&quot;:&quot;learn-wiki&quot;,&quot;gallery&quot;:&quot;gallery-production&quot;}}"><meta name="ol-isManagedAccount" data-type="boolean"><meta name="ol-bootstrapVersion" data-type="json" content="3"><meta name="ol-project_id" content="6655a7ff2eeb3db0025b0d55"><meta name="ol-projectName" content="TIPE : Réseau de Neurones Hydraulique"><meta name="ol-userSettings" data-type="json" content="{&quot;mode&quot;:&quot;none&quot;,&quot;editorTheme&quot;:&quot;textmate&quot;,&quot;fontSize&quot;:12,&quot;autoComplete&quot;:true,&quot;autoPairDelimiters&quot;:true,&quot;pdfViewer&quot;:&quot;pdfjs&quot;,&quot;syntaxValidation&quot;:true,&quot;fontFamily&quot;:&quot;lucida&quot;,&quot;lineHeight&quot;:&quot;normal&quot;,&quot;overallTheme&quot;:&quot;&quot;}"><meta name="ol-user" data-type="json" content="{&quot;id&quot;:&quot;61ba491bcc5e8d8a5a821072&quot;,&quot;email&quot;:&quot;leonardwilsonb@gmail.com&quot;,&quot;first_name&quot;:&quot;Leonard&quot;,&quot;last_name&quot;:&quot;Wilson&quot;,&quot;referal_id&quot;:&quot;BcTDwcdtRvZndHZB&quot;,&quot;signUpDate&quot;:&quot;2021-12-15T19:59:23.951Z&quot;,&quot;allowedFreeTrial&quot;:true,&quot;features&quot;:{&quot;collaborators&quot;:1,&quot;versioning&quot;:false,&quot;dropbox&quot;:false,&quot;github&quot;:false,&quot;gitBridge&quot;:false,&quot;compileTimeout&quot;:20,&quot;compileGroup&quot;:&quot;standard&quot;,&quot;templates&quot;:false,&quot;references&quot;:false,&quot;trackChanges&quot;:false,&quot;mendeley&quot;:false,&quot;zotero&quot;:false,&quot;referencesSearch&quot;:false,&quot;symbolPalette&quot;:false},&quot;refProviders&quot;:{&quot;mendeley&quot;:false,&quot;zotero&quot;:false},&quot;writefull&quot;:{&quot;enabled&quot;:false},&quot;alphaProgram&quot;:false,&quot;betaProgram&quot;:false,&quot;labsProgram&quot;:false,&quot;inactiveTutorials&quot;:[&quot;table-generator-promotion&quot;,&quot;writefull-oauth-promotion&quot;,&quot;bib-file-tpr-prompt&quot;],&quot;isAdmin&quot;:false}"><meta name="ol-learnedWords" data-type="json" content="[]"><meta name="ol-anonymous" data-type="boolean"><meta name="ol-brandVariation" data-type="json"><meta name="ol-isTokenMember" data-type="boolean"><meta name="ol-isRestrictedTokenMember" data-type="boolean"><meta name="ol-maxDocLength" data-type="json" content="2097152"><meta name="ol-wikiEnabled" data-type="boolean" content=""><meta name="ol-gitBridgePublicBaseUrl" content="https://git.overleaf.com"><meta name="ol-gitBridgeEnabled" data-type="boolean" content=""><meta name="ol-compilesUserContentDomain" content="https://compiles.overleafusercontent.com"><meta name="ol-useShareJsHash" data-type="boolean" content=""><meta name="ol-wsUrl" data-type="string"><meta name="ol-wsRetryHandshake" data-type="json" content="5"><meta name="ol-pdfjsVariant" content="default"><meta name="ol-debugPdfDetach" data-type="boolean"><meta name="ol-showSymbolPalette" data-type="boolean"><meta name="ol-symbolPaletteAvailable" data-type="boolean" content=""><meta name="ol-detachRole" data-type="string"><meta name="ol-allowedImageNames" data-type="json" content="[{&quot;imageName&quot;:&quot;texlive-full:2023.1&quot;,&quot;imageDesc&quot;:&quot;2023&quot;},{&quot;imageName&quot;:&quot;texlive-full:2022.1&quot;,&quot;imageDesc&quot;:&quot;2022&quot;},{&quot;imageName&quot;:&quot;texlive-full:2021.1&quot;,&quot;imageDesc&quot;:&quot;2021 (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2020.1&quot;,&quot;imageDesc&quot;:&quot;2020 (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2019.1&quot;,&quot;imageDesc&quot;:&quot;2019 (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2018.1&quot;,&quot;imageDesc&quot;:&quot;2018 (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2017.1&quot;,&quot;imageDesc&quot;:&quot;2017 (Legacy)&quot;},{&quot;imageName&quot;:&quot;wl_texlive:2018.1&quot;,&quot;imageDesc&quot;:&quot;2016 (Overleaf v1) (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2016.1&quot;,&quot;imageDesc&quot;:&quot;2016 (ShareLaTeX) (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2015.1&quot;,&quot;imageDesc&quot;:&quot;2015 (Legacy)&quot;},{&quot;imageName&quot;:&quot;texlive-full:2014.2&quot;,&quot;imageDesc&quot;:&quot;2014 (Legacy)&quot;}]"><meta name="ol-languages" data-type="json" content="[{&quot;code&quot;:&quot;en&quot;,&quot;name&quot;:&quot;English&quot;},{&quot;code&quot;:&quot;en_US&quot;,&quot;name&quot;:&quot;English (American)&quot;},{&quot;code&quot;:&quot;en_GB&quot;,&quot;name&quot;:&quot;English (British)&quot;},{&quot;code&quot;:&quot;en_CA&quot;,&quot;name&quot;:&quot;English (Canadian)&quot;},{&quot;code&quot;:&quot;af&quot;,&quot;name&quot;:&quot;Afrikaans&quot;},{&quot;code&quot;:&quot;ar&quot;,&quot;name&quot;:&quot;Arabic&quot;},{&quot;code&quot;:&quot;gl&quot;,&quot;name&quot;:&quot;Galician&quot;},{&quot;code&quot;:&quot;eu&quot;,&quot;name&quot;:&quot;Basque&quot;},{&quot;code&quot;:&quot;br&quot;,&quot;name&quot;:&quot;Breton&quot;},{&quot;code&quot;:&quot;bg&quot;,&quot;name&quot;:&quot;Bulgarian&quot;},{&quot;code&quot;:&quot;ca&quot;,&quot;name&quot;:&quot;Catalan&quot;},{&quot;code&quot;:&quot;hr&quot;,&quot;name&quot;:&quot;Croatian&quot;},{&quot;code&quot;:&quot;cs&quot;,&quot;name&quot;:&quot;Czech&quot;},{&quot;code&quot;:&quot;da&quot;,&quot;name&quot;:&quot;Danish&quot;},{&quot;code&quot;:&quot;nl&quot;,&quot;name&quot;:&quot;Dutch&quot;},{&quot;code&quot;:&quot;eo&quot;,&quot;name&quot;:&quot;Esperanto&quot;},{&quot;code&quot;:&quot;et&quot;,&quot;name&quot;:&quot;Estonian&quot;},{&quot;code&quot;:&quot;fo&quot;,&quot;name&quot;:&quot;Faroese&quot;},{&quot;code&quot;:&quot;fr&quot;,&quot;name&quot;:&quot;French&quot;},{&quot;code&quot;:&quot;de&quot;,&quot;name&quot;:&quot;German&quot;},{&quot;code&quot;:&quot;el&quot;,&quot;name&quot;:&quot;Greek&quot;},{&quot;code&quot;:&quot;id&quot;,&quot;name&quot;:&quot;Indonesian&quot;},{&quot;code&quot;:&quot;ga&quot;,&quot;name&quot;:&quot;Irish&quot;},{&quot;code&quot;:&quot;it&quot;,&quot;name&quot;:&quot;Italian&quot;},{&quot;code&quot;:&quot;kk&quot;,&quot;name&quot;:&quot;Kazakh&quot;},{&quot;code&quot;:&quot;ku&quot;,&quot;name&quot;:&quot;Kurdish&quot;},{&quot;code&quot;:&quot;lv&quot;,&quot;name&quot;:&quot;Latvian&quot;},{&quot;code&quot;:&quot;lt&quot;,&quot;name&quot;:&quot;Lithuanian&quot;},{&quot;code&quot;:&quot;nr&quot;,&quot;name&quot;:&quot;Ndebele&quot;},{&quot;code&quot;:&quot;ns&quot;,&quot;name&quot;:&quot;Northern Sotho&quot;},{&quot;code&quot;:&quot;no&quot;,&quot;name&quot;:&quot;Norwegian&quot;},{&quot;code&quot;:&quot;fa&quot;,&quot;name&quot;:&quot;Persian&quot;},{&quot;code&quot;:&quot;pl&quot;,&quot;name&quot;:&quot;Polish&quot;},{&quot;code&quot;:&quot;pt_BR&quot;,&quot;name&quot;:&quot;Portuguese (Brazilian)&quot;},{&quot;code&quot;:&quot;pt_PT&quot;,&quot;name&quot;:&quot;Portuguese (European)&quot;},{&quot;code&quot;:&quot;pa&quot;,&quot;name&quot;:&quot;Punjabi&quot;},{&quot;code&quot;:&quot;ro&quot;,&quot;name&quot;:&quot;Romanian&quot;},{&quot;code&quot;:&quot;ru&quot;,&quot;name&quot;:&quot;Russian&quot;},{&quot;code&quot;:&quot;sk&quot;,&quot;name&quot;:&quot;Slovak&quot;},{&quot;code&quot;:&quot;sl&quot;,&quot;name&quot;:&quot;Slovenian&quot;},{&quot;code&quot;:&quot;st&quot;,&quot;name&quot;:&quot;Southern Sotho&quot;},{&quot;code&quot;:&quot;es&quot;,&quot;name&quot;:&quot;Spanish&quot;},{&quot;code&quot;:&quot;sv&quot;,&quot;name&quot;:&quot;Swedish&quot;},{&quot;code&quot;:&quot;tl&quot;,&quot;name&quot;:&quot;Tagalog&quot;},{&quot;code&quot;:&quot;ts&quot;,&quot;name&quot;:&quot;Tsonga&quot;},{&quot;code&quot;:&quot;tn&quot;,&quot;name&quot;:&quot;Tswana&quot;},{&quot;code&quot;:&quot;hsb&quot;,&quot;name&quot;:&quot;Upper Sorbian&quot;},{&quot;code&quot;:&quot;cy&quot;,&quot;name&quot;:&quot;Welsh&quot;},{&quot;code&quot;:&quot;xh&quot;,&quot;name&quot;:&quot;Xhosa&quot;}]"><meta name="ol-editorThemes" data-type="json" content="[&quot;cobalt&quot;,&quot;dracula&quot;,&quot;eclipse&quot;,&quot;monokai&quot;,&quot;overleaf&quot;,&quot;textmate&quot;]"><meta name="ol-legacyEditorThemes" data-type="json" content="[&quot;ambiance&quot;,&quot;chaos&quot;,&quot;chrome&quot;,&quot;clouds&quot;,&quot;clouds_midnight&quot;,&quot;crimson_editor&quot;,&quot;dawn&quot;,&quot;dreamweaver&quot;,&quot;github&quot;,&quot;gob&quot;,&quot;gruvbox&quot;,&quot;idle_fingers&quot;,&quot;iplastic&quot;,&quot;katzenmilch&quot;,&quot;kr_theme&quot;,&quot;kuroir&quot;,&quot;merbivore&quot;,&quot;merbivore_soft&quot;,&quot;mono_industrial&quot;,&quot;nord_dark&quot;,&quot;pastel_on_dark&quot;,&quot;solarized_dark&quot;,&quot;solarized_light&quot;,&quot;sqlserver&quot;,&quot;terminal&quot;,&quot;tomorrow&quot;,&quot;tomorrow_night&quot;,&quot;tomorrow_night_blue&quot;,&quot;tomorrow_night_bright&quot;,&quot;tomorrow_night_eighties&quot;,&quot;twilight&quot;,&quot;vibrant_ink&quot;,&quot;xcode&quot;]"><meta name="ol-showUpgradePrompt" data-type="boolean"><meta name="ol-useOpenTelemetry" data-type="boolean"><meta name="ol-showSupport" data-type="boolean" content=""><meta name="ol-showTemplatesServerPro" data-type="boolean"><meta name="ol-showPersonalAccessToken" data-type="boolean"><meta name="ol-optionalPersonalAccessToken" data-type="boolean" content=""><meta name="ol-hasTrackChangesFeature" data-type="boolean" content=""><meta name="ol-inactiveTutorials" data-type="json" content="[&quot;table-generator-promotion&quot;,&quot;writefull-oauth-promotion&quot;,&quot;bib-file-tpr-prompt&quot;]"><meta name="ol-projectTags" data-type="json" content="[]"><meta name="ol-loadingText" data-type="string" content="Loading"><meta name="ol-translationLoadErrorMessage" data-type="string" content="Could not load translations"><meta name="ol-fileActionI18n" data-type="json" content="{&quot;edited&quot;:&quot;Edited&quot;,&quot;renamed&quot;:&quot;Renamed&quot;,&quot;created&quot;:&quot;Created&quot;,&quot;deleted&quot;:&quot;Deleted&quot;}"><meta name="ol-overallThemes" data-type="json" content="[{&quot;name&quot;:&quot;Default&quot;,&quot;val&quot;:&quot;&quot;,&quot;path&quot;:&quot;https://cdn.overleaf.com/stylesheets/main-style-a4521ec7389b00203fe5.css&quot;},{&quot;name&quot;:&quot;Light&quot;,&quot;val&quot;:&quot;light-&quot;,&quot;path&quot;:&quot;https://cdn.overleaf.com/stylesheets/main-light-style-be1eade9876ccd774b93.css&quot;}]"><meta name="ol-writefullEnabled" data-type="boolean" content=""><meta name="ol-writefullJsUrl" content="https://wfo-cdn.writefull.ai/alpha/writefull.js"><meta name="ol-writefullCssUrl" content="https://wfo-cdn.writefull.ai/alpha/style.css"><link rel="stylesheet" type="text/css" href="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/6219-e88824631fea5aac4685.css"></head><body br-mode="off" saccades-color="" fixation-strength="2" saccades-interval="0" style="--fixation-edge-opacity: 80%; --br-line-height: 1; --br-boldness: 600;" class=""><main id="ide-root"><div class="global-alerts"></div><div class="ide-react-main"><header class="toolbar toolbar-header toolbar-with-labels" role="navigation" aria-label="Project Layout, Sharing, and Submission"><div class="toolbar-left"><div class="toolbar-item"><button class="btn btn-full-height"><i class="fa fa-bars fa-fw editor-menu-icon" aria-hidden="true"></i><p class="toolbar-label">Menu</p></button></div><div class="toolbar-item"><a class="btn btn-full-height" draggable="false" href="https://www.overleaf.com/project"><i class="fa fa-home fa-fw" aria-hidden="true"></i><span class="sr-only">Back to your projects</span></a></div></div><div class="project-name toolbar-center"><span class="name">TIPE : Réseau de Neurones Hydraulique</span></div><div class="toolbar-right"><div class="online-users"></div><div class="toolbar-item"><button class="btn btn-full-height"><i class="review-icon"></i><p class="toolbar-label">Review</p></button></div><div class="toolbar-item"><button class="btn btn-full-height"><i class="fa fa-group fa-fw" aria-hidden="true"></i><p class="toolbar-label">Share</p></button></div><div class="toolbar-item"><button id="publishButton" class="btn btn-full-height"><i class="fa fa-globe fa-fw" aria-hidden="true"></i><p class="toolbar-label">Submit</p></button></div><div class="toolbar-item"><button class="btn btn-full-height"><i class="fa fa-history fa-fw" aria-hidden="true"></i><p class="toolbar-label">History</p></button></div><div class="toolbar-item layout-dropdown dropdown btn-group"><button id="layout-dropdown" role="button" aria-haspopup="true" aria-expanded="false" type="button" class="btn-full-height dropdown-toggle btn btn-link"><i class="fa fa-columns fa-fw" aria-hidden="true"></i><span class="toolbar-label">Layout</span> <span class="caret"></span></button><ul role="menu" class="layout-dropdown-list dropdown-menu dropdown-menu-right" aria-labelledby="layout-dropdown"><li role="presentation" class=""><a role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><div class="layout-menu-item"><div class="layout-menu-item-start"><div><i class="fa fa-check fa-fw" aria-hidden="true"></i><span class="sr-only">Selected</span></div><div><i class="fa fa-columns fa-fw" aria-hidden="true"></i></div><div>Editor &amp; PDF</div></div></div></a></li><li role="presentation" class=""><a role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><div class="layout-menu-item"><div class="layout-menu-item-start"><div><i class="fa fa- fa-fw" aria-hidden="true"></i></div><div><i class="fa fa-code fa-fw" aria-hidden="true"></i></div><div>Editor only <span class="subdued">(hide PDF)</span></div></div></div></a></li><li role="presentation" class=""><a role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><div class="layout-menu-item"><div class="layout-menu-item-start"><div><i class="fa fa- fa-fw" aria-hidden="true"></i></div><div><i class="fa fa-file-pdf-o fa-fw" aria-hidden="true"></i></div><div>PDF only <span class="subdued">(hide editor)</span></div></div></div></a></li><li role="presentation" class=""><a role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><div class="layout-menu-item"><div class="layout-menu-item-start"><div><i class="fa fa- fa-fw" aria-hidden="true"></i></div><div><i class="fa fa-window-restore fa-fw" aria-hidden="true"></i></div><div>PDF in separate tab</div></div></div></a></li></ul></div><div class="toolbar-item"><button class="btn btn-full-height btn-full-height-no-border"><i class="fa fa-comment fa-fw" aria-hidden="true"></i><p class="toolbar-label">Chat</p></button></div></div></header><div class="ide-react-body"><div class="" data-panel-group="" data-panel-group-direction="horizontal" data-panel-group-id="0" style="display: flex; flex-direction: row; height: 100%; overflow: hidden; width: 100%;"><div class="" data-panel="" data-panel-id="panel-sidebar" data-panel-group-id="0" style="flex: 15 1 0px; overflow: hidden;"><aside class="ide-react-editor-sidebar"><div class="" data-panel-group="" data-panel-group-direction="vertical" data-panel-group-id="1" style="display: flex; flex-direction: column; height: 100%; overflow: hidden; width: 100%;"><div class="ide-react-file-tree-panel" data-panel="" data-panel-id="panel-file-tree" data-panel-group-id="1" style="flex: 50 1 0px; overflow: hidden;"><div class="file-tree" data-testid="file-tree"><div class="toolbar toolbar-filetree"><div class="toolbar-left"><button type="button" class="btn"><i class="fa fa-file fa-fw" aria-hidden="true"></i><span class="sr-only">New file</span></button><button type="button" class="btn"><i class="fa fa-folder fa-fw" aria-hidden="true"></i><span class="sr-only">New folder</span></button><button type="button" class="btn btn-default"><i class="fa fa-upload fa-fw" aria-hidden="true"></i><span class="sr-only">Upload</span></button></div><div class="toolbar-right"><button type="button" class="btn btn-default"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i><span class="sr-only">Rename</span></button><button type="button" class="btn btn-default"><i class="fa fa-trash-o fa-fw" aria-hidden="true"></i><span class="sr-only">Delete</span></button></div></div><div class="file-tree-inner" data-testid="file-tree-inner"><div class="dnd-draggable-preview-layer"></div><ul class="list-unstyled file-tree-list" role="tree" data-testid="file-tree-list-root"><li role="treeitem" class="" aria-selected="false" aria-label="demo.bib" tabindex="0"><div class="entity" role="presentation" draggable="true" data-file-id="6655a8002eeb3db0025b0d59" data-file-type="doc"><div class="entity-name entity-name-react" role="presentation">&nbsp;<i class="fa fa-book fa-fw spaced file-tree-icon" aria-hidden="true"></i><button class="item-name-button"><span>demo.bib</span></button></div></div></li><li role="treeitem" class="selected" aria-selected="true" aria-label="demo.tex" tabindex="0"><div class="entity" role="presentation" draggable="true" data-file-id="6655a8002eeb3db0025b0d5a" data-file-type="doc"><div class="entity-name entity-name-react" role="presentation">&nbsp;<i class="fa fa-file fa-fw spaced file-tree-icon" aria-hidden="true"></i><button class="item-name-button"><span>demo.tex</span></button><div class="menu-button btn-group"><button class="entity-menu-toggle btn btn-sm" id="menu-button-6655a8002eeb3db0025b0d5a"><i class="fa fa-ellipsis-v" aria-hidden="true"></i><span class="sr-only">Menu</span></button></div></div></div></li></ul></div></div></div><div class="" role="separator" tabindex="0" data-panel-group-direction="vertical" data-panel-group-id="1" data-resize-handle="" data-panel-resize-handle-enabled="true" data-panel-resize-handle-id="2" style="cursor: ns-resize; touch-action: none; user-select: none;" aria-controls="panel-file-tree" aria-valuemax="100" aria-valuemin="25" aria-valuenow="50"><div class="vertical-resize-handle vertical-resize-handle-enabled" title="Resize"></div></div><div class="" data-panel="" data-panel-id="panel-outline" data-panel-group-id="1" style="flex: 50 1 0px; overflow: hidden; min-height: 32px;"><div class="outline-container"><div class="outline-pane"><header class="outline-header"><button class="outline-header-expand-collapse-btn" aria-label="Hide File outline"><i class="fa fa-angle-down outline-caret-icon" aria-hidden="true"></i><h4 class="outline-header-name">File outline</h4></button></header><div class="outline-body"><div><ul class="outline-item-list outline-item-list-root" role="tree"><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Table of contents"><div class="outline-item-row"><button class="outline-item-link">Table of contents</button></div></li><li class="outline-item" aria-expanded="true" role="treeitem" aria-current="false" aria-label="Introduction"><div class="outline-item-row"><button class="outline-item-expand-collapse-btn" aria-label="Collapse"><i class="fa fa-angle-down outline-caret-icon" aria-hidden="true"></i></button><button class="outline-item-link">Introduction</button></div><ul class="outline-item-list" role="group"><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Introduction"><div class="outline-item-row"><button class="outline-item-link">Introduction</button></div></li></ul></li><li class="outline-item" aria-expanded="true" role="treeitem" aria-current="false" aria-label="Étude Théorique"><div class="outline-item-row"><button class="outline-item-expand-collapse-btn" aria-label="Collapse"><i class="fa fa-angle-down outline-caret-icon" aria-hidden="true"></i></button><button class="outline-item-link">Étude Théorique</button></div><ul class="outline-item-list" role="group"><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Réseaux de Neurone"><div class="outline-item-row"><button class="outline-item-link">Réseaux de Neurone</button></div></li><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Theorème d&#39;aproximation Universelle d&#39;Hornik \cite{hornik}"><div class="outline-item-row"><button class="outline-item-link">Theorème d'aproximation Universelle d'Hornik \cite{hornik}</button></div></li><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Explication de notre Système"><div class="outline-item-row"><button class="outline-item-link">Explication de notre Système</button></div></li><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Équation des composants Hydrauliques"><div class="outline-item-row"><button class="outline-item-link">Équation des composants Hydrauliques</button></div></li><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Fonction de Transfert de Notre Système"><div class="outline-item-row"><button class="outline-item-link">Fonction de Transfert de Notre Système</button></div></li></ul></li><li class="outline-item" aria-expanded="true" role="treeitem" aria-current="false" aria-label="Expérimentation"><div class="outline-item-row"><button class="outline-item-expand-collapse-btn" aria-label="Collapse"><i class="fa fa-angle-down outline-caret-icon" aria-hidden="true"></i></button><button class="outline-item-link">Expérimentation</button></div><ul class="outline-item-list" role="group"><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Protocole"><div class="outline-item-row"><button class="outline-item-link">Protocole</button></div></li><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Setup"><div class="outline-item-row"><button class="outline-item-link">Setup</button></div></li><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="Resultat et Interpretation"><div class="outline-item-row"><button class="outline-item-link">Resultat et Interpretation</button></div></li></ul></li><li class="outline-item" aria-expanded="true" role="treeitem" aria-current="false" aria-label="Conclusion"><div class="outline-item-row"><button class="outline-item-expand-collapse-btn" aria-label="Collapse"><i class="fa fa-angle-down outline-caret-icon" aria-hidden="true"></i></button><button class="outline-item-link">Conclusion</button></div><ul class="outline-item-list" role="group"><li class="outline-item outline-item-no-children" role="treeitem" aria-current="false" aria-label="References"><div class="outline-item-row"><button class="outline-item-link">References</button></div></li></ul></li></ul></div></div></div></div></div></div></aside></div><div class="" role="separator" tabindex="0" data-panel-group-direction="horizontal" data-panel-group-id="0" data-resize-handle="" data-panel-resize-handle-enabled="true" data-panel-resize-handle-id="3" aria-controls="panel-sidebar" aria-valuemax="80" aria-valuemin="5" aria-valuenow="15" style="cursor: ew-resize; touch-action: none; user-select: none;"><div class="horizontal-resize-handle horizontal-resize-handle-enabled" title="Resize"><button class="custom-toggler custom-toggler-west custom-toggler-open" aria-label="Click to hide the file tree" title=""></button></div></div><div class="" data-panel="" data-panel-id="panel-outer-main" data-panel-group-id="0" style="flex: 85 1 0px; overflow: hidden;"><div class="" data-panel-group="" data-panel-group-direction="horizontal" data-panel-group-id="4" style="display: flex; flex-direction: row; height: 100%; overflow: hidden; width: 100%;"><div class="ide-react-panel" data-panel="" data-panel-id="panel-main" data-panel-group-id="4" style="flex: 100 1 0px; overflow: hidden;"><div class="" data-panel-group="" data-panel-group-direction="horizontal" data-panel-group-id="5" style="display: flex; flex-direction: row; height: 100%; overflow: hidden; width: 100%;"><div class="ide-react-panel" data-panel="" data-panel-id="panel-main" data-panel-group-id="5" style="flex: 50 1 0px; overflow: hidden;"><div class="ide-react-editor-content full-size"><div class="" data-panel-group="" data-panel-group-direction="vertical" data-panel-group-id="8" style="display: flex; flex-direction: column; height: 100%; overflow: hidden; width: 100%;"><div class="ide-react-editor-panel" data-panel="" data-panel-id="panel-source-editor" data-panel-group-id="8" style="flex: 1 1 0px; overflow: hidden;"><div style="height: 100%;"><div class="cm-editor ͼ1 ͼ2 ͼc ͼ8 ͼh ͼe ͼf ͼ9 ͼa ͼ4 ͼ5 overall-theme-dark" style="--font-size: 12px; --source-font-family: Lucida Console, Source Code Pro, monospace; --line-height: 1.6;"><div class="cm-panels cm-panels-top" style="top: 0px;"><div class="ol-cm-toolbar-portal cm-panel"><div class="ol-cm-toolbar toolbar-editor"><div class="editor-toggle-switch"><fieldset class="toggle-switch"><legend class="sr-only">Editor mode.</legend><input type="radio" name="editor" id="editor-switch-cm6" class="toggle-switch-input" value="cm6" checked=""><label for="editor-switch-cm6" class="toggle-switch-label"><span>Code Editor</span></label><span><input type="radio" name="editor" id="editor-switch-rich-text" class="toggle-switch-input" value="rich-text"><label for="editor-switch-rich-text" class="toggle-switch-label"><span>Visual Editor</span></label></span></fieldset></div><div class="ol-cm-toolbar-button-group"><button aria-label="Undo" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-undo fa-fw" aria-hidden="true"></i><span class="sr-only">Undo</span></button><button aria-label="Redo" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-repeat fa-fw" aria-hidden="true"></i><span class="sr-only">Redo</span></button></div><div class="ol-cm-toolbar-button-group" data-overflow="group-section"><button type="button" id="section-heading-menu-button" aria-haspopup="true" aria-controls="section-heading-menu" aria-label="Choose section heading level" class="ol-cm-toolbar-menu-toggle"><span>Normal text</span><i class="fa fa-caret-down fa-fw" aria-hidden="true"></i></button></div><div class="ol-cm-toolbar-button-group"><button aria-label="Format Bold" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-bold fa-fw" aria-hidden="true"></i><span class="sr-only">Format Bold</span></button><button aria-label="Format Italic" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-italic fa-fw" aria-hidden="true"></i><span class="sr-only">Format Italic</span></button></div><div class="ol-cm-toolbar-button-group overflow-hidden" data-overflow="group-math"><button type="button" aria-label="Insert Math" class="ol-cm-toolbar-button btn"><span class="material-symbols" aria-hidden="true">calculate</span></button><button aria-label="Toggle Symbol Palette" type="button" class="ol-cm-toolbar-button ol-cm-toolbar-button-math btn">Ω</button></div><div class="ol-cm-toolbar-button-group overflow-hidden" data-overflow="group-misc"><button aria-label="Insert Link" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-link fa-fw" aria-hidden="true"></i><span class="sr-only">Insert Link</span></button><button aria-label="Insert Cross-reference" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-tag fa-fw" aria-hidden="true"></i><span class="sr-only">Insert Cross-reference</span></button><button aria-label="Insert Citation" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-book fa-fw" aria-hidden="true"></i><span class="sr-only">Insert Citation</span></button><button type="button" aria-label="Insert Figure" class="ol-cm-toolbar-button btn"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i></button><button type="button" aria-label="Insert Table" class="ol-cm-toolbar-button btn"><span class="material-symbols" aria-hidden="true">table_chart</span></button></div><div class="ol-cm-toolbar-button-group overflow-hidden" data-overflow="group-list"><button aria-label="Bullet List" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-list-ul fa-fw" aria-hidden="true"></i><span class="sr-only">Bullet List</span></button><button aria-label="Numbered List" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i><span class="sr-only">Numbered List</span></button><button aria-label="Decrease Indent" aria-disabled="true" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-outdent fa-fw" aria-hidden="true"></i><span class="sr-only">Decrease Indent</span></button><button aria-label="Increase Indent" aria-disabled="true" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-indent fa-fw" aria-hidden="true"></i><span class="sr-only">Increase Indent</span></button></div><div class="ol-cm-toolbar-button-group ol-cm-toolbar-stretch"><button type="button" id="toolbar-more" aria-label="More" class="ol-cm-toolbar-button ol-cm-toolbar-overflow-toggle ol-cm-toolbar-overflow-toggle-visible btn"><i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i></button></div><div class="ol-cm-toolbar-button-group ol-cm-toolbar-end"><button aria-label="Toggle Search" type="button" class="ol-cm-toolbar-button btn"><i class="fa fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Toggle Search</span></button></div><div class="ol-cm-toolbar-button-group hidden"><button aria-label="Hide Toolbar" type="button" class="ol-cm-toolbar-button hidden btn"><i class="fa fa-caret-up fa-fw" aria-hidden="true"></i><span class="sr-only">Hide Toolbar</span></button></div></div></div></div><div class="cm-announced" aria-live="polite"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 3056.62px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement" style="height: 19.1875px; margin-top: 4px;">1</div><div class="cm-gutterElement" style="height: 19.1875px;">2</div><div class="cm-gutterElement" style="height: 19.1875px;">3</div><div class="cm-gutterElement" style="height: 19.1875px;">4</div><div class="cm-gutterElement" style="height: 19.1875px;">5</div><div class="cm-gutterElement" style="height: 19.1875px;">6</div><div class="cm-gutterElement" style="height: 19.1875px;">7</div><div class="cm-gutterElement" style="height: 19.1875px;">8</div><div class="cm-gutterElement" style="height: 19.1875px;">9</div><div class="cm-gutterElement" style="height: 19.1875px;">10</div><div class="cm-gutterElement" style="height: 19.1875px;">11</div><div class="cm-gutterElement" style="height: 19.1875px;">12</div><div class="cm-gutterElement" style="height: 19.1875px;">13</div><div class="cm-gutterElement" style="height: 19.1875px;">14</div><div class="cm-gutterElement" style="height: 19.1875px;">15</div><div class="cm-gutterElement" style="height: 38.375px;">16</div><div class="cm-gutterElement" style="height: 19.1875px;">17</div><div class="cm-gutterElement" style="height: 19.1875px;">18</div><div class="cm-gutterElement" style="height: 19.1875px;">19</div><div class="cm-gutterElement" style="height: 19.1875px;">20</div><div class="cm-gutterElement" style="height: 19.1875px;">21</div><div class="cm-gutterElement" style="height: 19.1875px;">22</div><div class="cm-gutterElement" style="height: 19.1875px;">23</div><div class="cm-gutterElement" style="height: 19.1875px;">24</div><div class="cm-gutterElement" style="height: 19.1875px;">25</div><div class="cm-gutterElement" style="height: 19.1875px;">26</div><div class="cm-gutterElement" style="height: 19.1875px;">27</div><div class="cm-gutterElement" style="height: 19.1875px;">28</div><div class="cm-gutterElement" style="height: 19.1875px;">29</div><div class="cm-gutterElement" style="height: 19.1875px;">30</div><div class="cm-gutterElement" style="height: 19.1875px;">31</div><div class="cm-gutterElement" style="height: 19.1875px;">32</div><div class="cm-gutterElement" style="height: 19.1875px;">33</div><div class="cm-gutterElement" style="height: 19.1875px;">34</div><div class="cm-gutterElement" style="height: 19.1875px;">35</div><div class="cm-gutterElement" style="height: 19.1875px;">36</div><div class="cm-gutterElement" style="height: 19.1875px;">37</div><div class="cm-gutterElement" style="height: 19.1875px;">38</div><div class="cm-gutterElement" style="height: 19.1875px;">39</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">▸</span></div><div class="cm-gutterElement" style="height: 19.1875px; margin-top: 445.312px;"><span title="Fold line">▾</span></div><div class="cm-gutterElement" style="height: 19.1875px; margin-top: 95.9375px;"><span title="Fold line">▾</span></div><div class="cm-gutterElement" style="height: 19.1875px; margin-top: 115.125px;"><span title="Fold line">▾</span></div><div class="cm-gutterElement" style="height: 19.1875px; margin-top: 19.1875px;"><span title="Fold line">▾</span></div><div class="cm-gutterElement" style="height: 19.1875px;"><span title="Fold line">▾</span></div></div><div class="cm-gutter cm-gutter-lint"><div class="cm-gutterElement" style="height: 19.1875px; margin-top: 483.688px;"><div class="cm-lint-marker cm-lint-marker-warning"></div></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content cm-lineWrapping" role="textbox" aria-multiline="true" style="tab-size: 4; --half-leading: 3.59px; padding-bottom: 635.812px;" aria-autocomplete="list" data-language="latex" autocomplete="off"><div contenteditable="false" style="height: 0px;"></div><div class="cm-line"><span class="tok-keyword">\documentclass</span><span class="tok-punctuation">[</span><span class="tok-attributeValue">10pt</span><span class="tok-punctuation">]</span><span class="tok-punctuation">{</span><span class="ol-cm-spelling-error">beamer</span><span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\usetheme</span><span class="tok-punctuation">[</span><span class="ol-cm-spelling-error">progressbar</span>=<span class="ol-cm-spelling-error">frametitle</span><span class="tok-punctuation">]</span><span class="tok-punctuation">{</span>metropolis<span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-keyword">\usepackage</span><span class="tok-punctuation">{</span>appendixnumberbeamer<span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-keyword">\usepackage</span><span class="tok-punctuation">{</span>booktabs<span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-keyword">\usepackage</span><span class="tok-punctuation">[</span><span class="tok-attributeValue">scale=2</span><span class="tok-punctuation">]</span><span class="tok-punctuation">{</span>ccicons<span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-keyword">\usepackage</span><span class="tok-punctuation">{</span>pgfplots<span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-typeName">\usepgfplotslibrary</span><span class="tok-punctuation">{</span><span class="ol-cm-spelling-error">dateplot</span><span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-keyword">\usepackage</span><span class="tok-punctuation">{</span>xspace<span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-typeName">\newcommand</span><span class="tok-punctuation">{</span><span class="tok-typeName">\themename</span><span class="tok-punctuation">}</span><span class="tok-punctuation">{</span><span class="tok-typeName">\textbf</span><span class="tok-punctuation">{</span><span class="tok-typeName">\textsc</span><span class="tok-punctuation">{</span>metropolis<span class="tok-punctuation">}</span><span class="tok-punctuation">}</span><span class="tok-typeName">\xspace</span><span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\title</span><span class="tok-punctuation">{</span><span class="ol-cm-spelling-error">TIPE</span> : <span class="ol-cm-spelling-error">Réseau</span> <span class="ol-cm-spelling-error">de</span> <span class="ol-cm-spelling-error">Neurones</span> <span class="ol-cm-spelling-error">Hydraulique</span><span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-typeName">\subtitle</span><span class="tok-punctuation">{</span>Est - <span class="ol-cm-spelling-error">qu'un</span> <span class="ol-cm-spelling-error">système</span> <span class="ol-cm-spelling-error">hydraulique</span> est capable <span class="ol-cm-spelling-error">d'apprentissage</span> <span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-comment">% \date{\today}</span></div><div class="cm-line"><span class="tok-typeName">\date</span><span class="tok-punctuation">{</span><span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-typeName">\author</span><span class="tok-punctuation">{</span><span class="ol-cm-spelling-error">PLE</span> <span class="ol-cm-spelling-error">Ioen</span> <span class="tok-literal">\&amp;</span> WILSON Leonard<span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-typeName">\institute</span><span class="tok-punctuation">{</span><span class="ol-cm-spelling-error">MPSI</span> <span class="ol-cm-spelling-error">Lycée</span> <span class="ol-cm-spelling-error">Vaugelas</span><span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-comment">% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\begin</span><span class="tok-punctuation">{</span><span class="tok-attributeValue">document</span><span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\maketitle</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\begin</span><span class="tok-punctuation">{</span><span class="tok-attributeValue">frame</span><span class="tok-punctuation">}</span><span class="tok-punctuation">{</span>Table of contents<span class="tok-punctuation">}</span></div><div class="cm-line" style="text-indent: -2ch; padding-left: calc(2ch + 6px);">  <span class="tok-typeName">\setbeamertemplate</span><span class="tok-punctuation">{</span>section in <span class="ol-cm-spelling-error">toc</span><span class="tok-punctuation">}</span><span class="tok-punctuation">[</span>sections numbered<span class="tok-punctuation">]</span></div><div class="cm-line" style="text-indent: -2ch; padding-left: calc(2ch + 6px);">  <span class="tok-typeName">\tableofcontents</span><span class="tok-comment">%[hideallsubsections]</span></div><div class="cm-line"><span class="tok-typeName">\end</span><span class="tok-punctuation">{</span><span class="tok-attributeValue">frame</span><span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\section</span><span class="tok-punctuation">[</span>Intro<span class="tok-punctuation">]</span><span class="tok-punctuation">{</span>Introduction<span class="tok-punctuation">}</span></div><div class="cm-line"><img class="cm-widgetBuffer" aria-hidden="true"><span class="ol-cm-filler" contenteditable="false"></span><br></div><div class="cm-line"><span class="tok-typeName">\begin</span><span class="tok-punctuation">{</span><span class="tok-attributeValue">frame</span><span class="tok-punctuation">}</span><span class="tok-punctuation">[</span>fragile<span class="tok-punctuation">]</span><span class="tok-punctuation">{</span>Introduction<span class="tok-punctuation">}</span></div><div class="cm-line"><span class="tok-typeName">\begin</span><span class="tok-punctuation">{</span><span class="tok-attributeValue">itemize</span><span class="tok-punctuation">}</span></div><div class="cm-gap" style="height: 307px;"></div><div class="cm-activeLine cm-line" style="text-indent: -1ch; padding-left: calc(1ch + 6px);"> \begin<span class="cm-matchingBracket">{</span>equation<span class="cm-matchingBracket">}</span></div><div class="cm-gap" style="height: 1323.94px;"></div></div><div class="rp-in-editor-widgets react-rp-in-editor-widgets"><div class="rp-in-editor-widgets-inner"></div></div><div class="review-panel-wrapper rp-state-current-file rp-state-current-file-mini"><div class="ol-cm-review-panel rp-current-file-container" data-testid="review-panel"><div class="review-panel-tools"><div class="review-panel-toolbar"><div class="resolved-comments"><div aria-hidden="true" class="resolved-comments-backdrop"></div><button class="resolved-comments-toggle" aria-label="Resolved comments"><i class="fa fa-inbox" aria-hidden="true"></i></button><div class="resolved-comments-dropdown"></div></div><span class="review-panel-toolbar-label"><button class="review-panel-toolbar-collapse-button">Track changes is <strong>off</strong><span class="rp-tc-state-collapse rp-tc-state-collapse-on"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></span></div><div class="rp-nav" role="tablist"><button type="button" id="review-panel-tab-current-file" role="tab" aria-selected="true" aria-controls="review-panel-current-file" tabindex="0" class="rp-nav-item rp-nav-item-active"><i class="fa fa-file-text-o" aria-hidden="true"></i><span class="rp-nav-label">Current file</span></button><button type="button" id="review-panel-tab-overview" role="tab" aria-selected="false" aria-controls="review-panel-overview" tabindex="-1" class="rp-nav-item"><i class="fa fa-list" aria-hidden="true"></i><span class="rp-nav-label">Overview</span></button></div></div><button type="button" class="review-panel-toggler"><span class="sr-only">Toggle review panel</span></button><div id="review-panel-current-file" role="tabpanel" tabindex="0" aria-labelledby="review-panel-tab-current-file"><div class="rp-entry-list-react" style="height: 3057px;"></div></div></div></div><div class="cm-layer cm-layer-above cm-cursorLayer" aria-hidden="true" style="z-index: 150; animation-duration: 1200ms; animation-name: cm-blink;"><div class="cm-cursor cm-cursor-primary" style="left: 176.328px; top: 1077.91px; height: 19.18px;"></div></div><div class="cm-layer cm-selectionLayer" aria-hidden="true" style="z-index: -2;"></div><div class="cm-layer cm-layer-above ol-cm-cursorHighlightsLayer" aria-hidden="true" style="z-index: 148;"></div><div class="cm-layer ol-cm-activeLineLayer" aria-hidden="true" style="z-index: -4;"></div></div></div></div></div></div></div></div><div class="" role="separator" tabindex="0" data-panel-group-direction="horizontal" data-panel-group-id="5" data-resize-handle="" data-panel-resize-handle-enabled="true" data-panel-resize-handle-id="6" aria-controls="panel-main" aria-valuemax="95" aria-valuemin="5" aria-valuenow="50" style="cursor: ew-resize; touch-action: none; user-select: none;"><div class="horizontal-resize-handle horizontal-resize-handle-enabled" title="Resize"><button class="custom-toggler custom-toggler-east custom-toggler-open" aria-label="Click to hide the PDF" title=""></button><div class="synctex-controls"><button aria-label="Go to code location in PDF" type="button" class="synctex-control btn-secondary toolbar-btn-secondary btn btn-xs"><i class="fa fa-arrow-right synctex-control-icon" aria-hidden="true"></i></button><button aria-label="Go to PDF location in code (Tip: double click on the PDF for best results)" type="button" class="synctex-control btn-secondary btn btn-xs"><i class="fa fa-arrow-left synctex-control-icon" aria-hidden="true"></i></button></div></div></div><div class="ide-react-panel" data-panel="" data-panel-id="panel-pdf" data-panel-group-id="5" style="flex: 50 1 0px; overflow: hidden;"><div class="pdf full-size"><div role="toolbar" class="toolbar toolbar-pdf toolbar-pdf-hybrid btn-toolbar"><div class="toolbar-pdf-left"><div class="split-menu btn-xs"><button data-ol-loading="false" type="button" class="split-menu-button no-left-radius btn btn-primary"><i class="fa fa-refresh split-menu-icon" aria-hidden="true"></i><span class="split-menu-button">Recompile</span></button><div class="split-menu-dropdown dropdown btn-group"><button aria-label="Toggle compile options menu" data-ol-loading="false" id="pdf-recompile-dropdown" role="button" aria-haspopup="true" aria-expanded="false" type="button" class="split-menu-dropdown-toggle no-left-border dropdown-toggle btn btn-primary"> <span class="caret"></span></button><ul role="menu" class="dropdown-menu" aria-labelledby="pdf-recompile-dropdown"><li draggable="false" role="heading" class="dropdown-header">Auto Compile</li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa- fa-fw" aria-hidden="true"></i>On</a></li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa-check fa-fw" aria-hidden="true"></i>Off</a></li><li draggable="false" role="heading" class="dropdown-header">Compile Mode</li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa-check fa-fw" aria-hidden="true"></i>Normal</a></li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa- fa-fw" aria-hidden="true"></i>Fast <span class="subdued">[draft]</span></a></li><li draggable="false" role="heading" class="dropdown-header">Syntax Checks</li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa-check fa-fw" aria-hidden="true"></i>Check syntax before compile</a></li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa- fa-fw" aria-hidden="true"></i>Don’t check syntax</a></li><li draggable="false" role="heading" class="dropdown-header">Compile Error Handling</li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa- fa-fw" aria-hidden="true"></i>Stop on first error</a></li><li role="presentation" class=""><a draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#"><i class="fa fa-check fa-fw" aria-hidden="true"></i>Try to compile despite errors</a></li><li draggable="false" role="separator" class="divider"></li><li role="presentation" class="disabled"><a aria-disabled="true" draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#">Stop compilation</a></li><li role="presentation" class=""><a aria-disabled="false" draggable="false" role="menuitem" tabindex="-1" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#">Recompile from scratch</a></li></ul></div></div><button aria-label="View logs" type="button" class="pdf-toolbar-btn toolbar-item log-btn btn btn-link" style="position: relative;"><i class="fa fa-file-text-o fa-fw" aria-hidden="true"></i><span class="label label-warning">1</span></button><a draggable="false" download="" href="https://www.overleaf.com/download/project/6655a7ff2eeb3db0025b0d55/build/190078c929d-b25c682d1f219010/output/output.pdf?compileGroup=standard&amp;clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;enable_pdf_caching=true&amp;popupDownload=true" target="_blank" aria-label="Download PDF" class="pdf-toolbar-btn btn btn-link" style="pointer-events: auto;"><i class="fa fa-download fa-fw" aria-hidden="true"></i></a></div><div class="toolbar-pdf-right"></div></div><div class="pdf-preview-messages"></div><div class="pdf-viewer" style=""><div class="pdfjs-viewer pdfjs-viewer-outer" tabindex="-1"><div class="pdfjs-viewer-inner" tabindex="0" role="tabpanel"><div class="pdfViewer"><div class="page" data-page-number="1" role="region" style="width: 524px; height: 393px;" aria-label="Page 1" data-loaded="true" data-listening-for-double-click="true"><div class="canvasWrapper" style="width: 524px; height: 393px;"><canvas width="524" height="394" style="width: 524px; height: 394px;"></canvas></div><div class="textLayer" style="width: 524px; height: 393px;"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 105.759px; font-size: 20.7188px; font-family: serif; transform: scaleX(1.08906);">TIPE : Réseau de Neurones Hydraulique</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 142.109px; font-size: 17.2657px; font-family: serif; transform: scaleX(1.11886);">Est - qu’un système hydraulique est capable</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 165.274px; font-size: 17.2657px; font-family: serif; transform: scaleX(1.11903);">d’apprentissage</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 241.392px; font-size: 12.9493px; font-family: serif; transform: scaleX(0.990575);">PLE Ioen &amp; WILSON Leonard</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 272.502px; font-size: 10.0716px; font-family: serif; transform: scaleX(1.02445);">MPSI Lycée Vaugelas</span><div class="endOfContent"></div></div></div><div class="page" data-page-number="2" role="region" style="width: 524px; height: 393px;" aria-label="Page 2"><div class="loadingIcon" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="3" role="region" style="width: 524px; height: 393px;" aria-label="Page 3"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="4" role="region" style="width: 524px; height: 393px;" aria-label="Page 4" data-loaded="true" data-listening-for-double-click="true"><div class="canvasWrapper" style="width: 524px; height: 393px;"><canvas width="524" height="394" style="width: 524px; height: 394px;"></canvas></div><div class="textLayer" style="width: 524px; height: 393px;"><span role="presentation" dir="ltr" style="left: 14.055px; top: 11.8301px; font-size: 17.2657px; font-family: serif; transform: scaleX(1.13827);">Introduction</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 58.3906px; top: 184.84px; font-size: 14.388px; font-family: serif; transform: scaleX(1.07642);">• [2]</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 58.3906px; top: 209.012px; font-size: 14.388px; font-family: serif;">•</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 507.896px; top: 368.968px; font-size: 10.0716px; font-family: serif;">2</span><div class="endOfContent"></div></div><div class="annotationLayer"><section data-annotation-id="69R" class="linkAnnotation" style="transform: matrix(1.4442, 0, 0, 1.4442, 0, 0); transform-origin: -51.43px -126.824px; left: 51.43px; top: 126.824px; width: 4.772px; height: 11.955px;"><a href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#beamerbibMNN" class="internalLink"></a></section></div></div><div class="page" data-page-number="5" role="region" style="width: 524px; height: 393px;" aria-label="Page 5" data-loaded="true" data-listening-for-double-click="true"><div class="canvasWrapper" style="width: 524px; height: 393px;"><canvas width="524" height="394" style="width: 524px; height: 394px;"></canvas></div><div class="textLayer" style="width: 524px; height: 393px;"><span role="presentation" dir="ltr" style="left: 103.734px; top: 169.635px; font-size: 20.7188px; font-family: serif; transform: scaleX(1.11346);">Étude Théorique</span><div class="endOfContent"></div></div><div class="annotationLayer"><section data-annotation-id="71R" class="linkAnnotation" style="transform: matrix(1.4442, 0, 0, 1.4442, 0, 0); transform-origin: -71.828px -115.783px; left: 71.828px; top: 115.783px; width: 106.851px; height: 17.215px;"><a href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55#Navigation5" class="internalLink"></a></section></div></div><div class="page" data-page-number="6" role="region" style="width: 524px; height: 393px;" aria-label="Page 6" data-loaded="true" data-listening-for-double-click="true"><div class="canvasWrapper" style="width: 524px; height: 393px;"><canvas width="524" height="394" style="width: 524px; height: 394px;"></canvas></div><div class="textLayer" style="width: 524px; height: 393px;"><span role="presentation" dir="ltr" style="left: 14.055px; top: 11.8301px; font-size: 17.2657px; font-family: serif; transform: scaleX(1.12251);">Réseaux de Neurone</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 135.83px; font-size: 14.388px; font-family: serif; transform: scaleX(1.115);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 155.685px; font-size: 14.388px; font-family: serif; transform: scaleX(1.12879);">eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 175.541px; font-size: 14.388px; font-family: serif; transform: scaleX(1.11491);">enim ad minim veniam, quis nostrud exercitation ullamco laboris</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 195.396px; font-size: 14.388px; font-family: serif; transform: scaleX(1.12113);">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 215.251px; font-size: 14.388px; font-family: serif; transform: scaleX(1.12622);">reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 235.107px; font-size: 14.388px; font-family: serif; transform: scaleX(1.12783);">pariatur. Excepteur sint occaecat cupidatat non proident, sunt in</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 40.9374px; top: 254.962px; font-size: 14.388px; font-family: serif; transform: scaleX(1.11568);">culpa qui officia deserunt mollit anim id est laborum.</span><br role="presentation"><span role="presentation" dir="ltr" style="left: 507.825px; top: 368.858px; font-size: 10.0716px; font-family: serif;">3</span><div class="endOfContent"></div></div></div><div class="page" data-page-number="7" role="region" style="width: 524px; height: 393px;" aria-label="Page 7"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="8" role="region" style="width: 524px; height: 393px;" aria-label="Page 8"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="9" role="region" style="width: 524px; height: 393px;" aria-label="Page 9"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="10" role="region" style="width: 524px; height: 393px;" aria-label="Page 10"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="11" role="region" style="width: 524px; height: 393px;" aria-label="Page 11"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="12" role="region" style="width: 524px; height: 393px;" aria-label="Page 12"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="13" role="region" style="width: 524px; height: 393px;" aria-label="Page 13"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="14" role="region" style="width: 524px; height: 393px;" aria-label="Page 14"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="15" role="region" style="width: 524px; height: 393px;" aria-label="Page 15"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div><div class="page" data-page-number="16" role="region" style="width: 524px; height: 393px;" aria-label="Page 16"><div class="loadingIcon notVisible" role="img" aria-label="Loading…"></div></div></div></div><div class="pdfjs-controls" tabindex="0"><div class="btn-group"><button aria-label="Fit to width" type="button" class="btn-secondary-info btn-secondary btn btn-lg"><i class="fa fa-arrows-h" aria-hidden="true"></i></button><button aria-label="Fit to height" type="button" class="btn-secondary-info btn-secondary btn btn-lg"><i class="fa fa-arrows-v" aria-hidden="true"></i></button><button aria-label="Zoom in" type="button" class="btn-secondary-info btn-secondary btn btn-lg"><i class="fa fa-search-plus" aria-hidden="true"></i></button><button aria-label="Zoom out" type="button" class="btn-secondary-info btn-secondary btn btn-lg"><i class="fa fa-search-minus" aria-hidden="true"></i></button></div></div></div></div><div class="logs-pane hidden"><div class="logs-pane-content"><div class="log-entry" aria-label="Log entry with level: warning"><header class="log-entry-header log-entry-header-warning"><h3 class="log-entry-header-title">Package hyperref Warning: Token not allowed in a PDF string (Unicode): removing `\translate ' on input line 86.</h3><button class="log-entry-header-link log-entry-header-link-warning" type="button" aria-label="Navigate to log position in source code: ./demo.tex, 86"><i class="fa fa-chain" aria-hidden="true"></i>&nbsp;<span class="log-entry-header-link-location">‪./demo.tex, 86‬</span></button></header></div><div class="log-entry" aria-label="Log entry with level: typesetting"><header class="log-entry-header log-entry-header-typesetting"><h3 class="log-entry-header-title">Overfull \vbox (13.79993pt too high) detected at line 25</h3><button class="log-entry-header-link log-entry-header-link-typesetting" type="button" aria-label="Navigate to log position in source code: ./demo.tex, 25"><i class="fa fa-chain" aria-hidden="true"></i>&nbsp;<span class="log-entry-header-link-location">‪./demo.tex, 25‬</span></button></header></div><div class="log-entry" aria-label="Raw logs from the LaTeX compiler"><header class="log-entry-header log-entry-header-raw"><h3 class="log-entry-header-title">Raw logs</h3></header><div class="log-entry-content"><div class="log-entry-content-raw-container"><div class="expand-collapse-container" style="height: 150px;"><pre class="log-entry-content-raw">This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.28)  11 JUN 2024 13:46
+entering extended mode
+ \write18 enabled.
+ %&amp;-line parsing enabled.
+**demo.tex
+(./demo.tex
+LaTeX2e &lt;2023-06-01&gt; patch level 1
+L3 programming layer &lt;2023-06-30&gt;
+(/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
+Document Class: beamer 2023/05/15 v3.70 A class for typesetting presentations
+(/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count181
+)
+\beamer@tempbox=\box51
+\beamer@tempcount=\count182
+\c@beamerpauses=\count183
+(/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count184
+\beamer@minimum=\count185
+\beamer@decode@box=\box52
+)
+\beamer@commentbox=\box53
+\beamer@modecount=\count186
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen140
+\footheight=\dimen141
+\sidebarheight=\dimen142
+\beamer@tempdim=\dimen143
+\beamer@finalheight=\dimen144
+\beamer@animht=\dimen145
+\beamer@animdp=\dimen146
+\beamer@animwd=\dimen147
+\beamer@leftmargin=\dimen148
+\beamer@rightmargin=\dimen149
+\beamer@leftsidebar=\dimen150
+\beamer@rightsidebar=\dimen151
+\beamer@boxsize=\dimen152
+\beamer@vboxoffset=\dimen153
+\beamer@descdefault=\dimen154
+\beamer@descriptionwidth=\dimen155
+\beamer@lastskip=\skip48
+\beamer@areabox=\box54
+\beamer@animcurrent=\box55
+\beamer@animshowbox=\box56
+\beamer@sectionbox=\box57
+\beamer@logobox=\box58
+\beamer@linebox=\box59
+\beamer@sectioncount=\count187
+\beamer@subsubsectionmax=\count188
+\beamer@subsectionmax=\count189
+\beamer@sectionmax=\count190
+\beamer@totalheads=\count191
+\beamer@headcounter=\count192
+\beamer@partstartpage=\count193
+\beamer@sectionstartpage=\count194
+\beamer@subsectionstartpage=\count195
+\beamer@animationtempa=\count196
+\beamer@animationtempb=\count197
+\beamer@xpos=\count198
+\beamer@ypos=\count199
+\beamer@ypos@offset=\count266
+\beamer@showpartnumber=\count267
+\beamer@currentsubsection=\count268
+\beamer@coveringdepth=\count269
+\beamer@sectionadjust=\count270
+\beamer@toclastsection=\count271
+\beamer@tocsectionnumber=\count272
+(/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+))
+\beamer@paperwidth=\skip49
+\beamer@paperheight=\skip50
+(/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count273
+\Gm@cntv=\count274
+\c@Gm@tempcnt=\count275
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks18
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen164
+\pgfutil@tempdimb=\dimen165
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box60
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen166
+\pgf@xa=\dimen167
+\pgf@xb=\dimen168
+\pgf@xc=\dimen169
+\pgf@y=\dimen170
+\pgf@ya=\dimen171
+\pgf@yb=\dimen172
+\pgf@yc=\dimen173
+\c@pgf@counta=\count276
+\c@pgf@countb=\count277
+\c@pgf@countc=\count278
+\c@pgf@countd=\count279
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count280
+\pgfmath@box=\box61
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count281
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen175
+\Gin@req@width=\dimen176
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count286
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-xetex.def
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count287
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count288
+\pgfsyssoftpath@bigbuffer@items=\count289
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen187
+\pgf@picmaxx=\dimen188
+\pgf@picminy=\dimen189
+\pgf@picmaxy=\dimen190
+\pgf@pathminx=\dimen191
+\pgf@pathmaxx=\dimen192
+\pgf@pathminy=\dimen193
+\pgf@pathmaxy=\dimen194
+\pgf@xx=\dimen195
+\pgf@xy=\dimen196
+\pgf@yx=\dimen197
+\pgf@yy=\dimen198
+\pgf@zx=\dimen199
+\pgf@zy=\dimen256
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen257
+\pgf@path@lasty=\dimen258
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen259
+\pgf@shorten@start@additional=\dimen260
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count290
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen261
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen262
+\pgf@pt@y=\dimen263
+\pgf@pt@temp=\dimen264
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen265
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen266
+\pgf@sys@shading@range@num=\count291
+\pgf@shadingcount=\count292
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box65
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count293
+\XC@countmixins=\count294
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
+(/usr/local/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-08-07 v2.53 Cross-referencing by name of section
+(/usr/local/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count295
+)
+\@linkdim=\dimen267
+\Hy@linkcounter=\count296
+\Hy@pagecounter=\count297
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count298
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4050.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4050.
+Package hyperref Info: Option `implicit' set `false' on input line 4050.
+Package hyperref Info: Hyper figures OFF on input line 4167.
+Package hyperref Info: Link nesting OFF on input line 4172.
+Package hyperref Info: Hyper index ON on input line 4175.
+Package hyperref Info: Plain pages OFF on input line 4182.
+Package hyperref Info: Backreferencing OFF on input line 4187.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4434.
+\c@Hy@tempcnt=\count299
+(/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4772.
+\XeTeXLinkMargin=\dimen268
+(/usr/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count300
+\Field@Width=\dimen269
+\Fld@charsize=\dimen270
+Package hyperref Info: Hyper figures OFF on input line 6051.
+Package hyperref Info: Link nesting OFF on input line 6056.
+Package hyperref Info: Hyper index ON on input line 6059.
+Package hyperref Info: backreferencing OFF on input line 6066.
+Package hyperref Info: Link coloring OFF on input line 6071.
+Package hyperref Info: Link coloring with OCG OFF on input line 6076.
+Package hyperref Info: PDF/A mode OFF on input line 6081.
+\Hy@abspage=\count301
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2023-07-08 v7.01b Hyperref driver for XeTeX
+(/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\pdfm@box=\box66
+\c@Hy@AnnotLevel=\count302
+\HyField@AnnotCount=\count303
+\Fld@listcount=\count304
+\c@bookmark@seq@number=\count305
+(/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaserequires.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasefont.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks29
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --&gt; U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+(/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+))))) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count306
+\beamer@lastskipcover=\skip51
+\beamer@trivlistdepth=\count307
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetitle.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count308
+\c@part=\count309
+\c@section=\count310
+\c@subsection=\count311
+\c@subsubsection=\count312
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+\beamer@framebox=\box67
+\beamer@frametitlebox=\box68
+\beamer@zoombox=\box69
+\beamer@zoomcount=\count313
+\beamer@zoomframecount=\count314
+\beamer@frametextheight=\dimen271
+\c@subsectionslide=\count315
+\beamer@frametopskip=\skip52
+\beamer@framebottomskip=\skip53
+\beamer@frametopskipautobreak=\skip54
+\beamer@framebottomskipautobreak=\skip55
+\beamer@envbody=\toks30
+\framewidth=\dimen272
+\c@framenumber=\count316
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+\beamer@splitbox=\box70
+\beamer@autobreakcount=\count317
+\beamer@autobreaklastheight=\dimen273
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
+\beamer@footins=\box71
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasecolor.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+\beamer@frameboxcopy=\box72
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetoc.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks33
+(/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+\bmb@box=\box73
+\bmb@colorbox=\box74
+\bmb@boxwidth=\dimen274
+\bmb@boxheight=\dimen275
+\bmb@prevheight=\dimen276
+\bmb@temp=\dimen277
+\bmb@dima=\dimen278
+\bmb@dimb=\dimen279
+\bmb@prevheight=\dimen280
+)
+\beamer@blockheadheight=\dimen281
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks34
+)
+\beamer@bibiconwidth=\skip56
+\c@figure=\count318
+\c@table=\count319
+\abovecaptionskip=\skip57
+\belowcaptionskip=\skip58
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasenavigationsymbols.tex)
+\beamer@section@min@dim=\dimen282
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip59
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks35
+\ex@=\dimen283
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen284
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count320
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count321
+\leftroot@=\count322
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count323
+\DOTSCASE@=\count324
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box75
+\strutbox@=\box76
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen285
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count325
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count326
+\dotsspace@=\muskip17
+\c@parentequation=\count327
+\dspbrk@lvl=\count328
+\tag@help=\toks36
+\row@=\count329
+\column@=\count330
+\maxfields@=\count331
+\andhelp@=\toks37
+\eqnshift@=\dimen286
+\alignsep@=\dimen287
+\tagshift@=\dimen288
+\tagwidth@=\dimen289
+\totwidth@=\dimen290
+\lineht@=\dimen291
+\@envbody=\toks38
+\multlinegap=\skip60
+\multlinetaggap=\skip61
+\mathdisplay@stack=\toks39
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip62
+\thm@postskip=\skip63
+\thm@headsep=\skip64
+\dth@everypar=\toks45
+)
+\c@theorem=\count332
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+\beamer@dima=\dimen292
+\beamer@dimb=\dimen293
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamertheme-metropolis/beamerthememetropolis.sty
+Package: beamerthememetropolis 2017/01/23 v1.2 Metropolis Beamer theme
+(/usr/local/texlive/2023/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks46
+\pgfopts@list@add@b@toks=\toks47
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamertheme-metropolis/beamerinnerthememetropolis.sty
+Package: beamerinnerthememetropolis 2017/01/23 Metropolis inner theme
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count333
+\calc@Bcount=\count334
+\calc@Adimen=\dimen294
+\calc@Bdimen=\dimen295
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count335
+\calc@Cskip=\skip67
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box77
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen296
+\pgf@nodesepend=\dimen297
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen298
+\pgffor@skip=\dimen299
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count336
+\pgfplotmarksize=\dimen300
+)
+\tikz@lastx=\dimen301
+\tikz@lasty=\dimen302
+\tikz@lastxsaved=\dimen303
+\tikz@lastysaved=\dimen304
+\tikz@lastmovetox=\dimen305
+\tikz@lastmovetoy=\dimen306
+\tikzleveldistance=\dimen307
+\tikzsiblingdistance=\dimen308
+\tikz@figbox=\box78
+\tikz@figbox@bg=\box79
+\tikz@tempbox=\box80
+\tikz@tempbox@bg=\box81
+\tikztreelevel=\count337
+\tikznumberofchildren=\count338
+\tikznumberofcurrentchild=\count339
+\tikz@fig@count=\count340
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count341
+\pgfmatrixcurrentcolumn=\count342
+\pgf@matrix@numberofcolumns=\count343
+)
+\tikz@expandcount=\count344
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+\metropolis@titleseparator@linewidth=\skip68
+\metropolis@progressonsectionpage=\skip69
+\metropolis@progressonsectionpage@linewidth=\skip70
+\metropolis@blocksep=\skip71
+\metropolis@blockadjust=\skip72
+\metropolis@parskip=\skip73
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamertheme-metropolis/beamerouterthememetropolis.sty
+Package: beamerouterthememetropolis 2017/01/23 Metropolis outer theme
+\metropolis@frametitle@padding=\skip74
+\metropolis@progressinheadfoot=\skip75
+\metropolis@progressinheadfoot@linewidth=\skip76
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamertheme-metropolis/beamercolorthememetropolis.sty
+Package: beamercolorthememetropolis 2017/01/23 Metropolis color theme
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamertheme-metropolis/beamerfontthememetropolis.sty
+Package: beamerfontthememetropolis 2017/01/23 Metropolis font theme
+(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-06-30 L3 programming layer (loader) 
+(/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2023-04-19 L3 backend support: XeTeX
+\g__graphics_track_int=\count345
+\l__pdf_internal_box=\box82
+\g__pdf_backend_object_int=\count346
+\g__pdf_backend_annotation_int=\count347
+\g__pdf_backend_link_int=\count348
+))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count349
+\l__fontspec_language_int=\count350
+\l__fontspec_strnum_int=\count351
+\l__fontspec_tmp_int=\count352
+\l__fontspec_tmpa_int=\count353
+\l__fontspec_tmpb_int=\count354
+\l__fontspec_tmpc_int=\count355
+\l__fontspec_em_int=\count356
+\l__fontspec_emdef_int=\count357
+\l__fontspec_strong_int=\count358
+\l__fontspec_strongdef_int=\count359
+\l__fontspec_tmpa_dim=\dimen309
+\l__fontspec_tmpb_dim=\dimen310
+\l__fontspec_tmpc_dim=\dimen311
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+\c@fontsnotfound=\count360
+
+Package fontspec Info: Font family 'FiraSansLight(0)' created for font 'Fira
+(fontspec)             Sans Light' with options
+(fontspec)             [Ligatures=TeX,ItalicFont={Fira Sans Light
+(fontspec)             Italic},BoldFont={Fira Sans},BoldItalicFont={Fira Sans
+(fontspec)             Italic}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: &lt;-&gt;"Fira Sans
+(fontspec)             Light/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: &lt;-&gt;"Fira Sans
+(fontspec)             Light/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: &lt;-&gt;"Fira
+(fontspec)             Sans/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: &lt;-&gt;"Fira
+(fontspec)             Sans/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: &lt;-&gt;"Fira Sans Light
+(fontspec)             Italic/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             &lt;-&gt;"Fira Sans Light
+(fontspec)             Italic/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: &lt;-&gt;"Fira Sans
+(fontspec)             Italic/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             &lt;-&gt;"Fira Sans
+(fontspec)             Italic/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Could not resolve font "Fira Mono/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'FiraMono(0)' created for font 'Fira Mono'
+(fontspec)             with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=WordSpace,BoldFont={Fira
+(fontspec)             Mono Medium}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: &lt;-&gt;"Fira
+(fontspec)             Mono/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: &lt;-&gt;"Fira Mono
+(fontspec)             Medium/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: &lt;-&gt;"Fira Mono
+(fontspec)             Medium/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/appendixnumberbeamer/appendixnumberbeamer.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen312
+\lightrulewidth=\dimen313
+\cmidrulewidth=\dimen314
+\belowrulesep=\dimen315
+\belowbottomsep=\dimen316
+\aboverulesep=\dimen317
+\abovetopsep=\dimen318
+\cmidrulesep=\dimen319
+\cmidrulekern=\dimen320
+\defaultaddspace=\dimen321
+\@cmidla=\count361
+\@cmidlb=\count362
+\@aboverulesep=\dimen322
+\@belowrulesep=\dimen323
+\@thisruleclass=\count363
+\@lastruleclass=\count364
+\@thisrulewidth=\dimen324
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
+Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks50
+\XKV@tempa@toks=\toks51
+)
+\XKV@depth=\count365
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks52
+\t@pgfplots@tokb=\toks53
+\t@pgfplots@tokc=\toks54
+\pgfplots@tmpa=\dimen325
+\c@pgfplots@coordindex=\count366
+\c@pgfplots@scanlineindex=\count367
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks55
+\t@pgf@tokb=\toks56
+\t@pgf@tokc=\toks57
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count368
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count369
+\t@pgfplotstable@a=\toks58
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count370
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-xetex.def (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-dvipdfmx.def
+\c@pgfplotslibrarysurf@streamlen=\count371
+)))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfpl
+ots.paths.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen326
+\pgfdecoratedremainingdistance=\dimen327
+\pgfdecoratedinputsegmentcompleteddistance=\dimen328
+\pgfdecoratedinputsegmentremainingdistance=\dimen329
+\pgf@decorate@distancetomove=\dimen330
+\pgf@decorate@repeatstate=\count372
+\pgfdecorationsegmentamplitude=\dimen331
+\pgfdecorationsegmentlength=\dimen332
+)
+\tikz@lib@dec@box=\box83
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count373
+\pgfplots@xmin@reg=\dimen333
+\pgfplots@xmax@reg=\dimen334
+\pgfplots@ymin@reg=\dimen335
+\pgfplots@ymax@reg=\dimen336
+\pgfplots@zmin@reg=\dimen337
+\pgfplots@zmax@reg=\dimen338
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.dateplot.code.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
+File: pgfcalendar.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfcalendarcurrentjulian=\count374
+\pgf@cal@easter@Y=\count375
+\pgf@cal@easter@G=\count376
+\pgf@cal@easter@C=\count377
+\pgf@cal@easter@X=\count378
+\pgf@cal@easter@Z=\count379
+\pgf@cal@easter@D=\count380
+\pgf@cal@easter@E=\count381
+\pgf@cal@easter@N=\count382
+\pgf@cal@easter@M=\count383
+\pgf@cal@easter@julianday=\count384
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamertheme-metropolis/pgfplotsthemetol.sty
+Package: pgfplotsthemetol 2017/01/23 PGFplots colors based on Paul Tol's SRON technical note
+) (./output.aux)
+\openout1 = `output.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 23.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: custom
+* layout: &lt;same size as paper&gt;
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=10.0pt
+* \footskip=14.22636pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 23.
+(./output.out) (./output.out)
+\@outlinefile=\write5
+\openout5 = `output.out'.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --&gt; OT1/cmss/m/n on input line 23.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --&gt; OT1/cmss/b/n on input line 23.
+\symnumbers=\mathgroup6
+\sympureletters=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmss/m/n --&gt; TU/lmr/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --&gt; TU/FiraSansLight(0)/b/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --&gt; TU/FiraSansLight(0)/b/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --&gt; TU/FiraSansLight(0)/m/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --&gt; TU/FiraSansLight(0)/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --&gt; TU/FiraSansLight(0)/m/it on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --&gt; TU/FiraSansLight(0)/m/it on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --&gt; TU/FiraMono(0)/m/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --&gt; TU/FiraMono(0)/m/n on input line 23.
+LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
+(Font)                  TU/FiraSansLight(0)/m/n --&gt; TU/FiraSansLight(0)/b/n on input line 23.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  TU/FiraSansLight(0)/m/it --&gt; TU/FiraSansLight(0)/b/it on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/cmss/b/n --&gt; TU/lmr/b/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  TU/FiraSansLight(0)/b/n --&gt; TU/FiraSansLight(0)/b/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  TU/FiraSansLight(0)/m/n --&gt; TU/FiraSansLight(0)/b/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  TU/FiraSansLight(0)/m/it --&gt; TU/FiraSansLight(0)/b/it on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  TU/FiraMono(0)/m/n --&gt; TU/FiraMono(0)/b/n on input line 23.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
+
+(./output.nav)
+Overfull \vbox (13.79993pt too high) detected at line 25
+ []
+
+[1
+
+] (./output.toc) [2
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [3
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [4
+
+] [5
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [6
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [7
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [8
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [9
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [10
+
+] [11
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [12
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [13
+
+]
+\openout4 = `output.vrb'.
+
+(./output.vrb) [14
+
+] [15
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 86.
+
+(./output.bbl
+File: beamericonarticle.pdf Graphic file (type pdf)
+&lt;use beamericonarticle.pdf&gt;
+File: beamericonarticle.pdf Graphic file (type pdf)
+&lt;use beamericonarticle.pdf&gt;
+File: beamericonarticle.pdf Graphic file (type pdf)
+&lt;use beamericonarticle.pdf&gt;
+) [16
+
+]
+\tf@nav=\write6
+\openout6 = `output.nav'.
+
+\tf@toc=\write7
+\openout7 = `output.toc'.
+
+\tf@snm=\write8
+\openout8 = `output.snm'.
+
+(./output.aux)
+ ***********
+LaTeX2e &lt;2023-06-01&gt; patch level 1
+L3 programming layer &lt;2023-06-30&gt;
+ ***********
+Package rerunfilecheck Info: File `output.out' has not changed.
+(rerunfilecheck)             Checksum: 513C9C92C7E42DE784D5C678326461E9;525.
+ ) 
+Here is how much of TeX's memory you used:
+ 37957 strings out of 475890
+ 946631 string characters out of 5778498
+ 1915875 words of memory out of 5000000
+ 58235 multiletter control sequences out of 15000+600000
+ 561305 words of font info for 82 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 128i,13n,139p,1895b,787s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on output.xdv (16 pages, 88096 bytes).</pre></div><div class="log-entry-content-button-container log-entry-content-button-container-collapsed"><button type="button" class="log-entry-btn-expand-collapse btn-secondary btn btn-xs"><i class="fa fa-angle-down" aria-hidden="true"></i> Expand</button></div></div></div></div><div class="logs-pane-actions"><button type="button" class="logs-pane-actions-clear-cache btn btn-sm btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;<span>Clear cached files</span></button><div class="dropup btn-group"><button title="Other logs and files" id="dropdown-files-logs-pane" role="button" aria-haspopup="true" aria-expanded="false" type="button" class="dropdown-toggle btn-secondary-info btn-secondary dropdown-toggle btn btn-sm">Other logs and files <span class="caret"></span></button><ul id="dropdown-files-logs-pane-list" role="menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-files-logs-pane"><li role="heading" class="dropdown-header">Download other output files</li><li role="presentation" class=""><a download="output.bbl" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.bbl?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.bbl</b></a></li><li role="separator" class="divider"></li><li role="presentation" class=""><a download="output.aux" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.aux?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.aux</b></a></li><li role="presentation" class=""><a download="output.blg" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.blg?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.blg</b></a></li><li role="presentation" class=""><a download="output.chktex" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.chktex?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.chktex</b></a></li><li role="presentation" class=""><a download="output.log" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.log?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.log</b></a></li><li role="presentation" class=""><a download="output.nav" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.nav?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.nav</b></a></li><li role="presentation" class=""><a download="output.out" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.out?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.out</b></a></li><li role="presentation" class=""><a download="output.pdfxref" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.pdfxref?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.pdfxref</b></a></li><li role="presentation" class=""><a download="output.snm" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.snm?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.snm</b></a></li><li role="presentation" class=""><a download="output.stderr" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.stderr?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.stderr</b></a></li><li role="presentation" class=""><a download="output.stdout" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.stdout?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.stdout</b></a></li><li role="presentation" class=""><a download="output.synctex.gz" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.synctex.gz?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.synctex.gz</b></a></li><li role="presentation" class=""><a download="output.toc" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.toc?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.toc</b></a></li><li role="presentation" class=""><a download="output.vrb" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.vrb?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.vrb</b></a></li><li role="presentation" class=""><a download="output.xdv" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.xdv?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard" role="menuitem" tabindex="-1"><b>output.xdv</b></a></li><li role="presentation" class=""><a download="output.zip" href="https://www.overleaf.com/project/6655a7ff2eeb3db0025b0d55/user/61ba491bcc5e8d8a5a821072/build/190078c929d-b25c682d1f219010/output/output.zip?clsiserverid=clsi-pre-emp-n2d-c-f-pn23&amp;compileGroup=standard&amp;files=output.bbl&amp;files=output.aux&amp;files=output.blg&amp;files=output.chktex&amp;files=output.log&amp;files=output.nav&amp;files=output.out&amp;files=output.pdfxref&amp;files=output.snm&amp;files=output.stderr&amp;files=output.stdout&amp;files=output.synctex.gz&amp;files=output.toc&amp;files=output.vrb&amp;files=output.xdv" role="menuitem" tabindex="-1"><b>Download all (15)</b></a></li></ul></div></div></div></div></div></div></div></div><div class="" role="separator" tabindex="0" data-panel-group-direction="horizontal" data-panel-group-id="4" data-resize-handle="" data-panel-resize-handle-enabled="false" data-panel-resize-handle-id="7" aria-controls="panel-main" aria-valuemax="95" aria-valuemin="70" aria-valuenow="100" style="cursor: ew-resize; touch-action: none; user-select: none;"><div class="horizontal-resize-handle" title="Resize"></div></div><div class="" data-panel="" data-panel-id="panel-chat" data-panel-group-id="4" style="flex: 0 1 0px; overflow: hidden;"></div></div></div></div></div></div></main><div class="cookie-banner hidden-print hidden"><div class="cookie-banner-content">We only use cookies for essential purposes and to improve your experience on our site. You can find out more in our <a href="https://www.overleaf.com/legal#Cookies">cookie policy</a>.</div><div class="cookie-banner-actions"><button class="btn btn-link btn-sm" type="button" data-ol-cookie-banner-set-consent="essential">Essential cookies only</button><button class="btn btn-primary btn-sm" type="button" data-ol-cookie-banner-set-consent="all">Accept all cookies</button></div></div><div class="modal fade" tabindex="-1" role="dialog" data-ol-contact-form-modal="contact-us"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title">Get in touch</h4></div><div class="modal-body contact-us-modal"><form data-ol-async-form="" data-ol-contact-form="" data-ol-contact-form-with-search="" name="contactForm" role="form" aria-label="Contact Us" action="https://www.overleaf.com/support"><input name="inbox" type="hidden" value="support"><span data-ol-not-sent=""><div data-ol-form-messages="" role="alert"></div><label>Email address</label><div class="form-group"><input class="form-control" aria-label="Email address" name="email" required="" type="email" spellcheck="false" maxlength="255" value="leonardwilsonb@gmail.com" data-ol-contact-form-email-input=""></div><label>Subject</label><div class="form-group"><input class="form-control" aria-label="Subject" name="subject" required="" autocomplete="off" maxlength="255"></div><div class="contact-suggestions" data-ol-search-results-wrapper="" hidden=""><p class="contact-suggestion-label" aria-live="polite">Have you checked our <a href="https://www.overleaf.com/learn/kb" target="_blank">knowledge base</a>?</p><ul class="contact-suggestion-list" data-ol-search-results="" aria-role="region" aria-label="Help articles matching your subject"></ul></div><label for="subSubject">What do you need help with?</label><div class="form-group"><select class="form-control" id="subSubject" name="subSubject" required="" autocomplete="off"><option selected="" disabled="">Please select…</option><option>Using LaTeX</option><option>Using the Overleaf Editor</option><option>Logging in or managing your account</option><option>Managing your subscription</option><option>Using premium features</option><option>Contacting the Sales team</option><option>Other</option></select></div><label>Affected project URL</label>&nbsp;&nbsp;<span class="optional-text">(Optional)</span><div class="form-group"><input class="form-control" name="projectUrl" aria-label="Affected project URL Optional"></div><label>Let us know how we can help</label><div class="form-group"><textarea class="form-control" aria-label="Let us know how we can help" name="message" required="" type="text"></textarea></div><div class="form-group hidden"><input class="form-control" aria-label="important message" name="important_message"></div><hr><div class="form-group text-right"><button class="btn-primary btn" type="submit" data-ol-disabled-inflight="" event-tracking="form-submitted-contact-us" event-tracking-mb="true" event-tracking-trigger="click" event-segmentation="{&quot;location&quot;:&quot;contact-us-form&quot;}"><span data-ol-inflight="idle">Send message</span><span hidden="" data-ol-inflight="pending">Sending…</span></button></div></span><span data-ol-sent="" hidden=""><p>Message sent! Our team will review it and reply by email.</p><p><span>Email:&nbsp;</span><span data-ol-contact-form-thank-you-email="">leonardwilsonb@gmail.com</span></p></span></form></div></div></div></div><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/socket.io.js.download" defer=""></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/6708-bb0ec2a596e2d79e281e.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/5256-e38e4bfb734ca907961e.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/4339-485a27cc929cb2a210f6.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/757-a5725578ff2fb8775fc3.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/6635-f6c6ddc6ca0e7d24b8b3.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/2933-659c7a75bfa5b4621c6f.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/231-bfb01c848ff1c241b0bc.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/8869-90dcc04774bb8b2ec54c.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/bootstrap-3-031ec5519edce6537d97.js.download"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/6708-bb0ec2a596e2d79e281e.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/5256-e38e4bfb734ca907961e.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/4339-485a27cc929cb2a210f6.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/757-a5725578ff2fb8775fc3.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/3488-0d84d6d23b5c910bc742.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/2933-659c7a75bfa5b4621c6f.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/427-113defacd625a19c4fab.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/8815-c1ca95010c545d99f79a.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/8126-3873f5cfa76f3ca64820.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/6840-71edb7ad8b80bd3746a7.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/2697-686cc7653c66c12e6272.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/3433-f65c0491d97028a70fe3.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/9672-9cc6a732c52c73ab424f.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/65-8f352b390c4650ce511e.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/9034-83c18011d57773f8d5bc.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/7797-c80e742874265125dcf8.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/471-d58c7aaee44ebb992722.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/8112-75a3a67563061333da8f.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/4121-e52a97593c56673cd1af.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/1202-cdb2346f76c19079b283.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/3167-91529df4ab986c247778.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/511-85eb932456c73e0d12e7.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/1875-750247e480ead4c71980.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/2392-86536f13eab1a725bc18.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/6146-bd91a8dfb57c92992266.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/9556-cc20757be8e44a0317d3.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/4511-decad0bc95620117e38b.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/2217-46d6e09bdbf253dc60c1.js.download" defer="defer"></script><script type="text/javascript" nonce="" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/ide-50db313be1ebdb31000f.js.download" defer="defer"></script><script type="text/javascript" nonce="">window.addEventListener('DOMContentLoaded', function() {
+	//- Look for bundle
+	var cdnBlocked = typeof Frontend === 'undefined'
+	//- Prevent loops
+	var noCdnAlreadyInUrl = window.location.href.indexOf("nocdn=true") != -1
+	if (cdnBlocked && !noCdnAlreadyInUrl && navigator.userAgent.indexOf("Googlebot") == -1) {
+		//- Set query param, server will not set CDN url
+		window.location.search += "&nocdn=true";
+	}
+})</script><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./TIPE _ Réseau de Neurones Hydraulique - Online LaTeX Editor Overleaf_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div><div class="ͼ1 ͼ2 ͼc ͼ8 ͼh ͼe ͼf ͼ9 ͼa ͼ4 ͼ5" style="position: relative;"></div></body><div id="vimeo-record-extension"></div><div style="position: absolute; bottom: 0px; left: 0px; height: 0px; z-index: 5;"><template shadowrootmode="open"><div id="plasmo-mount-container" style="display: flex; position: relative; top: 0px; left: 0px;"></div></template></div></html>
