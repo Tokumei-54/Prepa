@@ -1,3 +1,4 @@
+import os
 import numpy as np
 
 
@@ -27,13 +28,13 @@ class NN:
             self.db[i] = np.zeros((1, layers[i]))
         
     def use(self, X: np.ndarray) -> np.ndarray:
-        Y = X
+        Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
             Y = self.f(np.dot(Y, self.W[i]) + self.b[i])
         return self.g(np.dot(Y, self.W[len(self.W)]))
     
     def forward_propagation(self, X: np.ndarray) -> np.ndarray:
-        Y = X
+        Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
             C = np.dot(Y, self.W[i]) + self.b[i]
             self.cache.append((Y,C))
@@ -53,12 +54,12 @@ class NN:
             X, C = self.cache.pop()
             self.dW[n - i] += np.dot(X.T, error)
             self.db[n - i] += error
-            error = np.dot(self.deriv_f(C) * error, self.W[n].T)
+            error = np.dot(self.deriv_f(C) * error, self.W[n-i].T)
     
     def reset_grad(self) -> None:
-        for i in range(1, len(self.dW) + 1):
-            self.dW[i] = np.zeros(self.dW[i].shape)
-            self.db[i] = np.zeros(self.db[i].shape)
+        for i in range(1, len(self.W) + 1):
+            self.dW[i] = np.zeros(self.W[i].shape)
+            self.db[i] = np.zeros(self.b[i].shape)
     
     def divide_grad(self,n) -> None:
         for i in range(1, len(self.dW) + 1):
@@ -73,6 +74,13 @@ class NN:
     def train(self, data, labels, epochs, learning_rate = 0.01, loss = (lambda x , y: np.mean(np.power(y-x, 2)),  lambda x, y: 2*(x-y)/y.size)) -> None:
         samples = len(data)
         self.reset_grad()
+        self.cache = []
+
+        err_min = 0.01
+        directory = self.name + "_training"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
         for i in range(epochs):
             err = 0
             for j in range(samples):
@@ -86,48 +94,38 @@ class NN:
             self.update(learning_rate)
 
             err /= samples
-            if i%10 == 0 : print('epoch %d/%d   error=%f' % (i+1, epochs, err))
+            if (i+1)%100 == 0 : 
+                print('epoch %d/%d   error=%f' % (i+1, epochs, err))
+                if err < err_min :
+                    err_min = err *0.8
+                    self.save(os.path.join(directory, self.name + "_" + str(err)))
+
     
     def save(self, filename = "default"):
-        if filename == "default" : filename = self.name + '_' + str(np.datetime64('now'))
-        np.savez(filename, W = self.W, b = self.b, dW = self.dW, db = self.db, cache = self.cache, f = self.f, g = self.g, deriv_f = self.deriv_f, deriv_g = self.deriv_g)
+        if filename == "default" : filename = self.name
+        np.savez(filename+ '_' + str(np.datetime64('now')), W = self.W, b = self.b)
 
     def load(self, filename):
         data = np.load(filename, allow_pickle=True)
         self.W = data['W'].item()
         self.b = data['b'].item()
-        self.dW = data['dW'].item()
-        self.db = data['db'].item()
-        self.cache = data['cache'].item()
-        self.f = data['f'].item()
-        self.deriv_f = data['deriv_f'].item()
-        self.g = data['g'].item()
-        self.deriv_g = data['deriv_g'].item()
 
     
 
 
 
-ReLU = lambda x: np.maximum(0, x)
-deriv_ReLU = lambda x: x > 0
+ReLU = (lambda x: np.maximum(0, x), lambda x: x > 0)
 
-Id = lambda x: x
-deriv_Id = lambda x: 1
+Id = (lambda x: x, lambda x: 1)
 
-sigmoid = lambda x: 1 / (1 + np.exp(-x))
-deriv_sigmoid = lambda x: np.exp(-x) / (1 + np.exp(-x))**2
+sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x: np.exp(-x) / (1 + np.exp(-x))**2)
 
 softmax = lambda x: np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
 
-mse = lambda x , y: np.mean(np.power(y-x, 2))
-deriv_mse = lambda x, y: 2*(x-y)/y.size
+mse = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2*(x-y)/y.size)
 
 def main():
-    bill = NN([2,2,2])
-    bill.W[1] = np.array([[0, 1],[1, 0]])
-    bill.W[2] = np.array([[1, 0],[0, 1]])
-    X = np.array([0,1])
-    print(bill.forward_propagation(X, g = Id))
+    pass
 
 
 if __name__ == "__main__":
