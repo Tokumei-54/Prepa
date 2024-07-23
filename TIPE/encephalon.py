@@ -2,8 +2,21 @@ import os
 import numpy as np
 
 
+ReLU = (lambda x: np.maximum(0, x), lambda x: x > 0)
+
+Id = (lambda x: x, lambda x: 1)
+
+sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x: np.exp(-x) / (1 + np.exp(-x))**2)
+
+tanh = (lambda x: np.tanh(x), lambda x: 1 - np.tanh(x)**2)
+
+softmax = lambda x: np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
+
+mse = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2*(x-y)/y.size)
+
+
 class NN:
-    def __init__(self,layers: list[int], name = "model", f = (lambda x: np.maximum(0, x),  lambda x: x > 0), g = (lambda x: x, lambda x: 1)) -> None:
+    def __init__(self,layers: list[int], name = "model", f = ReLU, g = ReLU) -> None:
 
         if len(layers) <= 1 : raise Exception("not enough layers")
 
@@ -43,7 +56,7 @@ class NN:
         self.cache.append((Y,C))
         return self.g(C)
 
-    def backward_propagation(self, output: np.ndarray, label: np.ndarray, deriv_loss = lambda x, y: 2*(x-y)/y.size) -> None:
+    def backward_propagation(self, output: np.ndarray, label: np.ndarray, deriv_loss = mse[1]) -> None:
         n = len(self.W)
         X, C = self.cache.pop()
         error = self.deriv_g(C) * deriv_loss(output,label)
@@ -72,7 +85,7 @@ class NN:
             self.W[i] -= learning_rate * self.dW[i]
             self.b[i] -= learning_rate * self.db[i]
 
-    def train(self, data, labels, epochs, learning_rate = 0.01, loss = (lambda x , y: np.mean(np.power(y-x, 2)),  lambda x, y: 2*(x-y)/y.size)) -> None:
+    def train(self, data, labels, epochs, learning_rate = 0.01, loss = mse) -> None:
         samples = len(data)
         self.reset_grad()
         self.cache = []
@@ -111,21 +124,8 @@ class NN:
         self.W = data['W'].item()
         self.b = data['b'].item()
 
-    
 
 
-
-ReLU = (lambda x: np.maximum(0, x), lambda x: x > 0)
-
-Id = (lambda x: x, lambda x: 1)
-
-sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x: np.exp(-x) / (1 + np.exp(-x))**2)
-
-tanh = (lambda x: np.tanh(x), lambda x: 1 - np.tanh(x)**2)
-
-softmax = lambda x: np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
-
-mse = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2*(x-y)/y.size)
 
 def main():
     pass
