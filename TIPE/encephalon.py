@@ -45,16 +45,17 @@ class NN:
 
     def backward_propagation(self, output: np.ndarray, label: np.ndarray, deriv_loss = lambda x, y: 2*(x-y)/y.size) -> None:
         n = len(self.W)
-        error = deriv_loss(output,label)
         X, C = self.cache.pop()
+        error = self.deriv_g(C) * deriv_loss(output,label)
         self.dW[n] += np.dot(X.T, error)
         self.db[n] += error
-        error = np.dot(self.deriv_g(C) * error, self.W[n].T)
+        error = np.dot(error, self.W[n].T)
         for i in range(1,n):
             X, C = self.cache.pop()
+            error = self.deriv_f(C) * error
             self.dW[n - i] += np.dot(X.T, error)
             self.db[n - i] += error
-            error = np.dot(self.deriv_f(C) * error, self.W[n-i].T)
+            error = np.dot(error, self.W[n-i].T)
     
     def reset_grad(self) -> None:
         for i in range(1, len(self.W) + 1):
@@ -76,7 +77,7 @@ class NN:
         self.reset_grad()
         self.cache = []
 
-        err_min = 0.01
+        err_min = 0.001
         directory = self.name + "_training"
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -119,6 +120,8 @@ ReLU = (lambda x: np.maximum(0, x), lambda x: x > 0)
 Id = (lambda x: x, lambda x: 1)
 
 sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x: np.exp(-x) / (1 + np.exp(-x))**2)
+
+tanh = (lambda x: np.tanh(x), lambda x: 1 - np.tanh(x)**2)
 
 softmax = lambda x: np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
 
