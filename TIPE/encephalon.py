@@ -2,17 +2,28 @@ import os
 import numpy as np
 
 
-ReLU = (lambda x: np.maximum(0, x), lambda x: x > 0)
+ReLU = (lambda x: np.maximum(0, x), lambda x,y: (x > 0)*y)
 
-Id = (lambda x: x, lambda x: 1)
+Id = (lambda x: x, lambda x, y: y)
 
-sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x: np.exp(-x) / (1 + np.exp(-x))**2)
+sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x, y: (np.exp(-x) / (1 + np.exp(-x))**2)*y)
 
-tanh = (lambda x: np.tanh(x), lambda x: 1 - np.tanh(x)**2)
+tanh = (lambda x: np.tanh(x), lambda x, y: (1 - np.tanh(x)**2)*y)
 
-softmax = lambda x: np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
+def forward_softmax(x):
+    tmp = np.exp(x)
+    return tmp / np.sum(tmp)
 
-mse = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2*(x-y)/y.size)
+def backward_softmax(x, y):
+    tmp = np.exp(x)
+    o = tmp / np.sum(tmp)
+    n = np.size(o)
+    return np.dot(y, (np.identity(n) - o.T) * o)
+
+softmax = (forward_softmax, backward_softmax)
+
+
+mse = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2 * (x-y) / np.size(y))
 
 
 class NN:
@@ -23,9 +34,9 @@ class NN:
         self.name = name
 
         self.f = f[0]
-        self.deriv_f = f[1]
+        self.backward_f = f[1]
         self.g = g[0]
-        self.deriv_g = g[1]
+        self.backward_g = g[1]
 
 
         self.W = {}
@@ -56,16 +67,16 @@ class NN:
         self.cache.append((Y,C))
         return self.g(C)
 
-    def backward_propagation(self, output: np.ndarray, label: np.ndarray, deriv_loss = mse[1]) -> None:
+    def backward_propagation(self, output: np.ndarray, label: np.ndarray, backward_loss = mse[1]) -> None:
         n = len(self.W)
         X, C = self.cache.pop()
-        error = self.deriv_g(C) * deriv_loss(output,label)
+        error = self.backward_g(C, backward_loss(output,label))
         self.dW[n] += np.dot(X.T, error)
         self.db[n] += error
         error = np.dot(error, self.W[n].T)
         for i in range(1,n):
             X, C = self.cache.pop()
-            error = self.deriv_f(C) * error
+            error = self.backward_f(C, error)
             self.dW[n - i] += np.dot(X.T, error)
             self.db[n - i] += error
             error = np.dot(error, self.W[n-i].T)
@@ -85,15 +96,19 @@ class NN:
             self.W[i] -= learning_rate * self.dW[i]
             self.b[i] -= learning_rate * self.db[i]
 
-    def train(self, data, labels, epochs, learning_rate = 0.01, loss = mse) -> None:
+    def train(self, data, labels, epochs, learning_rate = 0.01, loss = mse, err_min_init = 0.001, print_step=100) -> None:
         samples = len(data)
         self.reset_grad()
         self.cache = []
 
-        err_min = 0.001
+        err_min = err_min_init
         directory = self.name + "_training"
         if not os.path.exists(directory):
             os.makedirs(directory)
+        start_time = str(np.datetime64('now'))
+        subdirectory = os.path.join(directory,start_time)
+        if not os.path.exists(subdirectory):
+            os.makedirs(subdirectory)
 
         for i in range(epochs):
             err = 0
@@ -102,17 +117,17 @@ class NN:
 
                 err += loss[0](labels[j], output) # for display purpose only
 
-                self.backward_propagation(output, labels[j], deriv_loss = loss[1])
+                self.backward_propagation(output, labels[j], backward_loss=loss[1])
             
             self.divide_grad(samples)
             self.update(learning_rate)
 
             err /= samples
-            if (i+1)%100 == 0 : 
+            if (i+1)%print_step == 0 : 
                 print('epoch %d/%d   error=%f' % (i+1, epochs, err))
                 if err < err_min :
                     err_min = err *0.8
-                    self.save(os.path.join(directory, self.name + "_" + str(err)))
+                    self.save(os.path.join(subdirectory, self.name + "_" + str(err)))
 
     
     def save(self, filename = "default"):
@@ -123,8 +138,6 @@ class NN:
         data = np.load(filename, allow_pickle=True)
         self.W = data['W'].item()
         self.b = data['b'].item()
-
-
 
 
 def main():
