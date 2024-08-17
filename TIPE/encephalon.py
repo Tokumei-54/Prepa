@@ -41,16 +41,11 @@ class NN:
 
         self.W = {}
         self.b = {}
-        self.dW = {}
-        self.db = {}
-        self.cache = []
 
         for i in range(1, len(layers)):
             self.W[i] = np.random.randn(layers[i-1], layers[i]) * np.sqrt(2 / layers[i-1])
             self.b[i] = np.zeros((1, layers[i]))
-            self.dW[i] = np.zeros((layers[i-1], layers[i]))
-            self.db[i] = np.zeros((1, layers[i]))
-        
+
     def use(self, X: np.ndarray) -> np.ndarray:
         Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
@@ -58,76 +53,111 @@ class NN:
         return self.g(np.dot(Y, self.W[len(self.W)]))
     
     def forward_propagation(self, X: np.ndarray) -> np.ndarray:
+        cache = []
         Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
             C = np.dot(Y, self.W[i]) + self.b[i]
-            self.cache.append((Y,C))
+            cache.append((Y,C))
             Y = self.f(C)
         C = np.dot(Y, self.W[len(self.W)]) + self.b[len(self.W)]
-        self.cache.append((Y,C))
-        return self.g(C)
+        cache.append((Y,C))
+        return self.g(C), cache
 
-    def backward_propagation(self, output: np.ndarray, label: np.ndarray, backward_loss = mse[1]) -> None:
+    def backward_propagation(self, output: np.ndarray, label: np.ndarray, cache, backward_loss = mse[1]) -> None:
+        dW, db = {}, {}
         n = len(self.W)
-        X, C = self.cache.pop()
+        X, C = cache.pop()
         error = self.backward_g(C, backward_loss(output,label))
-        self.dW[n] += np.dot(X.T, error)
-        self.db[n] += error
+        dW[n] = np.dot(X.T, error)
+        db[n] = error
         error = np.dot(error, self.W[n].T)
         for i in range(1,n):
-            X, C = self.cache.pop()
+            X, C = cache.pop()
             error = self.backward_f(C, error)
-            self.dW[n - i] += np.dot(X.T, error)
-            self.db[n - i] += error
+            dW[n - i] = np.dot(X.T, error)
+            db[n - i] = error
             error = np.dot(error, self.W[n-i].T)
+        return dW, db
     
-    def reset_grad(self) -> None:
+    def empty_grad(self) -> None:
+        dW = {}
+        db = {}
         for i in range(1, len(self.W) + 1):
-            self.dW[i] = np.zeros(self.W[i].shape)
-            self.db[i] = np.zeros(self.b[i].shape)
+            dW[i] = np.zeros(self.W[i].shape)
+            db[i] = np.zeros(self.b[i].shape)
+        return dW, db
     
-    def divide_grad(self,n) -> None:
-        for i in range(1, len(self.dW) + 1):
-            self.dW[i] /= n
-            self.db[i] /= n
+    def add_grad(self, dW, db, g):
+        for i in range(1, len(self.W) + 1):
+            dW[i] += g[0][i]
+            db[i] += g[1][i]
+        return dW, db
+
+    def divide_grad(self, dW, db, n):
+        for i in range(1, len(self.W) + 1):
+            dW[i] /= n
+            db[i] /= n
+        return dW, db
     
-    def update(self, learning_rate = 0.01):
+    def update(self, dW, db, learning_rate = 0.01) -> None:
         for i in range(1,len(self.W) + 1):
-            self.W[i] -= learning_rate * self.dW[i]
-            self.b[i] -= learning_rate * self.db[i]
+            self.W[i] -= learning_rate * dW[i]
+            self.b[i] -= learning_rate * db[i]
 
-    def train(self, data, labels, epochs, learning_rate = 0.01, loss = mse, err_min_init = 0.001, print_step=100) -> None:
+    def train(self, data, labels, epochs, learning_rate = 0.01, loss = mse, saving=True, save_step=1, saving_improvement=0.8, err_min_init = 0.001, printing=True, print_step=10) -> None:
         samples = len(data)
-        self.reset_grad()
-        self.cache = []
 
-        err_min = err_min_init
-        directory = self.name + "_training"
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-        start_time = str(np.datetime64('now'))
-        subdirectory = os.path.join(directory,start_time)
-        if not os.path.exists(subdirectory):
-            os.makedirs(subdirectory)
+        if saving:
+            err_min = err_min_init
+            directory = self.name + "_training"
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+            start_time = str(np.datetime64('now'))
+            subdirectory = os.path.join(directory,start_time)
+            if not os.path.exists(subdirectory):
+                os.makedirs(subdirectory)
 
         for i in range(epochs):
             err = 0
+            dW, db = self.empty_grad()
             for j in range(samples):
-                output = self.forward_propagation(data[j])
+                output, cache = self.forward_propagation(data[j])
 
                 err += loss[0](labels[j], output) # for display purpose only
 
-                self.backward_propagation(output, labels[j], backward_loss=loss[1])
+                dW, db = self.add_grad(dW, db,self.backward_propagation(output, labels[j], cache, backward_loss=loss[1]))
             
-            self.divide_grad(samples)
-            self.update(learning_rate)
+            dW, db = self.divide_grad(dW, db, samples)
+            self.update(dW, db, learning_rate)
 
             err /= samples
-            if (i+1)%print_step == 0 : 
+            if printing and (i+1)%print_step == 0 : 
                 print('epoch %d/%d   error=%f' % (i+1, epochs, err))
+            if saving and (i+1)%save_step == 0 : 
                 if err < err_min :
-                    err_min = err *0.8
+                    err_min = err * saving_improvement
                     self.save(os.path.join(subdirectory, self.name + "_" + str(err)))
+    
+    def stochastic(self, data, labels, epochs, batch_size, learning_rate = 0.01, loss = mse) -> None:
+        for epoch in range(epochs):
+            indices = np.arange(data.shape[0])
+            np.random.shuffle(indices)
+            x_train, y_train = data[indices], labels[indices]
+
+            for i in range(0, x_train.shape[0], batch_size):
+                x_batch = x_train[i:i + batch_size]
+                y_batch = y_train[i:i + batch_size]
+
+                dW, db = self.empty_grad()
+                for j in range(batch_size):
+                    output, cache = self.forward_propagation(data[j])
+                    dW, db = self.add_grad(dW, db,self.backward_propagation(output, labels[j], cache, backward_loss=loss[1]))
+                
+                dW, db = self.divide_grad(dW, db, batch_size)
+                self.update(dW, db, learning_rate)
+            
+            print(epoch + 1,'/',epochs)
+
 
     
     def save(self, filename = "default"):
