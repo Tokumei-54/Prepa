@@ -1,33 +1,79 @@
 import os
+from typing import Callable
 import numpy as np
 
 
-ReLU = (lambda x: np.maximum(0, x), lambda x,y: (x > 0)*y)
 
-Id = (lambda x: x, lambda x, y: y)
 
-sigmoid = (lambda x: 1 / (1 + np.exp(-x)), lambda x, y: (np.exp(-x) / (1 + np.exp(-x))**2)*y)
 
-tanh = (lambda x: np.tanh(x), lambda x, y: (1 - np.tanh(x)**2)*y)
 
-def forward_softmax(x):
+activation_fonction_type = tuple[Callable[[np.ndarray], np.ndarray], Callable[[np.ndarray, np.ndarray], np.ndarray]]
+error_fonction_type = tuple[Callable[[np.ndarray, np.ndarray], float], Callable[[np.ndarray, np.ndarray], np.ndarray]]
+learning_rate_optimizer_type = Callable[[float,int,np.ndarray,np.ndarray],float]
+
+
+
+
+
+
+ReLU: activation_fonction_type = (lambda x: np.maximum(0, x), lambda x,y: (x > 0)*y)
+
+
+Id: activation_fonction_type = (lambda x: x, lambda x, y: y)
+
+
+sigmoid: activation_fonction_type = (lambda x: 1 / (1 + np.exp(-x)), lambda x, y: (np.exp(-x) / (1 + np.exp(-x))**2)*y)
+
+
+tanh: activation_fonction_type = (lambda x: np.tanh(x), lambda x, y: (1 - np.tanh(x)**2)*y)
+
+
+def forward_softmax(x: np.ndarray) -> np.ndarray:
     tmp = np.exp(x)
     return tmp / np.sum(tmp)
 
-def backward_softmax(x, y):
+def backward_softmax(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     tmp = np.exp(x)
     o = tmp / np.sum(tmp)
     n = np.size(o)
     return np.dot(y, (np.identity(n) - o.T) * o)
 
-softmax = (forward_softmax, backward_softmax)
+softmax: activation_fonction_type = (forward_softmax, backward_softmax)
 
 
-mse = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2 * (x-y) / np.size(y))
+
+
+
+
+mse: error_fonction_type = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2 * (x-y) / np.size(y))
+
+
+
+
+
+
+def fixed_learning_rate() -> learning_rate_optimizer_type:
+    return lambda learning_rate, epoch, dW, db : learning_rate
+
+
+def time_based_decay(func: Callable[[int],float]) -> learning_rate_optimizer_type:
+    return lambda learning_rate, epoch, dW, db : func(epoch)
+
+
+def exponential_decay(k: int|float) -> learning_rate_optimizer_type:
+    return time_based_decay(lambda x: np.exp(-k*x))
+
+
+def step_decay(decay_rate: float = 0.5, step: int = 10) -> learning_rate_optimizer_type:
+    return lambda learning_rate, epoch, dW, db : learning_rate * decay_rate if epoch % step == 0  else learning_rate
+
+
+
+
 
 
 class NN:
-    def __init__(self,layers: list[int], name = "model", f = ReLU, g = ReLU) -> None:
+    def __init__(self,layers: list[int], name: str = "model", f: activation_fonction_type = ReLU, g: activation_fonction_type = ReLU) -> None:
 
         if len(layers) <= 1 : raise Exception("not enough layers")
 
@@ -46,13 +92,15 @@ class NN:
             self.W[i] = np.random.randn(layers[i-1], layers[i]) * np.sqrt(2 / layers[i-1])
             self.b[i] = np.zeros((1, layers[i]))
 
+
     def use(self, X: np.ndarray) -> np.ndarray:
         Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
             Y = self.f(np.dot(Y, self.W[i]) + self.b[i])
         return self.g(np.dot(Y, self.W[len(self.W)]))
     
-    def forward_propagation(self, X: np.ndarray) -> np.ndarray:
+
+    def forward_propagation(self, X: np.ndarray) -> tuple[np.ndarray,list[np.ndarray]]:
         cache = []
         Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
@@ -63,7 +111,8 @@ class NN:
         cache.append((Y,C))
         return self.g(C), cache
 
-    def backward_propagation(self, output: np.ndarray, label: np.ndarray, cache, backward_loss = mse[1]) -> None:
+
+    def backward_propagation(self, output: np.ndarray, label: np.ndarray, cache: list[np.ndarray], backward_loss: Callable[[np.ndarray, np.ndarray], np.ndarray] = mse[1]) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
         dW, db = {}, {}
         n = len(self.W)
         X, C = cache.pop()
@@ -79,7 +128,8 @@ class NN:
             error = np.dot(error, self.W[n-i].T)
         return dW, db
     
-    def empty_grad(self) -> None:
+
+    def empty_grad(self) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
         dW = {}
         db = {}
         for i in range(1, len(self.W) + 1):
@@ -87,26 +137,29 @@ class NN:
             db[i] = np.zeros(self.b[i].shape)
         return dW, db
     
-    def add_grad(self, dW, db, g):
+
+    def add_grad(self, dW: dict[int,np.ndarray], db: dict[int,np.ndarray], g:tuple[dict[int,np.ndarray], dict[int,np.ndarray]]) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
         for i in range(1, len(self.W) + 1):
             dW[i] += g[0][i]
             db[i] += g[1][i]
         return dW, db
 
-    def divide_grad(self, dW, db, n):
+
+    def divide_grad(self, dW: dict[int,np.ndarray], db: dict[int,np.ndarray], n: int|float) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
         for i in range(1, len(self.W) + 1):
             dW[i] /= n
             db[i] /= n
         return dW, db
     
-    def update(self, dW, db, learning_rate = 0.01) -> None:
+
+    def update(self,  dW: dict[int,np.ndarray], db: dict[int,np.ndarray], learning_rate: float = 0.01) -> None:
         for i in range(1,len(self.W) + 1):
             self.W[i] -= learning_rate * dW[i]
             self.b[i] -= learning_rate * db[i]
 
-    def train(self, data, labels, epochs, learning_rate = 0.01, loss = mse, saving=True, save_step=1, saving_improvement=0.8, err_min_init = 0.001, printing=True, print_step=10) -> None:
-        samples = len(data)
 
+    def train(self, data: np.ndarray, labels: np.ndarray, epochs: int, learning_rate: float = 0.01, learning_rate_optimiser:learning_rate_optimizer_type = fixed_learning_rate(), loss: error_fonction_type = mse, saving: bool = True, save_step: int = 1, saving_improvement: float = 0.8, err_min_init: float = 0.001, printing: bool = True, print_step: int = 10) -> None:
+        samples = len(data)
         if saving:
             err_min = err_min_init
             directory = self.name + "_training"
@@ -123,11 +176,12 @@ class NN:
             for j in range(samples):
                 output, cache = self.forward_propagation(data[j])
 
-                err += loss[0](labels[j], output) # for display purpose only
+                err += loss[0](labels[j], output)
 
                 dW, db = self.add_grad(dW, db,self.backward_propagation(output, labels[j], cache, backward_loss=loss[1]))
             
             dW, db = self.divide_grad(dW, db, samples)
+            learning_rate = learning_rate_optimiser(learning_rate, i, dW, db)
             self.update(dW, db, learning_rate)
 
             err /= samples
@@ -138,12 +192,13 @@ class NN:
                     err_min = err * saving_improvement
                     self.save(os.path.join(subdirectory, self.name + "_" + str(err)))
     
-    def stochastic(self, data, labels, epochs, batch_size, learning_rate = 0.01, loss = mse) -> None:
+
+    def stochastic(self, data: np.ndarray, labels: np.ndarray, epochs: int, batch_size: int, learning_rate: float = 0.01, loss: error_fonction_type = mse) -> None:
         for epoch in range(epochs):
             indices = np.arange(data.shape[0])
             np.random.shuffle(indices)
             x_train, y_train = data[indices], labels[indices]
-
+            
             for i in range(0, x_train.shape[0], batch_size):
                 x_batch = x_train[i:i + batch_size]
                 y_batch = y_train[i:i + batch_size]
@@ -158,21 +213,24 @@ class NN:
             
             print(epoch + 1,'/',epochs)
 
-
     
-    def save(self, filename = "default"):
+    def save(self, filename: str = "default"):
         if filename == "default" : filename = self.name
         np.savez(filename+ '_' + str(np.datetime64('now')), W = self.W, b = self.b)
 
-    def load(self, filename):
+
+    def load(self, filename: str):
         data = np.load(filename, allow_pickle=True)
         self.W = data['W'].item()
         self.b = data['b'].item()
 
 
+
+
+
+
 def main():
     pass
-
 
 if __name__ == "__main__":
     main()
