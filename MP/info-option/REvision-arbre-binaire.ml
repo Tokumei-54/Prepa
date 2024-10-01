@@ -11,7 +11,6 @@ let rec taille = function
 
 let rec hauteur = function
   | V -> 0
-  | N(V,_,V) -> 1
   | N(g,_,d) -> 1 + max (hauteur g)  (hauteur d)
 
 let rec feuille = function
