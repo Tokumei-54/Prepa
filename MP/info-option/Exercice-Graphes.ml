@@ -51,4 +51,7 @@ let affiche_voisins (g:graphe) = iter_voisins print_int g
 
 let affiche_aretes = iter_aretes (fun s1 s2 -> Printf.printf "(%d , %d) \n" s1 s2)
 
- 
+let g_complet (n:int) = Array.init n (fun i -> List.init (n-1) (fun j ->  if j >= i then j+1 else j))
+
+let test3 = g_complet 10
+let test4 = affiche_aretes test3
