@@ -67,3 +67,28 @@ let chemin (g: graphe) =
   in function
     |[] -> true
     |hd::tl -> aux hd tl 
+
+let affiche_matrice m = 
+  let n = Array.length m -1 in
+  let p = Array.length m.(0) -1 in
+  Printf.printf "\n";
+  for i = 0 to n do
+    Printf.printf "(";
+    for j = 0 to p do
+      Printf.printf " %d " m.(i).(j)
+    done;
+    Printf.printf ")";
+  done
+
+let iter_matrix f m = 
+  let n = Array.length m -1 in
+  let p = Array.length m.(0) -1 in
+  for i = 0 to n do
+    for j = 0 to p do
+      f m.(i).(j)
+    done;
+  done
+
+let matrix_of_graph = map_matrix (fun b -> if b then 1 else 0)  
+
+let test5 = affiche_matrice (matrix_of_graph c)
