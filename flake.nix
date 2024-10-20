@@ -49,7 +49,7 @@
           # Additional OCaml libraries
           ocamlPackages.core
           ocamlPackages.base
-          ocamlPackages.ocaml-lsp-server
+          ocamlPackages.ocaml-lsp
 
           # Optional opam if needed
           # ocamlPackages.opam
