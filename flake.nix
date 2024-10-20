@@ -25,7 +25,7 @@
           python312Packages.numpy
           python312Packages.pandas
           python312Packages.scipy
-          
+          python312Packages.keras
 
 
           # Deep learning frameworks
