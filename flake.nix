@@ -39,7 +39,7 @@
 
           # OCaml and related tools
           ocamlPackages.ocaml           # OCaml compiler
-          ocamlPackages.dune            # Build system for OCaml
+          ocamlPackages.dune-release           # Build system for OCaml
           ocamlPackages.utop            # Interactive toplevel for OCaml
           ocamlPackages.ocamlformat     # OCaml code formatter
           ocamlPackages.merlin  # Editor integration for OCaml (autocomplete)
