@@ -25,11 +25,11 @@
           python312Packages.numpy
           python312Packages.pandas
           python312Packages.scipy
-
+          python312Packages.keras
 
 
           # Deep learning frameworks
-          python312Packages.tensorflow  # Switch to pytorch if preferred
+          # python312Packages.tensorflow  # Switch to pytorch if preferred
           # python312Packages.pytorch
 
           # JupyterLab extensions
