@@ -38,10 +38,10 @@
 
 
           # OCaml and related tools
-          ocaml           # OCaml compiler
-          # dune            # Build system for OCaml
-          utop            # Interactive toplevel for OCaml
-          ocamlformat     # OCaml code formatter
+          ocamlPackages.ocaml           # OCaml compiler
+          ocamlPackages.dune            # Build system for OCaml
+          ocamlPackages.utop            # Interactive toplevel for OCaml
+          ocamlPackages.ocamlformat     # OCaml code formatter
           ocamlPackages.merlin  # Editor integration for OCaml (autocomplete)
           ocamlPackages.ocp-indent  # OCaml code indentation
           ocamlPackages.ocamlfind   # OCaml library manager
