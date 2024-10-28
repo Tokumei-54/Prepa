@@ -26,7 +26,7 @@
           numpy
           pandas
           scipy
-          cv2 
+          opencv
 
 
           # Deep learning frameworks
