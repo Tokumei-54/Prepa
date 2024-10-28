@@ -13,49 +13,46 @@
       };
     in {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          # Python 3.12 and related packages
-          python312  # Upgraded Python version
-
+        buildInputs = with pkgs; ([
+          python312  
+        ]
+        ++ with python312Packages; [
           # Python libraries for data science, ML, and deep learning
-          python312Packages.jupyterlab
-          python312Packages.ipython
-          python312Packages.ipykernel
-          python312Packages.matplotlib
-          python312Packages.numpy
-          python312Packages.pandas
-          python312Packages.scipy
-
+          jupyterlab
+          ipython
+          ipykernel
+          matplotlib
+          numpy
+          pandas
+          scipy
 
           # Deep learning frameworks
-          # python312Packages.tensorflow 
-          python312Packages.tensorflow-bin #bug in python 3.12
-          # python312Packages.pytorch
+          tensorflow-bin  # Bug fix for Python 3.12
 
           # JupyterLab extensions
-          python312Packages.jupyterlab-lsp
-          python312Packages.jupyterlab-git
-
-
+          jupyterlab-lsp
+          jupyterlab-git
+        ]
+        ++ [
+          ocaml      # OCaml compiler
+          dune-release    # Build system for OCaml
+        ]
+        ++ with ocamlPackages; [
           # OCaml and related tools
-          ocaml           # OCaml compiler
-          dune-release           # Build system for OCaml
-          ocamlPackages.utop            # Interactive toplevel for OCaml
-          ocamlPackages.ocamlformat     # OCaml code formatter
-          ocamlPackages.merlin  # Editor integration for OCaml (autocomplete)
-          ocamlPackages.ocp-indent  # OCaml code indentation
-          ocamlPackages.findlib   # OCaml library manager
+          utop            # Interactive toplevel for OCaml
+          ocamlformat     # OCaml code formatter
+          merlin          # Editor integration for OCaml (autocomplete)
+          ocp-indent      # OCaml code indentation
+          findlib         # OCaml library manager
 
           # Additional OCaml libraries
-          ocamlPackages.core
-          ocamlPackages.base
-          ocamlPackages.ocaml-lsp
+          core
+          base
+          ocaml-lsp
 
           # Optional opam if needed
-          # ocamlPackages.opam
-
-
-        ];
+          # opam
+        ];)
       };
     });
 }
