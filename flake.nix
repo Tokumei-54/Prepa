@@ -13,7 +13,7 @@
       };
     in {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; with python312Packages; with ocamlPackages [
+        buildInputs = with pkgs; with python312Packages; with ocamlPackages; [
           # Python 3.12 and related packages
           python312  # Upgraded Python version
 
