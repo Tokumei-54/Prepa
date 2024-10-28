@@ -8,16 +8,17 @@
 
   outputs = { self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs { inherit system; };
-      pythonPackages = pkgs.python312Packages;
-      ocamlPackages = pkgs.ocamlPackages;
+      pkgs = import nixpkgs {
+        inherit system;
+      };
     in {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          python312
-          ocaml
-          dune-release
-        ] ++ with pythonPackages; [
+        buildInputs = with pkgs; with python312Packages; with ocamlPackages [
+          # Python 3.12 and related packages
+          python312  # Upgraded Python version
+
+          #python3XXPackages.
+          # Python libraries for data science, ML, and deep learning
           jupyterlab
           ipython
           ipykernel
@@ -25,18 +26,39 @@
           numpy
           pandas
           scipy
-          tensorflow-bin
+          cv2 
+
+
+          # Deep learning frameworks
+          # tensorflow 
+          tensorflow-bin #bug in python 3.12
+          # pytorch
+
+          # JupyterLab extensions
           jupyterlab-lsp
           jupyterlab-git
-        ] ++ with ocamlPackages; [
-          utop
-          ocamlformat
-          merlin
-          ocp-indent
-          findlib
+
+
+          # OCaml and related tools
+          ocaml           # OCaml compiler
+          dune-release           # Build system for OCaml
+
+          #ocamlPackages.
+          utop            # Interactive toplevel for OCaml
+          ocamlformat     # OCaml code formatter
+          merlin  # Editor integration for OCaml (autocomplete)
+          ocp-indent  # OCaml code indentation
+          findlib   # OCaml library manager
+
+          # Additional OCaml libraries
           core
           base
           ocaml-lsp
+
+          # Optional opam if needed
+          # opam
+
+
         ];
       };
     });
