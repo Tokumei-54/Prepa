@@ -13,9 +13,9 @@
       };
     in {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; with python312Packages; with ocamlPackages; [
+        buildInputs = with pkgs; with python310Packages; with ocamlPackages; [
           # Python 3.12 and related packages
-          python312  # Upgraded Python version
+          python310  # Upgraded Python version
 
           #python3XXPackages.
           # Python libraries for data science, ML, and deep learning
@@ -30,8 +30,8 @@
 
 
           # Deep learning frameworks
-          # tensorflow 
-          tensorflow-bin #bug in python 3.12
+          tensorflow 
+          #tensorflow-bin #bug in python 3.12
           # pytorch
 
           # JupyterLab extensions
