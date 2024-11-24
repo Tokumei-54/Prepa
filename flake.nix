@@ -24,7 +24,7 @@
             pandas
             scipy
             opencv
-            tensorflow
+            # tensorflow
           ]))
 
           # JupyterLab extensions
