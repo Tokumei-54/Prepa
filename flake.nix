@@ -27,9 +27,6 @@
             # tensorflow
           ]))
 
-          # JupyterLab extensions
-          jupyterlab-lsp
-          jupyterlab-git
 
           # OCaml environment and tools
           ocaml           # OCaml compiler
