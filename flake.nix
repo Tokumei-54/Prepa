@@ -30,6 +30,7 @@
 
           # OCaml environment and tools
           ocaml           # OCaml compiler
+          opam
           dune-release     # Build system for OCaml
           utop            # Interactive toplevel for OCaml
           ocamlformat     # OCaml code formatter
