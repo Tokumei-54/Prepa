@@ -13,52 +13,33 @@
       };
     in {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; with python310Packages; with ocamlPackages; [
-          # Python 3.12 and related packages
-          python310  # Upgraded Python version
-
-          #python3XXPackages.
-          # Python libraries for data science, ML, and deep learning
-          jupyterlab
-          ipython
-          ipykernel
-          matplotlib
-          numpy
-          pandas
-          scipy
-          opencv
-
-
-          # Deep learning frameworks
-          tensorflow 
-          #tensorflow-bin #bug in python 3.12
-          # pytorch
+        buildInputs = with pkgs; with ocamlPackages; [
+          # Python environment with selected packages
+          (python3.withPackages (python-pkgs: with python-pkgs; [
+            jupyterlab
+            ipython
+            ipykernel
+            matplotlib
+            numpy
+            pandas
+            scipy
+            opencv
+            tensorflow
+          ]))
 
           # JupyterLab extensions
           jupyterlab-lsp
           jupyterlab-git
 
-
-          # OCaml and related tools
+          # OCaml environment and tools
           ocaml           # OCaml compiler
-          dune-release           # Build system for OCaml
-
-          #ocamlPackages.
+          dune-release     # Build system for OCaml
           utop            # Interactive toplevel for OCaml
           ocamlformat     # OCaml code formatter
-          merlin  # Editor integration for OCaml (autocomplete)
-          ocp-indent  # OCaml code indentation
-          findlib   # OCaml library manager
-
-          # Additional OCaml libraries
-          core
-          base
-          ocaml-lsp
-
-          # Optional opam if needed
-          # opam
-
-
+          merlin           # Editor integration for OCaml
+          ocp-indent       # OCaml code indentation
+          findlib          # OCaml library manager
+          ocaml-lsp        # Language server for OCaml
         ];
       };
     });
