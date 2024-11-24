@@ -37,9 +37,7 @@
           merlin           # Editor integration for OCaml
           ocp-indent       # OCaml code indentation
           findlib          # OCaml library manager
-          ocamlfind
           ocaml-lsp        # Language server for OCaml
-          ocaml-lsp-server
         ];
       };
     });
