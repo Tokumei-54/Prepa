@@ -158,7 +158,7 @@ class NN:
             self.b[i] -= learning_rate * db[i]
 
 
-    def train(self, data: np.ndarray, labels: np.ndarray, epochs: int, learning_rate: float = 0.01, learning_rate_optimiser:learning_rate_optimizer_type = fixed_learning_rate(), loss: error_fonction_type = mse, saving: bool = True, save_step: int = 1, saving_improvement: float = 0.8, err_min_init: float = 0.001, printing: bool = True, print_step: int = 10) -> None:
+    def train(self, data: np.ndarray, labels: np.ndarray, epochs: int, learning_rate: float = 0.01, learning_rate_optimiser:learning_rate_optimizer_type = fixed_learning_rate(), loss: error_fonction_type = mse, saving: bool = False, save_step: int = 1, saving_improvement: float = 0.8, err_min_init: float = 0.001, printing: bool = True, print_step: int = 10) -> None:
         samples = len(data)
         if saving:
             err_min = err_min_init
