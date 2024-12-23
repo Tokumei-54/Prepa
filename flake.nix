@@ -24,6 +24,7 @@
             pandas
             scipy
             opencv
+            pyserial
             # tensorflow
           ]))
 

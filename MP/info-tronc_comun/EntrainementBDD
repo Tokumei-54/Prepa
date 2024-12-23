@@ -1,0 +1,9 @@
+--0 
+SELECT masse FROM corps
+--1
+SELECT count(*) 
+FROM corps JOIN etat ON corps.id_corps = etat.id_corps
+GROUP BY id_corps 
+HAVING tmin() IS NOT NULL
+--2
+SELECT 
