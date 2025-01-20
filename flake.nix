@@ -17,6 +17,7 @@
           # Python environment with selected packages
           (python3.withPackages (python-pkgs: with python-pkgs; [
             jupyterlab
+            jupyter
             ipython
             ipykernel
             matplotlib
