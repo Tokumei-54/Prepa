@@ -7,8 +7,8 @@ import numpy as np
 
 
 
-activation_fonction_type = tuple[Callable[[np.ndarray], np.ndarray], Callable[[np.ndarray, np.ndarray], np.ndarray]]
-error_fonction_type = tuple[Callable[[np.ndarray, np.ndarray], float], Callable[[np.ndarray, np.ndarray], np.ndarray]]
+activation_function_type = tuple[Callable[[np.ndarray], np.ndarray], Callable[[np.ndarray, np.ndarray], np.ndarray]]
+error_function_type = tuple[Callable[[np.ndarray, np.ndarray], float], Callable[[np.ndarray, np.ndarray], np.ndarray]]
 learning_rate_optimizer_type = Callable[[float,int,np.ndarray,np.ndarray],float]
 
 
@@ -16,16 +16,16 @@ learning_rate_optimizer_type = Callable[[float,int,np.ndarray,np.ndarray],float]
 
 
 
-ReLU: activation_fonction_type = (lambda x: np.maximum(0, x), lambda x,y: (x > 0)*y)
+ReLU: activation_function_type = (lambda x: np.maximum(0, x), lambda x,y: (x > 0)*y)
 
 
-Id: activation_fonction_type = (lambda x: x, lambda x, y: y)
+Id: activation_function_type = (lambda x: x, lambda x, y: y)
 
 
-sigmoid: activation_fonction_type = (lambda x: 1 / (1 + np.exp(-x)), lambda x, y: (np.exp(-x) / (1 + np.exp(-x))**2)*y)
+sigmoid: activation_function_type = (lambda x: 1 / (1 + np.exp(-x)), lambda x, y: (np.exp(-x) / (1 + np.exp(-x))**2)*y)
 
 
-tanh: activation_fonction_type = (lambda x: np.tanh(x), lambda x, y: (1 - np.tanh(x)**2)*y)
+tanh: activation_function_type = (lambda x: np.tanh(x), lambda x, y: (1 - np.tanh(x)**2)*y)
 
 
 def forward_softmax(x: np.ndarray) -> np.ndarray:
@@ -38,14 +38,14 @@ def backward_softmax(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     n = np.size(o)
     return np.dot(y, (np.identity(n) - o.T) * o)
 
-softmax: activation_fonction_type = (forward_softmax, backward_softmax)
+softmax: activation_function_type = (forward_softmax, backward_softmax)
 
 
 
 
 
 
-mse: error_fonction_type = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2 * (x-y) / np.size(y))
+mse: error_function_type = (lambda x , y: np.mean(np.power(y-x, 2)), lambda x, y: 2 * (x-y) / np.size(y))
 
 
 
@@ -73,7 +73,7 @@ def step_decay(decay_rate: float = 0.5, step: int = 10) -> learning_rate_optimiz
 
 
 class NN:
-    def __init__(self,layers: list[int], name: str = "model", f: activation_fonction_type = ReLU, g: activation_fonction_type = ReLU) -> None:
+    def __init__(self,layers: list[int], name: str = "unnamed_model", f: activation_function_type = ReLU, g: activation_function_type = ReLU) -> None:
 
         if len(layers) <= 1 : raise Exception("not enough layers")
 
@@ -89,7 +89,7 @@ class NN:
         self.b = {}
 
         for i in range(1, len(layers)):
-            self.W[i] = np.random.randn(layers[i-1], layers[i]) * np.sqrt(2 / layers[i-1])
+            self.W[i] = np.random.randn(layers[i-1], layers[i]) * np.sqrt(2 / layers[i-1]) #He initialisation
             self.b[i] = np.zeros((1, layers[i]))
 
 
@@ -97,7 +97,7 @@ class NN:
         Y = np.array(X, ndmin=2)
         for i in range(1, len(self.W)):
             Y = self.f(np.dot(Y, self.W[i]) + self.b[i])
-        return self.g(np.dot(Y, self.W[len(self.W)]))
+        return self.g(np.dot(Y, self.W[len(self.W)]) + self.b[len(self.W)])
     
 
     def forward_propagation(self, X: np.ndarray) -> tuple[np.ndarray,list[np.ndarray]]:
@@ -158,7 +158,7 @@ class NN:
             self.b[i] -= learning_rate * db[i]
 
 
-    def train(self, data: np.ndarray, labels: np.ndarray, epochs: int, learning_rate: float = 0.01, learning_rate_optimiser:learning_rate_optimizer_type = fixed_learning_rate(), loss: error_fonction_type = mse, saving: bool = False, save_step: int = 1, saving_improvement: float = 0.8, err_min_init: float = 0.001, printing: bool = True, print_step: int = 10) -> None:
+    def train(self, data: np.ndarray, labels: np.ndarray, epochs: int, learning_rate: float = 0.01, learning_rate_optimiser:learning_rate_optimizer_type = fixed_learning_rate(), loss: error_function_type = mse, saving: bool = False, save_step: int = 1, saving_improvement: float = 0.8, err_min_init: float = 0.001, printing: bool = True, print_step: int = 10) -> None:
         samples = len(data)
         if saving:
             err_min = err_min_init
@@ -193,7 +193,7 @@ class NN:
                     self.save(os.path.join(subdirectory, self.name + "_" + str(err)))
     
 
-    def stochastic(self, data: np.ndarray, labels: np.ndarray, epochs: int, batch_size: int, learning_rate: float = 0.01, loss: error_fonction_type = mse) -> None:
+    def stochastic(self, data: np.ndarray, labels: np.ndarray, epochs: int, batch_size: int, learning_rate: float = 0.01, loss: error_function_type = mse) -> None:
         for epoch in range(epochs):
             indices = np.arange(data.shape[0])
             np.random.shuffle(indices)
