@@ -4,6 +4,14 @@
 #foward prop though serial
 #adaptable to any networtk send dimensions
 # look into initialisation (He initialisation)
+#compenser division par 10V des multiplieur dans le somateur
+#comment faire des tension negatives en soustrayant 2,5 peut etre [0,5] -> [-2.5,2.5]
+# dead neurons look into leaky ReLU L2 regularisation
+
+
+
+
+
 
 import os
 from dendron import *
@@ -42,7 +50,7 @@ class NN:
             parts.append(f"W:{key}={json.dumps(value.tolist())}")
         for key, value in self.b.items():
             parts.append(f"b:{key}={json.dumps(value.tolist())}")
-        serial_write(self.serialInst, "SET " + "; ".join(parts))
+        serial_write(self.serialInst, "PARAMETERS " + "; ".join(parts))
 
 
     def use(self, X: np.ndarray, timeout_delay = 0.1) -> np.ndarray | None: #test if timeout is enough
