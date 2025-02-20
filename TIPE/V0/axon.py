@@ -107,8 +107,9 @@ def serial_write_and_await(serialInst: serial.Serial, data: str, timeout: float 
         while time.time() - start_time < timeout:
             incoming_data = serial_read(serialInst)
             if incoming_data:
+                print(incoming_data)
                 return incoming_data
-        return None  # Return None if no response within the timeout
+        return "timeout"  # Return None if no response within the timeout
     except Exception as e:
         print(f"Error in write and wait: {e}")
         return None

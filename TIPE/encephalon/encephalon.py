@@ -74,7 +74,7 @@ def step_decay(decay_rate: float = 0.5, step: int = 10) -> learning_rate_optimiz
 
 class NN:
     def __init__(self,layers: list[int], name: str = "unnamed_model", f: activation_function_type = ReLU, g: activation_function_type = ReLU) -> None:
-
+        
         if len(layers) <= 1 : raise Exception("not enough layers")
 
         self.name = name

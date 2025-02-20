@@ -54,10 +54,11 @@ class NN:
 
 
     def use(self, X: np.ndarray, timeout_delay = 0.1) -> np.ndarray | None: #test if timeout is enough
-        response = serial_write_and_await(self.serialInst, f"INPUT {json.dumps(X)}", timeout=timeout_delay)
+        response = serial_write_and_await(self.serialInst, f"INPUT {json.dumps(X)}", timeout=timeout_delay)         
         if response:
             try:
-                return np.ndarray(json.loads(response)) #possibly more parsing necessary
+                return response
+                # return np.ndarray(json.loads(response)) #possibly more parsing necessary
             except json.JSONDecodeError:
                 print("Error decoding response")
                 return None
