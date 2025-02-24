@@ -21,7 +21,7 @@
             ipython
             ipykernel
             matplotlib
-            PyQt5
+            pyqt5
             numpy
             pandas
             scipy
