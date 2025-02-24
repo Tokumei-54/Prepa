@@ -30,6 +30,8 @@
             # tensorflow
           ]))
 
+          # Full Qt environment
+          qt5Full
 
           # OCaml environment and tools
           ocaml           # OCaml compiler
