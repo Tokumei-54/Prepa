@@ -21,7 +21,6 @@
             ipython
             ipykernel
             matplotlib
-            pyqt5
             numpy
             pandas
             scipy
@@ -30,8 +29,6 @@
             # tensorflow
           ]))
 
-          # Full Qt environment
-          qt5Full
 
           # OCaml environment and tools
           ocaml           # OCaml compiler
