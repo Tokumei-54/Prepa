@@ -57,7 +57,7 @@ class NN:
         response = serial_write_and_await(self.serialInst, f"INPUT {json.dumps(X)}", timeout=timeout_delay)         
         if response:
             try:
-                return response
+                return json.loads(response)
                 # return np.ndarray(json.loads(response)) #possibly more parsing necessary
             except json.JSONDecodeError:
                 print("Error decoding response")

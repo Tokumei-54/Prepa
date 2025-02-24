@@ -38,7 +38,7 @@ def serial_innit(baud: int = 9600) -> serial.Serial:
     return serialInst
 
 
-def serial_read(serialInst: serial.Serial, timeout: float = 0.01) -> str | None:
+def serial_read(serialInst: serial.Serial, timeout: float = 0.1) -> str | None:
     """
     Reads a line of data from the serial port.
 
@@ -81,7 +81,7 @@ def serial_write(serialInst: serial.Serial, data: str) -> None:
         print(f"Error writing to serial: {e}")
 
 
-def serial_write_and_await(serialInst: serial.Serial, data: str, timeout: float = 1.0) -> str | None:
+def serial_write_and_await(serialInst: serial.Serial, data: str, timeout: float = 10) -> str | None:
     """
     Sends a string of data to the serial port and waits for a response, returning the
     received data or None if the response is not received within the timeout.
@@ -107,9 +107,8 @@ def serial_write_and_await(serialInst: serial.Serial, data: str, timeout: float 
         while time.time() - start_time < timeout:
             incoming_data = serial_read(serialInst)
             if incoming_data:
-                print(incoming_data)
                 return incoming_data
-        return "timeout"  # Return None if no response within the timeout
+        return None  # Return None if no response within the timeout
     except Exception as e:
         print(f"Error in write and wait: {e}")
         return None
@@ -168,5 +167,6 @@ usbipd bind --busid 1-2
 usbipd attach --wsl --busid 1-2
 lsusb
 usbipd detach --busid 1-2
+wsl --shutdown
 """
 
