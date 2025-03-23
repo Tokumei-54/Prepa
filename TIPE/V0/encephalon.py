@@ -50,16 +50,16 @@ class NN:
             parts.append(f"W:{key}={json.dumps(value.tolist())}")
         for key, value in self.b.items():
             parts.append(f"b:{key}={json.dumps(value.tolist())}")
-        serial_write(self.serialInst, "PARAMETERS " + "; ".join(parts))
+        serial_write(self.serialInst, "PARAMETERS " + "; ".join(parts)+"\n")
 
 
     def use(self, X: np.ndarray, timeout_delay = 0.1) -> np.ndarray | None: #test if timeout is enough
-        response = serial_write_and_await(self.serialInst, f"INPUT {json.dumps(X)}", timeout=timeout_delay)         
+        response = serial_write_and_await(self.serialInst, f"INPUT {json.dumps(X)}\n", timeout=timeout_delay).strip()   
         if response:
             try:
                 return json.loads(response)
                 # return np.ndarray(json.loads(response)) #possibly more parsing necessary
             except json.JSONDecodeError:
-                print("Error decoding response")
+                print("Error decoding response: {response}")
                 return None
         return None
