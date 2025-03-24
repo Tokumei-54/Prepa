@@ -5,6 +5,8 @@ import numpy as np
 import json
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+import matplotlib
+matplotlib.rcParams['font.family'] = 'DejaVu Sans'
 
 ser , port = test_serial()
 run_sim(ANN([2,1,1]),port)
@@ -28,7 +30,7 @@ for x in np.linspace(0, 5, sub):
         if z is None:
             print(f"No response for input: {[x, y]}")
             continue
-        points.append([x, y, z[0]])
+        points.append([float(x), float(y), float(z[0][0])])
 
 # for x in np.linspace(0, 5, sub):
 #         z = model.use([x,0],5)
@@ -40,3 +42,4 @@ points = np.array(points)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection="3d")
 ax.scatter(points[:, 0], points[:, 1], points[:, 2], c=points[:, 2], cmap="winter")
+plt.show()

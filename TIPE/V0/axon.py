@@ -89,7 +89,7 @@ def serial_read(serialInst: serial.Serial, timeout: float = 0.1) -> str | None:
     """
     try:
         serialInst.timeout = timeout  # Set timeout for blocking read
-        return serialInst.readline().decode('utf-8').strip()
+        return serialInst.readline().decode('utf-8').strip() #Maybe .strip() is not necessary ?
     except Exception as e:
         print(f"Error reading from serial: {e}")
         return None

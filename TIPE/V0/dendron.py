@@ -63,3 +63,8 @@ def exponential_decay(k: int|float) -> learning_rate_optimizer_type:
 def step_decay(decay_rate: float = 0.5, step: int = 10) -> learning_rate_optimizer_type:
     return lambda learning_rate, epoch, dW, db : learning_rate * decay_rate if epoch % step == 0  else learning_rate
 
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()

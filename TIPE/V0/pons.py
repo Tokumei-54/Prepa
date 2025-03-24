@@ -8,7 +8,7 @@ def run_sim(sim , port):
     thread = threading.Thread(target=sim, args=[port], daemon=True)
     thread.start()
 
-def ANN(layers: list[int], f: activation_function_type = ReLU, g: activation_function_type = Id):
+def ANN(layers: list[int], f: activation_function_type = ReLU, g: activation_function_type = Id, noise_amplitude=0):
     def sim(port):
         I = np.zeros((1, layers[0]))
         W = {}
@@ -17,11 +17,13 @@ def ANN(layers: list[int], f: activation_function_type = ReLU, g: activation_fun
             W[i] = np.random.randn(layers[i-1], layers[i]) * np.sqrt(2 / layers[i-1]) #He initialisation
             b[i] = np.zeros((1, layers[i]))
         
-        def O(I,W,b,f,g):
+        N = np.random.rand(layers[-1]) * noise_amplitude
+
+        def O(I, W, b, f, g):
             Y = I
             for i in range(1, len(W)):
-                Y = f(np.dot(Y, W[i]) + b[i])[0]
-            return g(np.dot(Y, W[len(W)]) + b[len(W)])[0]
+                Y = f[0](np.dot(Y, W[i]) + b[i])
+            return g[0](np.dot(Y, W[len(W)]) + b[len(W)]) + N
         
         def process_command(command):
             if not command.strip():
@@ -43,10 +45,6 @@ def ANN(layers: list[int], f: activation_function_type = ReLU, g: activation_fun
                     I[int(param[1:])] = voltage
                 
                 os.write(port, f"SET command executed: {param} set to {voltage}V\n".encode())
-                # if channel != 255:
-                #     os.write(port, f"SET command executed: {param} set to {voltage}V".encode())
-                # else:
-                #     os.write(port, b"Invalid parameter for SET command.")
             elif command.startswith("READ"):
                 index = int(command.split()[1][1:])
                 analog_value = O(I,W,b,f,g)[index]
@@ -60,18 +58,20 @@ def ANN(layers: list[int], f: activation_function_type = ReLU, g: activation_fun
                             layer = int(key[2:])
                             W[layer] = np.array(values)
                         elif key.startswith("b"):
-                            layer = int(key[1:])
+                            layer = int(key[2:])
                             b[layer] = np.array(values)
-                    os.write(port, b"Weights and biases updated.\n")
-                except json.JSONDecodeError as e:
-                    print(f"Invalid PARAMETERS command: {command}, Error: {e}")
-                    os.write(port, b"Invalid PARAMETERS command.\n")
+                    os.write(port, b"ACK\n")
+                except Exception as e:
+                    os.write(port, f"ERROR: {str(e)}\n".encode())
             elif command.startswith("INPUT"):
-                command = command[6:]
-                values = json.loads(command)
-                
-                I = np.array(values)
-                os.write(port, (json.dumps(O(I, W, b, f, g)) + "\n").encode())
+                try:
+                    command = command[6:]
+                    values = json.loads(command)
+                    I = np.array(values)
+                    os.write(port, b"ACK\n")
+                    os.write(port, (json.dumps(O(I, W, b, f, g).tolist()) + "\n").encode())
+                except Exception as e:
+                    os.write(port, f"ERROR: {str(e)}\n".encode())
 
         while True:
             command = b""
@@ -80,3 +80,9 @@ def ANN(layers: list[int], f: activation_function_type = ReLU, g: activation_fun
             command = command.decode("utf-8").strip()
             process_command(command)
     return sim
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()

@@ -75,7 +75,8 @@ def step_decay(decay_rate: float = 0.5, step: int = 10) -> learning_rate_optimiz
 class NN:
     def __init__(self,layers: list[int], name: str = "unnamed_model", f: activation_function_type = ReLU, g: activation_function_type = ReLU) -> None:
         
-        if len(layers) <= 1 : raise Exception("not enough layers")
+        self.lenght = len(layers) - 1
+        if self.lenght <= 0 : raise Exception("not enough layers")
 
         self.name = name
 
@@ -88,33 +89,33 @@ class NN:
         self.W = {}
         self.b = {}
 
-        for i in range(1, len(layers)):
+        for i in range(1, self.lenght + 1):
             self.W[i] = np.random.randn(layers[i-1], layers[i]) * np.sqrt(2 / layers[i-1]) #He initialisation
             self.b[i] = np.zeros((1, layers[i]))
 
 
     def use(self, X: np.ndarray) -> np.ndarray:
         Y = np.array(X, ndmin=2)
-        for i in range(1, len(self.W)):
+        for i in range(1, self.lenght):
             Y = self.f(np.dot(Y, self.W[i]) + self.b[i])
-        return self.g(np.dot(Y, self.W[len(self.W)]) + self.b[len(self.W)])
+        return self.g(np.dot(Y, self.W[self.lenght]) + self.b[self.lenght])
     
 
     def forward_propagation(self, X: np.ndarray) -> tuple[np.ndarray,list[np.ndarray]]:
         cache = []
         Y = np.array(X, ndmin=2)
-        for i in range(1, len(self.W)):
+        for i in range(1, self.lenght):
             C = np.dot(Y, self.W[i]) + self.b[i]
-            cache.append((Y,C))
+            cache.append((Y, C))
             Y = self.f(C)
-        C = np.dot(Y, self.W[len(self.W)]) + self.b[len(self.W)]
+        C = np.dot(Y, self.W[self.lenght]) + self.b[self.lenght]
         cache.append((Y,C))
         return self.g(C), cache
 
 
     def backward_propagation(self, output: np.ndarray, label: np.ndarray, cache: list[np.ndarray], backward_loss: Callable[[np.ndarray, np.ndarray], np.ndarray] = mse[1]) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
-        dW, db = {}, {}
-        n = len(self.W)
+        dW, db = self.empty_grad()
+        n = self.lenght
         X, C = cache.pop()
         error = self.backward_g(C, backward_loss(output,label))
         dW[n] = np.dot(X.T, error)
@@ -123,8 +124,8 @@ class NN:
         for i in range(1,n):
             X, C = cache.pop()
             error = self.backward_f(C, error)
-            dW[n - i] = np.dot(X.T, error)
-            db[n - i] = error
+            np.dot(X.T, error, out=dW[n - i])  # In-place operation for dW
+            np.copyto(db[n - i], error)        # In-place copy for db
             error = np.dot(error, self.W[n-i].T)
         return dW, db
     
@@ -132,28 +133,28 @@ class NN:
     def empty_grad(self) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
         dW = {}
         db = {}
-        for i in range(1, len(self.W) + 1):
-            dW[i] = np.zeros(self.W[i].shape)
-            db[i] = np.zeros(self.b[i].shape)
+        for i in range(1, self.lenght + 1):
+            dW[i] = np.zeros_like(self.W[i])
+            db[i] = np.zeros_like(self.b[i])
         return dW, db
     
 
     def add_grad(self, dW: dict[int,np.ndarray], db: dict[int,np.ndarray], g:tuple[dict[int,np.ndarray], dict[int,np.ndarray]]) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
-        for i in range(1, len(self.W) + 1):
-            dW[i] += g[0][i]
-            db[i] += g[1][i]
+        for i in range(1, self.lenght + 1):
+            np.add(dW[i], g[0][i], out=dW[i])
+            np.add(db[i], g[1][i], out=db[i])
         return dW, db
 
 
     def divide_grad(self, dW: dict[int,np.ndarray], db: dict[int,np.ndarray], n: int|float) -> tuple[dict[int,np.ndarray], dict[int,np.ndarray]]:
-        for i in range(1, len(self.W) + 1):
-            dW[i] /= n
-            db[i] /= n
+        for i in range(1,self.lenght + 1):
+            np.divide(dW[i], n, out=dW[i])
+            np.divide(db[i], n, out=db[i])
         return dW, db
     
 
     def update(self,  dW: dict[int,np.ndarray], db: dict[int,np.ndarray], learning_rate: float = 0.01) -> None:
-        for i in range(1,len(self.W) + 1):
+        for i in range(1,self.lenght + 1):
             self.W[i] -= learning_rate * dW[i]
             self.b[i] -= learning_rate * db[i]
 
@@ -223,8 +224,6 @@ class NN:
         data = np.load(filename, allow_pickle=True)
         self.W = data['W'].item()
         self.b = data['b'].item()
-
-
 
 
 

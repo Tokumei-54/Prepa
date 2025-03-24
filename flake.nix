@@ -26,7 +26,7 @@
             scipy
             opencv
             pyserial
-            # tensorflow
+            tensorflow
           ]))
 
 
